@@ -211,7 +211,9 @@ By default,
 it recovers the version of the file recorded in `HEAD`,
 which is the last saved commit.
 
-::: spoiler FCM Comparison
+::: spoiler
+
+### FCM Comparison
 
 `git restore` is equivalent to:
 

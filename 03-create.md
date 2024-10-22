@@ -96,7 +96,9 @@ No commits yet
 nothing to commit (create/copy files and use "git add" to track)
 ```
 
-::: spoiler FCM Comparison
+::: spoiler
+
+### FCM Comparison
 
 `git status` is equivalent to:
 

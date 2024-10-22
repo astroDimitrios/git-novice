@@ -140,7 +140,9 @@ so that we can write a longer message.
 changes made in the commit. Generally, the message should complete the sentence "If applied, this commit will" <commit message here>.
 If you want to go into more detail, add a blank line between the summary line and your additional notes. Use this additional space to explain why you made changes and/or what their impact will be.
 
-::: spoiler FCM Comparison
+::: spoiler
+
+### FCM Comparison
 
 Running `git add` followed by `git commit` is equivalent to:
 
@@ -186,7 +188,9 @@ the commit's author,
 when it was created,
 and the log message Git was given when the commit was created.
 
-::: spoiler FCM Comparison
+::: spoiler
+
+### FCM Comparison
 
 `git log` is equivalent to:
 
