@@ -77,6 +77,25 @@ These modern systems also include powerful merging tools that make it possible f
 multiple authors to work on
 the same files concurrently.
 
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+:::::::::::::::::::::::::::::::::::::::::  callout
+
+## Moving to Git from FCM
+
+If you currently use [FCM](https://metomi.github.io/fcm/doc/user_guide/getting_started.html) 
+(a wrapper around Subversion, SVN) then look out for the following dropdowns.
+They contain the FCM equivalent for git commands.
+
+::: spoiler FCM Comparison
+
+Running the `git ...` command is equivalent to:
+
+```bash
+fcm ...
+```
+
+:::
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 

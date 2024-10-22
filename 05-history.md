@@ -210,6 +210,17 @@ As you might guess from its name,
 By default,
 it recovers the version of the file recorded in `HEAD`,
 which is the last saved commit.
+
+::: spoiler FCM Comparison
+
+`git restore` is equivalent to:
+
+```bash
+$ fcm revert FILE
+```
+
+:::
+
 If we want to go back even further,
 we can use a commit identifier instead, using `-s` option:
 
