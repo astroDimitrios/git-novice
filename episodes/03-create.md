@@ -96,6 +96,22 @@ No commits yet
 nothing to commit (create/copy files and use "git add" to track)
 ```
 
+::: spoiler FCM Comparison
+
+`git status` is equivalent to:
+
+```bash
+$ fcm status
+```
+
+or
+
+```bash
+$ fcm info
+```
+
+:::
+
 If you are using a different version of `git`, the exact
 wording of the output might be slightly different.
 
