@@ -260,10 +260,11 @@
 
     <div id="flush-collapsecurrent" class="accordion-collapse collapse show" aria-labelledby="flush-headingcurrent" data-bs-parent="#accordionFlushcurrent">
       <div class="accordion-body">
-        <ul><li><a href="#create-a-remote-repository">1. Create a remote repository</a></li>
-<li><a href="#connect-local-to-remote-repository">2. Connect local to remote repository</a></li>
-<li><a href="#ssh-background-and-setup">3. SSH Background and Setup</a></li>
-<li><a href="#push-local-changes-to-a-remote">4. Push local changes to a remote</a></li>
+        <ul><li><a href="#exploring-the-github-interface">1. Exploring the GitHub interface</a></li>
+<li><a href="#create-a-remote-repository">2. Create a remote repository</a></li>
+<li><a href="#connect-local-to-remote-repository">3. Connect local to remote repository</a></li>
+<li><a href="#ssh-background-and-setup">4. SSH Background and Setup</a></li>
+<li><a href="#push-local-changes-to-a-remote">5. Push local changes to a remote</a></li>
         </ul></div><!--/div.accordion-body-->
     </div><!--/div.accordion-collapse-->
 
@@ -435,10 +436,42 @@ to keep it on the web rather than on someone’s laptop. Most programmers
 use hosting services like <a href="https://github.com" class="external-link">GitHub</a>, <a href="https://bitbucket.org" class="external-link">Bitbucket</a> or <a href="https://gitlab.com/" class="external-link">GitLab</a> to hold those main copies; we’ll
 explore the pros and cons of this in a <a href="13-hosting.html">later
 episode</a>.</p>
-<p>Let’s start by sharing the changes we’ve made to our current project
-with the world. To this end we are going to create a <em>remote</em>
+<section><h2 class="section-heading" id="exploring-the-github-interface">1. Exploring the GitHub interface<a class="anchor" aria-label="anchor" href="#exploring-the-github-interface"></a></h2>
+<hr class="half-width"><p>GitHub has a lot of features so we’ll take some time to learn how to
+navigate the interface. Your instructor will guide you through
+navigating each section.</p>
+<figure><img src="fig/github_home_full_page.png" alt="The GitHub home page showing repositories on the left, and news in the centre." class="figure mx-auto d-block"></figure><p>This is the GitHub homepage. On the left you can quickly navigate to
+a repository or use the green <code>New</code> button to create a new
+repository. If you are in an organisation that requires single sign on
+to see organisational repositories you will be prompted with a large
+green button at the top of this page to sign in.</p>
+<p>To access your settings click on your round profile icon in the top
+right hand corner and select the <code>Settings</code> option.</p>
+<div class="section level3">
+<h3 id="exploring-the-interface-for-a-repository">1.1 Exploring the interface for a repository<a class="anchor" aria-label="anchor" href="#exploring-the-interface-for-a-repository"></a></h3>
+<p>The following image shows an example repository. In fact it is the
+repository containing the material for this lesson. <a href="https://github.com/swcarpentry/git-novice/" class="external-link">Link to the git-novice
+repository</a>.</p>
+<figure><img src="fig/github_repo_full_page.png" alt="A screenshot of the GitHub repository for the git-novice lesson." class="figure mx-auto d-block"></figure><p>Let’s break it down into parts:</p>
+<figure><img src="fig/github_repo_top_nav.png" alt="The GitHub nav at the top of a repository." class="figure mx-auto d-block"></figure><p>When you navigate to a repository the top nav will display the
+organisation the repository belongs to, <code>swcarpentry</code>, and
+the name of the repository, <code>git-novice</code>, in the top left. In
+the top right you have access to GitHubs powerful search, buttons to
+open Issues and Pull requests (which will be explained later), and the
+notifications and profile icon on the far right.</p>
+<figure><img src="fig/github_top_nav.png" alt="The GitHub navigation tabs for a repository." class="figure mx-auto d-block"></figure><p>This next section displays tabs to navigate around your repository
+and various buttons which allow you to watch for changes to a repository
+and star a project. Starring a repo makes it easier to find from your
+homepage and helps repository owners gauge usage of their code.</p>
+<figure><img src="fig/github_repo_code_section.png" alt="A screenshot of the lower section of the repository interface." class="figure mx-auto d-block"></figure><p>This section displays the code contained on the default branch, in
+this case <code>main</code>. It also displays useful stats about the
+repository on the right. The green <code>&lt;&gt; Code</code> button
+lets you check out a local copy of the repository.</p>
+<p>Let’s now share the changes we’ve made to our current project with
+the world. To this end we are going to create a <em>remote</em>
 repository that will be linked to our <em>local</em> repository.</p>
-<section><h2 class="section-heading" id="create-a-remote-repository">1. Create a remote repository<a class="anchor" aria-label="anchor" href="#create-a-remote-repository"></a></h2>
+</div>
+</section><section><h2 class="section-heading" id="create-a-remote-repository">2. Create a remote repository<a class="anchor" aria-label="anchor" href="#create-a-remote-repository"></a></h2>
 <hr class="half-width"><p>Log in to <a href="https://github.com" class="external-link">GitHub</a>, then click on the
 icon in the top right corner to create a new repository called
 <code>planets</code>:</p>
@@ -466,7 +499,7 @@ repository which looked like this:</p>
 <figure><img src="fig/git-freshly-made-github-repo.svg" alt='A diagram illustrating how the GitHub "planets" repository is also a git repository like our local repository, but that it is currently empty' class="figure mx-auto d-block"></figure><p>Note that our local repository still contains our earlier work on
 <code>mars.txt</code>, but the remote repository on GitHub appears empty
 as it doesn’t contain any files yet.</p>
-</section><section><h2 class="section-heading" id="connect-local-to-remote-repository">2. Connect local to remote repository<a class="anchor" aria-label="anchor" href="#connect-local-to-remote-repository"></a></h2>
+</section><section><h2 class="section-heading" id="connect-local-to-remote-repository">3. Connect local to remote repository<a class="anchor" aria-label="anchor" href="#connect-local-to-remote-repository"></a></h2>
 <hr class="half-width"><p>Now we connect the two repositories. We do this by making the GitHub
 repository a <a href="reference.html#remote">remote</a> for the local
 repository. The home page of the repository on GitHub includes the URL
@@ -515,7 +548,7 @@ origin   git@github.com:vlad/planets.git (push)</code></pre>
 </div>
 <p>We’ll discuss remotes in more detail in the next episode, while
 talking about how they might be used for collaboration.</p>
-</section><section><h2 class="section-heading" id="ssh-background-and-setup">3. SSH Background and Setup<a class="anchor" aria-label="anchor" href="#ssh-background-and-setup"></a></h2>
+</section><section><h2 class="section-heading" id="ssh-background-and-setup">4. SSH Background and Setup<a class="anchor" aria-label="anchor" href="#ssh-background-and-setup"></a></h2>
 <hr class="half-width"><p>Before Dracula can connect to a remote repository, he needs to set up
 a way for his computer to authenticate with GitHub so it knows it’s him
 trying to connect to his remote repository.</p>
@@ -589,7 +622,7 @@ pairs were set up.<br>
 Since they don’t exist on Dracula’s computer, he uses this command to
 create them.</p>
 <div class="section level3">
-<h3 id="create-an-ssh-key-pair">3.1 Create an SSH key pair<a class="anchor" aria-label="anchor" href="#create-an-ssh-key-pair"></a></h3>
+<h3 id="create-an-ssh-key-pair">4.1 Create an SSH key pair<a class="anchor" aria-label="anchor" href="#create-an-ssh-key-pair"></a></h3>
 <p>To create an SSH key pair Vlad uses this command, where the
 <code>-t</code> option specifies which type of algorithm to use and
 <code>-C</code> attaches a comment to the key (here, Vlad’s email):</p>
@@ -671,7 +704,7 @@ drwxr-xr-x 1 Vlad Dracula 197121   0 Jul 16 14:48 ../
 </div>
 </div>
 <div class="section level3">
-<h3 id="copy-the-public-key-to-github">3.2 Copy the public key to GitHub<a class="anchor" aria-label="anchor" href="#copy-the-public-key-to-github"></a></h3>
+<h3 id="copy-the-public-key-to-github">4.2 Copy the public key to GitHub<a class="anchor" aria-label="anchor" href="#copy-the-public-key-to-github"></a></h3>
 <p>Now we have a SSH key pair and we can run this command to check if
 GitHub can read our authentication.</p>
 <div class="codewrapper sourceCode" id="cb14">
@@ -726,7 +759,7 @@ the command line.</p>
 <p>Good! This output confirms that the SSH key works as intended. We are
 now ready to push our work to the remote repository.</p>
 </div>
-</section><section><h2 class="section-heading" id="push-local-changes-to-a-remote">4. Push local changes to a remote<a class="anchor" aria-label="anchor" href="#push-local-changes-to-a-remote"></a></h2>
+</section><section><h2 class="section-heading" id="push-local-changes-to-a-remote">5. Push local changes to a remote<a class="anchor" aria-label="anchor" href="#push-local-changes-to-a-remote"></a></h2>
 <hr class="half-width"><p>Now that authentication is setup, we can return to the remote. This
 command will push the changes from our local repository to the
 repository on GitHub:</p>
@@ -864,7 +897,7 @@ shell?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p>The left-most button (with the picture of a clipboard) copies the
 full identifier of the commit to the clipboard. In the shell,
@@ -923,7 +956,7 @@ GitHub record times, and why?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <p>GitHub displays timestamps in a human readable relative format
 (i.e. “22 hours ago” or “three weeks ago”). However, if you hover over
@@ -950,7 +983,7 @@ push” different from “git commit”?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <p>When we push changes, we’re interacting with a remote repository to
 update it with the changes we’ve made locally (often this corresponds to
@@ -979,7 +1012,7 @@ happened when you tried to link your local and remote repositories?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
   <h4 class="accordion-header" id="headingSolution4"> Show me the solution </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
 <div class="accordion-body">
 <p>In this case, we’d see a merge conflict due to unrelated histories.
 When GitHub creates a README.md file, it performs a commit in the remote
