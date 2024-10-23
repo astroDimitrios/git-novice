@@ -391,7 +391,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Remotes in GitHub</h1>
-        <p>Last updated on 2024-10-07 |
+        <p>Last updated on 2024-10-23 |
 
         <a href="https://github.com/swcarpentry/git-novice/edit/main/episodes/07-github.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -607,19 +607,22 @@ algorithm, use:
 <pre class="output" tabindex="0"><code>Generating public/private ed25519 key pair.
 Enter file in which to save the key (/c/Users/Vlad Dracula/.ssh/id_ed25519):</code></pre>
 </div>
-<p>We want to use the default file, so just press <kbd>Enter</kbd>.</p>
+<p>We want to store our key in the file
+<code>~/.ssh/id_ed25519_github</code>.</p>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="output" tabindex="0"><code>Created directory '/c/Users/Vlad Dracula/.ssh'.
 Enter passphrase (empty for no passphrase):</code></pre>
 </div>
-<p>Now, it is prompting Dracula for a passphrase. Since he is using his
-lab’s laptop that other people sometimes have access to, he wants to
-create a passphrase. Be sure to use something memorable or save your
-passphrase somewhere, as there is no “reset my password” option. Note
-that, when typing a passphrase on a terminal, there won’t be any visual
-feedback of your typing. This is normal: your passphrase will be
+<p>Now you will be prompted for a passphrase. If the computer you work
+on is shared between multiple users you should set a passphrase. On your
+VDI there is no need to set a passphrase so just press
+<kbd>Enter</kbd>.</p>
+<p>If you do set a passphrase be sure to use something memorable or save
+your passphrase somewhere, as there is no “reset my password” option.
+Note that, when typing a passphrase on a terminal, there won’t be any
+visual feedback of your typing. This is normal: your passphrase will be
 recorded even if you see nothing changing on your screen.</p>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -861,7 +864,7 @@ shell?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>The left-most button (with the picture of a clipboard) copies the
 full identifier of the commit to the clipboard. In the shell,
@@ -920,7 +923,7 @@ GitHub record times, and why?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <p>GitHub displays timestamps in a human readable relative format
 (i.e. “22 hours ago” or “three weeks ago”). However, if you hover over
@@ -947,7 +950,7 @@ push” different from “git commit”?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
 <div class="accordion-body">
 <p>When we push changes, we’re interacting with a remote repository to
 update it with the changes we’ve made locally (often this corresponds to
@@ -976,7 +979,7 @@ happened when you tried to link your local and remote repositories?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
   <h4 class="accordion-header" id="headingSolution4"> Show me the solution </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
 <div class="accordion-body">
 <p>In this case, we’d see a merge conflict due to unrelated histories.
 When GitHub creates a README.md file, it performs a commit in the remote
@@ -1101,8 +1104,8 @@ local repository.</li>
   "url": "https://swcarpentry.github.io/git-novice/07-github.html",
   "identifier": "https://swcarpentry.github.io/git-novice/07-github.html",
   "dateCreated": "2014-12-04",
-  "dateModified": "2024-10-07",
-  "datePublished": "2024-10-22"
+  "dateModified": "2024-10-23",
+  "datePublished": "2024-10-23"
 }
 
   </script><script>
