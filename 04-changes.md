@@ -140,6 +140,15 @@ so that we can write a longer message.
 changes made in the commit. Generally, the message should complete the sentence "If applied, this commit will" <commit message here>.
 If you want to go into more detail, add a blank line between the summary line and your additional notes. Use this additional space to explain why you made changes and/or what their impact will be.
 
+::::::::::::::::::::::::::::::::::::: instructor
+
+The [whatthecommit site](https://whatthecommit.com/) can be used to show 
+example commit messages, good and bad, pulled from public repos on GitHub.
+You should note that there is no safe for work filter. Some of the commit 
+messages may include inappropriate language.
+
+:::::::::::::::::::::::::::::::::::::::::::::::::
+
 ::: spoiler
 
 ### FCM Comparison
