@@ -28,10 +28,58 @@ services like [GitHub](https://github.com), [Bitbucket](https://bitbucket.org) o
 [GitLab](https://gitlab.com/) to hold those main copies; we'll explore the pros
 and cons of this in a [later episode](13-hosting.md).
 
-Let's start by sharing the changes we've made to our current project with the
+## 1\. Exploring the GitHub interface
+
+GitHub has a lot of features so we'll take some time to learn 
+how to navigate the interface. Your instructor will guide you through navigating 
+each section.
+
+![](fig/github_home_full_page.png){alt='The GitHub home page showing repositories on the left, and news in the centre.'}
+
+This is the GitHub homepage. On the left you can quickly navigate to a repository 
+or use the green `New` button to create a new repository. If you are in an 
+organisation that requires single sign on to see organisational repositories 
+you will be prompted with a large green button at the top of this page to sign in.
+
+To access your settings click on your round profile icon in the top right 
+hand corner and select the `Settings` option.
+
+### 1\.1 Exploring the interface for a repository
+
+The following image shows an example repository. In fact it is the repository 
+containing the material for this lesson.
+[Link to the git-novice repository](https://github.com/swcarpentry/git-novice/).
+
+![](fig/github_repo_full_page.png){alt='A screenshot of the GitHub repository for the git-novice lesson.'}
+
+Let's break it down into parts:
+
+![](fig/github_repo_top_nav.png){alt='The GitHub nav at the top of a repository.'}
+
+When you navigate to a repository the top nav will display the 
+organisation the repository belongs to, `swcarpentry`, and the name of the 
+repository, `git-novice`, in the top left.
+In the top right you have access to GitHubs powerful search, buttons to open 
+Issues and Pull requests (which will be explained later), and the notifications 
+and profile icon on the far right.
+
+![](fig/github_top_nav.png){alt='The GitHub navigation tabs for a repository.'}
+
+This next section displays tabs to navigate around your repository and various 
+buttons which allow you to watch for changes to a repository and star a project.
+Starring a repo makes it easier to find from your homepage and helps 
+repository owners gauge usage of their code.
+
+![](fig/github_repo_code_section.png){alt='A screenshot of the lower section of the repository interface.'}
+
+This section displays the code contained on the default branch, in this case `main`.
+It also displays useful stats about the repository on the right.
+The green `<> Code` button lets you check out a local copy of the repository.
+
+Let's now share the changes we've made to our current project with the
 world. To this end we are going to create a *remote* repository that will be linked to our *local* repository.
 
-## 1\. Create a remote repository
+## 2\. Create a remote repository
 
 Log in to [GitHub](https://github.com), then click on the icon in the top right corner to
 create a new repository called `planets`:
@@ -73,7 +121,7 @@ Now that we have two repositories, we need a diagram like this:
 Note that our local repository still contains our earlier work on `mars.txt`, but the
 remote repository on GitHub appears empty as it doesn't contain any files yet.
 
-## 2\. Connect local to remote repository
+## 3\. Connect local to remote repository
 
 Now we connect the two repositories.  We do this by making the
 GitHub repository a [remote](../learners/reference.md#remote) for the local repository.
@@ -125,7 +173,7 @@ origin   git@github.com:vlad/planets.git (push)
 We'll discuss remotes in more detail in the next episode, while
 talking about how they might be used for collaboration.
 
-## 3\. SSH Background and Setup
+## 4\. SSH Background and Setup
 
 Before Dracula can connect to a remote repository, he needs to set up a way for his computer to authenticate with GitHub so it knows it's him trying to connect to his remote repository.
 
@@ -176,7 +224,7 @@ ls: cannot access '/c/Users/Vlad Dracula/.ssh': No such file or directory
 If SSH has been set up on the computer you're using, the public and private key pairs will be listed. The file names are either `id_ed25519`/`id_ed25519.pub` or `id_rsa`/`id_rsa.pub` depending on how the key pairs were set up.  
 Since they don't exist on Dracula's computer, he uses this command to create them.
 
-### 3\.1 Create an SSH key pair
+### 4\.1 Create an SSH key pair
 
 To create an SSH key pair Vlad uses this command, where the `-t` option specifies which type of algorithm to use and `-C` attaches a comment to the key (here, Vlad's email):
 
@@ -249,7 +297,7 @@ drwxr-xr-x 1 Vlad Dracula 197121   0 Jul 16 14:48 ../
 -rw-r--r-- 1 Vlad Dracula 197121 106 Jul 16 14:48 id_ed25519.pub
 ```
 
-### 3\.2 Copy the public key to GitHub
+### 4\.2 Copy the public key to GitHub
 
 Now we have a SSH key pair and we can run this command to check if GitHub can read our authentication.
 
@@ -296,7 +344,7 @@ Hi Vlad! You've successfully authenticated, but GitHub does not provide shell ac
 
 Good! This output confirms that the SSH key works as intended. We are now ready to push our work to the remote repository.
 
-## 4\. Push local changes to a remote
+## 5\. Push local changes to a remote
 
 Now that authentication is setup, we can return to the remote.  This command will push the changes from
 our local repository to the repository on GitHub:
