@@ -192,15 +192,19 @@ Generating public/private ed25519 key pair.
 Enter file in which to save the key (/c/Users/Vlad Dracula/.ssh/id_ed25519):
 ```
 
-We want to use the default file, so just press <kbd>Enter</kbd>.
+We want to store our key in the file `~/.ssh/id_ed25519_github`.
 
 ```output
 Created directory '/c/Users/Vlad Dracula/.ssh'.
 Enter passphrase (empty for no passphrase):
 ```
 
-Now, it is prompting Dracula for a passphrase.  Since he is using his lab's laptop that other people sometimes have access to, he wants to create a passphrase.
-Be sure to use something memorable or save your passphrase somewhere, as there is no "reset my password" option.
+Now you will be prompted for a passphrase. If the computer you work on is shared between 
+multiple users you should set a passphrase. On your VDI there is no need 
+to set a passphrase so just press <kbd>Enter</kbd>.
+
+If you do set a passphrase be sure to use something memorable or save your passphrase somewhere, 
+as there is no "reset my password" option.
 Note that, when typing a passphrase on a terminal, there won't be any visual feedback of your typing.
 This is normal: your passphrase will be recorded even if you see nothing changing on your screen.
 
