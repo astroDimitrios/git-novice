@@ -48,8 +48,7 @@ For this lesson, we will be interacting with [GitHub](https://github.com/) and s
 
 ## Keeping your email private
 
-If you elect to use a private email address with GitHub, then use GitHub's no-reply email address for the `user.email` value. It looks like `ID+username@users.noreply.github.com`. You can look up your own address in your GitHub [email settings](https://github.com/settings/emails).
-
+If you elect to use a private email address with GitHub, then use GitHub's no-reply email address for the `user.email` value. It looks like `ID+username@users.noreply.github.com`. You can look up your own address in your GitHub [email settings](https://github.com/settings/emails). Check with your instructor whether your organisation has a policy on keeping emails private. At the Met Office it is up to you whether to keep your email address private.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
