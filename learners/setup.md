@@ -12,6 +12,17 @@ instructions on installing Git for various operating systems.
 - [Git installation on MacOS][workshop-setup]
 - [Git installation on Linux][workshop-setup]
 
+Your institution may have already installed git on your work computer.
+Ask your instructor if this step is necessary or simply type:
+
+```bash
+$ git --version
+git version 2.47.0
+```
+
+If a version number is printed like the output above git is installed and 
+ready for use.
+
 ## Creating a GitHub Account
 
 You will need an account for [GitHub](https://github.com) to follow episodes 7 & 8 in this lesson.
@@ -19,7 +30,11 @@ You will need an account for [GitHub](https://github.com) to follow episodes 7 &
 1. Go to <https://github.com> and follow the "Sign up" link at the top-right of the window.
 2. Follow the instructions to create an account.
 3. Verify your email address with GitHub.
-4. Configure multifactor authentication (see below).
+4. Configure multifactor authentication and or a passkey (see below).
+
+There is no fixed guidance for choosing your GitHub username however you should ensure it is suitable for work.
+At the Met Office a common pattern for usernames is: `mo-{first name initial}{surname}`.
+So if your name is `Eleanor Ormerod` your username would be: `mo-eormerod`
 
 ### Multi-factor Authentication
 
@@ -43,6 +58,10 @@ Several options exist for setting up 2FA, which are summarised here:
        or the [Google Titan key](https://store.google.com/us/product/titan_security_key?hl=en-US&pli=1).
 
 The GitHub documentation provides [more details about configuring 2FA](https://docs.github.com/en/authentication/securing-your-account-with-two-factor-authentication-2fa/configuring-two-factor-authentication).
+
+### Passkeys
+
+To completely avoid having authentication for work purposes on a personal device you may choose to [set up a passkey](https://docs.github.com/en/authentication/authenticating-with-a-passkey/managing-your-passkeys). Your instructor and organisation will be able to provide guidance on suitable passkey providers and password managers.
 
 ----------------
 
