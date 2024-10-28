@@ -21,7 +21,7 @@ git version 2.47.0
 ```
 
 If a version number is printed like the output above git is installed and 
-ready for use.
+ready to use.
 
 ## Creating a GitHub Account
 
