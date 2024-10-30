@@ -18,6 +18,17 @@ exercises: 0
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
+::: caution
+
+### Check your Organisation's Policy
+
+Your organisation most likely has policies governing their intellectual property.
+The guidelines below are general.
+You should consult your organisational policy on licensing and
+open source before making any decisions.
+
+:::
+
 When a repository with source code, a manuscript or other creative
 works becomes public, it should include a file `LICENSE` or
 `LICENSE.txt` in the base directory of the repository that clearly
