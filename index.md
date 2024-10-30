@@ -52,11 +52,6 @@ In this lesson we use Git from the Unix Shell.
 Some previous experience with the shell is expected,
 *but isn't mandatory*.
 
-At the Met Office please ensure you are using `bash`.
-If you are still using KornShell (ksh) then please migrate to `bash`.
-Your instructor will point you to resources which can auto-migrate you.
-
-
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 

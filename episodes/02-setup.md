@@ -167,56 +167,6 @@ And if necessary, change your configuration using the
 same commands to choose another editor or update your email address.
 This can be done as many times as you want.
 
-## Git Autocomplete
-
-Git provides a script which lets us display the repository status in your 
-terminal prompt. To enable this script add the following to your `~/.bashrc` 
-file:
-
-```bash
-# open a new terminal in the current working directory
-source /etc/profile.d/vte.sh
-
-GIT_PROMPT_PATH=~/git-prompt.sh
-if [ -f "${GIT_PROMPT_PATH}" ]; then    
-    source "${GIT_PROMPT_PATH}"
-else
-    if [[ "$-" == *i* ]]; then
-        echo "${GIT_PROMPT_PATH} - not found, check version hasn't been updated"
-    fi
-fi
-export GIT_PS1_SHOWDIRTYSTATE=1
-export GIT_PS1_SHOWSTASHSTATE=1
-export GIT_PS1_SHOWUPSTREAM="auto"
-export GIT_PS1_SHOWCOLORHINTS=1
-export GIT_PS1_SHOWUNTRACKEDFILES=1
-
-export PROMPT_COMMAND='__git_ps1 "${CONDA_PROMPT_MODIFIER}[\u@\h]:" "\W\$ " "(%s)"'
-export PS1='${CONDA_PROMPT_MODIFIER}[\u@\h]$(__git_ps1 "(%s)"):\W\$ '
-
-# trim long working directory paths
-PROMPT_DIRTRIM=3
-```
-
-Your instructor will let you know if the value of `GIT_PROMPT_PATH` is 
-different from the path in the example above.
-If you would like your own copy of the `git-prompt.sh` script you can 
-download the latest version from the 
-[git repository contrib directory](https://github.com/git/git/blob/master/contrib/completion/git-prompt.sh).
-
-If your `~/.bashrc` file already defines a `PROMPT_COMMAND` or `PS1`
-you may need to merge what is shown above with your current script.
-Your instructor can help you with this.
-
-The `PROMPT_DIRTRIM=3` line is optional.
-It trims long directory paths to only show the current and two parent directories.
-You can change this value or delete the line entirely based on your preference.
-
-```bash
-/Documents/A/Really/Long/Path $ # without PROMPT_DIRTRIM
-.../Really/Long/Path $          # with PROMPT_DIRTRIM
-```
-
 :::::::::::::::::::::::::::::::::::::::::  callout
 
 ## Proxy

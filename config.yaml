@@ -58,7 +58,7 @@ contact: 'team@carpentries.org'
 # - another-learner.md
 
 # Order of episodes in your lesson
-episodes: 
+episodes:
 - 01-basics.md
 - 02-setup.md
 - 03-create.md
@@ -75,19 +75,20 @@ episodes:
 - 14-supplemental-rstudio.md
 
 # Information for Learners
-learners: 
+learners:
 
 # Information for Instructors
-instructors: 
+instructors:
 
 # Learner Profiles
-profiles: 
+profiles:
 
 # Customisation ---------------------------------------------
 #
 # This space below is where custom yaml items (e.g. pinning
 # sandpaper and varnish versions) should live
 
+varnish: astroDimitrios/varnish
 
 url: 'https://swcarpentry.github.io/git-novice'
 analytics: carpentries
