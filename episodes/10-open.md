@@ -16,6 +16,17 @@ exercises: 5
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
+::: caution
+
+### Check your Organisation's Policy
+
+Your organisation most likely has policies governing their intellectual property.
+The guidelines below are general.
+You should consult your organisational policy on publishing and
+open source before making any decisions.
+
+:::
+
 > The opposite of "open" isn't "closed".
 > The opposite of "open" is "broken".
 > 
