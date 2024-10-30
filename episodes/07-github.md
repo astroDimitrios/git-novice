@@ -258,8 +258,8 @@ Enter same passphrase again:
 After entering the same passphrase a second time, we receive the confirmation
 
 ```output
-Your identification has been saved in /c/Users/Vlad Dracula/.ssh/id_ed25519
-Your public key has been saved in /c/Users/Vlad Dracula/.ssh/id_ed25519.pub
+Your identification has been saved in /c/Users/Vlad Dracula/.ssh/id_ed25519_github
+Your public key has been saved in /c/Users/Vlad Dracula/.ssh/id_ed25519_github.pub
 The key fingerprint is:
 SHA256:SMSPIStNyA00KPxuYu94KpZgRAYjgt9g4BA4kFy3g1o vlad@tran.sylvan.ia
 The key's randomart image is:
@@ -288,8 +288,8 @@ ls -al ~/.ssh
 ```output
 drwxr-xr-x 1 Vlad Dracula 197121   0 Jul 16 14:48 ./
 drwxr-xr-x 1 Vlad Dracula 197121   0 Jul 16 14:48 ../
--rw-r--r-- 1 Vlad Dracula 197121 419 Jul 16 14:48 id_ed25519
--rw-r--r-- 1 Vlad Dracula 197121 106 Jul 16 14:48 id_ed25519.pub
+-rw-r--r-- 1 Vlad Dracula 197121 419 Jul 16 14:48 id_ed25519_github
+-rw-r--r-- 1 Vlad Dracula 197121 106 Jul 16 14:48 id_ed25519_github.pub
 ```
 
 ### 4\.2 Copy the public key to GitHub
@@ -312,10 +312,21 @@ git@github.com: Permission denied (publickey).
 
 Right, we forgot that we need to give GitHub our public key!
 
+::: spoiler
+
+### Checking the GitHub RSA Key
+
+Ideally before connecting to a new host, like `github.com` in the output above,
+you would check the RSA key fingerprint matches the expected value.
+GitHub publishes their public [SSH key fingerprints](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/githubs-ssh-key-fingerprints)
+for you to check against.
+
+:::
+
 First, we need to copy the public key.  Be sure to include the `.pub` at the end, otherwise you're looking at the private key.
 
 ```bash
-cat ~/.ssh/id_ed25519.pub
+cat ~/.ssh/id_ed25519_github.pub
 ```
 
 ```output
