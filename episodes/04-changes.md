@@ -394,6 +394,28 @@ than you would like!
 
 ![](fig/git-staging-area.svg){alt='A diagram showing how "git add" registers changes in the staging area, while "git commit" moves changes from the staging area to the repository'}
 
+::: spoiler
+
+### FCM Comparison
+
+In FCM there is no concept of a staging area.
+FCM will commit all file modifications at once.
+This can lead to rather large commits.
+In git remember to break down commits into small logical chunks.
+
+```bash
+$ git add <file>
+$ git commit
+```
+
+is equivalent to:
+
+```bash
+$ fcm commit
+```
+
+:::
+
 Let's watch as our changes to a file move from our editor
 to the staging area
 and into long-term storage.
