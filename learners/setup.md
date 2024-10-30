@@ -23,6 +23,72 @@ git version 2.47.0
 If a version number is printed like the output above git is installed and 
 ready to use.
 
+## Git Autocomplete
+
+Git provides a script which lets us display the version control status in your 
+terminal prompt.
+The following instructions have been tested on **Linux**.
+If you are using MacOS or Windows please consult the
+[git autocomplete instructions](https://github.com/git/git/blob/master/contrib/completion/git-prompt.sh)
+at the top of the linked file.
+Your instructor may point you to another online resource for your OS.
+To enable this script add the following to your `~/.bashrc` 
+file:
+
+```bash
+# open a new terminal in the current working directory
+source /etc/profile.d/vte.sh
+
+GIT_PROMPT_PATH=~/git-prompt.sh
+if [ -f "${GIT_PROMPT_PATH}" ]; then    
+    source "${GIT_PROMPT_PATH}"
+else
+    if [[ "$-" == *i* ]]; then
+        echo "${GIT_PROMPT_PATH} - not found, check version hasn't been updated"
+    fi
+fi
+export GIT_PS1_SHOWDIRTYSTATE=1
+export GIT_PS1_SHOWSTASHSTATE=1
+export GIT_PS1_SHOWUPSTREAM="auto"
+export GIT_PS1_SHOWCOLORHINTS=1
+export GIT_PS1_SHOWUNTRACKEDFILES=1
+
+export PROMPT_COMMAND='__git_ps1 "${CONDA_PROMPT_MODIFIER}[\u@\h:\w]:" "\W\$ " "(%s)"'
+export PS1='${CONDA_PROMPT_MODIFIER}[\u@\h:\w]$(__git_ps1 "(%s)"):\W\$ '
+
+# trim long working directory paths
+PROMPT_DIRTRIM=3
+```
+
+Your instructor will let you know if the value of `GIT_PROMPT_PATH` is 
+different from the path in the example above.
+If you would like your own copy of the `git-prompt.sh` script you can 
+download the latest version from the 
+[git repository contrib directory](https://github.com/git/git/blob/master/contrib/completion/git-prompt.sh).
+
+If your `~/.bashrc` file already defines a `PROMPT_COMMAND` or `PS1`
+you may need to merge what is shown above with your current script.
+Your instructor may be able to help you with this.
+
+If adding in your username, `\u`, and hostname, `\h`, makes the terminal prompt
+too long you can remove the `\u` and or `\h` from the `PROMPT_COMMAND` and
+`PS1` lines.
+
+The `PROMPT_DIRTRIM=3` line is optional.
+It trims long directory paths to only show the current and two parent directories.
+You can change this value or delete the line entirely based on your preference.
+
+```bash
+/Documents/A/Really/Long/Path $ # without PROMPT_DIRTRIM
+.../Really/Long/Path $          # with PROMPT_DIRTRIM
+```
+
+To see the changes to your terminal prompt run:
+
+```bash
+source ~/.bashrc
+```
+
 ## Creating a GitHub Account
 
 You will need an account for [GitHub](https://github.com) to follow episodes 7 & 8 in this lesson.
@@ -62,17 +128,6 @@ The GitHub documentation provides [more details about configuring 2FA](https://d
 ### Passkeys
 
 To completely avoid having authentication for work purposes on a personal device you may choose to [set up a passkey](https://docs.github.com/en/authentication/authenticating-with-a-passkey/managing-your-passkeys). Your instructor and organisation will be able to provide guidance on suitable passkey providers and password managers.
-
-----------------
-
-## Preparing Your Working Directory
-
-We'll do our work in the `Desktop` folder so make sure you change your working directory to it with:
-
-```bash
-$ cd
-$ cd Desktop
-```
 
 [workshop-setup]: https://carpentries.github.io/workshop-template/install_instructions/#git
 
