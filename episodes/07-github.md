@@ -184,16 +184,6 @@ SSH uses what is called a key pair. This is two keys that work together to valid
 You can think of the public key as a padlock, and only you have the key (the private key) to open it. You use the public key where you want a secure method of communication, such as your GitHub account.  You give this padlock, or public key, to GitHub and say "lock the communications to my account with this so that only computers that have my private key can unlock communications and send git commands as my GitHub account."
 
 What we will do now is the minimum required to set up the SSH keys and add the public key to a GitHub account.
-
-:::::::::::::::::::::::::::::::::::::::::  callout
-
-## Advanced SSH
-
-A supplemental episode in this lesson discusses SSH and key pairs in more depth and detail.
-
-
-::::::::::::::::::::::::::::::::::::::::::::::::::
-
 The first thing we are going to do is check if this has already been done on the computer you're on.  Because generally speaking, this setup only needs to happen once and then you can forget about it.
 
 :::::::::::::::::::::::::::::::::::::::::  callout
@@ -226,11 +216,16 @@ Since they don't exist on Dracula's computer, he uses this command to create the
 
 ### 4\.1 Create an SSH key pair
 
-To create an SSH key pair Vlad uses this command, where the `-t` option specifies which type of algorithm to use and `-C` attaches a comment to the key (here, Vlad's email):
+To create an SSH key pair Vlad uses this command, where the `-t` option specifies which type of algorithm to use:
 
 ```bash
 $ ssh-keygen -t ed25519 -C "vlad@tran.sylvan.ia"
 ```
+
+The `-C` flag attaches a comment to the key.
+The comment has no effect on your key, you may place anything here to help
+you remember what the key is for. It makes no difference whether you use
+a public email or your no-reply private GitHub email in the comment.
 
 If you are using a legacy system that doesn't support the Ed25519 algorithm, use:
 `$ ssh-keygen -t rsa -b 4096 -C "your_email@example.com"`
