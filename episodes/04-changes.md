@@ -295,6 +295,31 @@ If we break it down into pieces:
   In particular,
   the `+` marker in the first column shows where we added a line.
 
+::: spoiler
+
+### git difftool
+
+[git-difftool](https://git-scm.com/docs/git-difftool) lets you compare and 
+edit files using your preferred diff tool.
+
+```bash
+$ git difftool -g
+```
+
+The `-g` flag launches the default gui diff tool. To change defaults:
+
+```bash
+git config --global diff.tool <tool>
+git config --global diff.guitool <tool>
+git config --global --add difftool.prompt false
+```
+
+Where `<tool>` is your preferred diffing tool such as [meld](https://gnome.pages.gitlab.gnome.org/meld/).
+The third line disables the git prompt which asks you to confirm
+whether to launch the diff for every changed file.
+
+:::
+
 After reviewing our change, it's time to commit it:
 
 ```bash
