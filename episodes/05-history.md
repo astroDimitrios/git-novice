@@ -298,12 +298,6 @@ recent commit (`HEAD~1`), which is commit `f22b25e`. We use the `.` to mean all 
 
 ![](fig/git-restore.svg){alt='A diagram showing how git restore can be used to restore the previous version of two files'}
 
-So, to put it all together,
-here's how Git works in cartoon form:
-
-![https://figshare.com/articles/How_Git_works_a_cartoon/1328266](fig/git_staging.svg){alt='A diagram showing the entire git workflow: local changes are staged using git add, applied to the local repository using git commit, and can be restored from the repository using git checkout'}
-
-
 The fact that files can be reverted one by one
 tends to change the way people organize their work.
 If everything is in one large document,
@@ -312,6 +306,15 @@ without also undoing changes made later to the conclusion.
 If the introduction and conclusion are stored in separate files,
 on the other hand,
 moving backward and forward in time becomes much easier.
+
+The table below summarises how to revert a change depending on where in the 
+commit process you are:
+
+| **To revert files you have ...** |     **git command**     |
+|:--------------------------------:|:-----------------------:|
+| modified                         | `$ git restore <files>` |
+| staged                           | `$ git reset <files>`   |
+| committed                        | `$ git revert <commit>` |
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
