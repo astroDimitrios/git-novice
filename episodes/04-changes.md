@@ -190,41 +190,6 @@ nothing to commit, working tree clean
 ```
 
 it tells us everything is up to date.
-If we want to know what we've done recently,
-we can ask Git to show us the project's history using `git log`:
-
-```bash
-$ git log
-```
-
-```output
-commit f22b25e3233b4645dabd0d81e651fe074bd8e73b
-Author: Alfredo Linguini <a.linguini@ratatouille.fr>
-Date:   Thu Aug 22 09:51:46 2013 -0400
-
-    Create a template for recipe
-```
-
-`git log` lists all commits  made to a repository in reverse chronological order.
-The listing for each commit includes
-the commit's full identifier
-(which starts with the same characters as
-the short identifier printed by the `git commit` command earlier),
-the commit's author,
-when it was created,
-and the log message Git was given when the commit was created.
-
-::: spoiler
-
-### FCM Comparison
-
-`git log` is equivalent to:
-
-```bash
-$ fcm log
-```
-
-:::
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
@@ -543,32 +508,6 @@ On branch main
 nothing to commit, working tree clean
 ```
 
-and look at the history of what we've done so far:
-
-```bash
-$ git log
-```
-
-```output
-commit 005937fbe2a98fb83f0ade869025dc2636b4dad5 (HEAD -> main)
-Author: Alfredo Linguini <a.linguini@ratatouille.fr>
-Date:   Thu Aug 22 10:14:07 2013 -0400
-
-    Modify guacamole to the traditional recipe
-
-commit 34961b159c27df3b475cfe4415d94a6d1fcd064d
-Author: Alfredo Linguini <a.linguini@ratatouille.fr>
-Date:   Thu Aug 22 10:07:21 2013 -0400
-
-    Add basic guacamole's ingredients
-
-commit f22b25e3233b4645dabd0d81e651fe074bd8e73b
-Author: Alfredo Linguini <a.linguini@ratatouille.fr>
-Date:   Thu Aug 22 09:51:46 2013 -0400
-
-    Create a template for recipe
-```
-
 :::::::::::::::::::::::::::::::::::::::::  callout
 
 ## Word-based diffing
@@ -578,77 +517,6 @@ diff is too coarse. That is where the `--color-words` option of
 `git diff` comes in very useful as it highlights the changed
 words using colors.
 
-
-::::::::::::::::::::::::::::::::::::::::::::::::::
-
-:::::::::::::::::::::::::::::::::::::::::  callout
-
-## Paging the Log
-
-When the output of `git log` is too long to fit in your screen,
-`git` uses a program to split it into pages of the size of your screen.
-When this "pager" is called, you will notice that the last line in your
-screen is a `:`, instead of your usual prompt.
-
-- To get out of the pager, press <kbd>Q</kbd>.
-- To move to the next page, press <kbd>Spacebar</kbd>.
-- To search for `some_word` in all pages,
-  press <kbd>/</kbd>
-  and type `some_word`.
-  Navigate through matches pressing <kbd>N</kbd>.
-  
-
-::::::::::::::::::::::::::::::::::::::::::::::::::
-
-:::::::::::::::::::::::::::::::::::::::::  callout
-
-## Limit Log Size
-
-To avoid having `git log` cover your entire terminal screen, you can limit the
-number of commits that Git lists by using `-N`, where `N` is the number of
-commits that you want to view. For example, if you only want information from
-the last commit you can use:
-
-```bash
-$ git log -1
-```
-
-```output
-commit 005937fbe2a98fb83f0ade869025dc2636b4dad5 (HEAD -> main)
-Author: Alfredo Linguini <a.linguini@ratatouille.fr>
-Date:   Thu Aug 22 10:14:07 2013 -0400
-
-   Modify guacamole to the traditional recipe
-```
-
-You can also reduce the quantity of information using the
-`--oneline` option:
-
-```bash
-$ git log --oneline
-```
-
-```output
-005937f (HEAD -> main) Modify guacamole to the traditional recipe
-34961b1 Add basic guacamole's ingredients
-f22b25e Create a template for recipe
-```
-
-You can also combine the `--oneline` option with others. One useful
-combination adds `--graph` to display the commit history as a text-based
-graph and to indicate which commits are associated with the
-current `HEAD`, the current branch `main`, or
-[other Git references][git-references]:
-
-```bash
-$ git log --oneline --graph
-```
-
-```output
-* 005937f (HEAD -> main) Modify guacamole to the traditional recipe
-* 34961b1 Add basic guacamole's ingredients
-* f22b25e Create a template for recipe
-```
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
