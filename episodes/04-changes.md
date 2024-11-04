@@ -20,6 +20,19 @@ exercises: 0
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
+::: caution
+
+### Committing to Main
+
+In this lesson you will be making changes on `main`.
+The `main` branch normally contains stable production code and
+should **NEVER** be committed to directly.
+In a later episode you will learn a basic workflow to
+ensure you never commit to main;
+and learn what to do when you accidentally commit to main.
+
+:::
+
 First let's make sure we're still in the right directory.
 You should be in the `recipes` directory.
 
