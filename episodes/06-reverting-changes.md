@@ -136,7 +136,7 @@ recent commit (`HEAD~1`), which is commit `f22b25e`. We use the `.` to mean all 
 
 ![](fig/git-restore.svg){alt='A diagram showing how git restore can be used to restore the previous version of two files'}
 
-The fact that files can be reverted one by one
+The fact that files can be restored one by one
 tends to change the way people organize their work.
 If everything is in one large document,
 it's hard (but not impossible) to undo changes to the introduction

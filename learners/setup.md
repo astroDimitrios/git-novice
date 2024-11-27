@@ -19,7 +19,7 @@ instructions on installing Git for various operating systems.
 - [Git installation on MacOS][workshop-setup]
 - [Git installation on Linux][workshop-setup]
 
-Your institution may have already installed git on your work computer.
+Your institution may have already installed Git on your work computer.
 Ask your instructor if this step is necessary or simply type:
 
 ```bash
@@ -27,7 +27,7 @@ $ git --version
 git version 2.47.0
 ```
 
-If a version number is printed like the output above git is installed and 
+If a version number is printed like the output above Git is installed and 
 ready to use.
 
 ## Git Autocomplete

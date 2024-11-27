@@ -317,7 +317,7 @@ git config --global --add difftool.prompt false
 ```
 
 Where `<tool>` is your preferred diffing tool such as [meld](https://gnome.pages.gitlab.gnome.org/meld/).
-The third line disables the git prompt which asks you to confirm
+The third line disables the Git prompt which asks you to confirm
 whether to launch the diff for every changed file.
 
 :::
@@ -403,7 +403,7 @@ than you would like!
 In FCM there is no concept of a staging area.
 FCM will commit all file modifications at once.
 This can lead to rather large commits.
-In git remember to break down commits into small logical chunks.
+In Git remember to break down commits into small logical chunks.
 
 ```bash
 $ git add <file>
@@ -725,9 +725,9 @@ $ git commit -m "Add in the temperature to the forecast and create the weather a
 
 - Create a new Git repository on your computer called `bio`.
 - Write a three-line biography for yourself in a file called `me.txt`,
-  commit your changes
+  commit your changes.
 - Modify one line, add a fourth line
-- Display the differences
+- Display the differences.
   between its updated state and its original state.
 
 :::::::::::::::  solution

@@ -11,7 +11,7 @@ for other learners.
 
 ### Where to next?
 
-The git working practices lesson teaches you how to work
+The Git working practices lesson teaches you how to work
 collaboratively with others using git and GitHub.
 
 There are also a number of optional episodes after this page

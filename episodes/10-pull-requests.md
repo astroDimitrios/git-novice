@@ -17,7 +17,7 @@ exercises: 15
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-Pull requests are a great way to collaborate with others using github. Instead of making changes directly to a repository you can suggest changes to a repository using a pull request.
+Pull requests are a great way to collaborate with others using GitHub. Instead of making changes directly to a repository you can suggest changes to a repository using a pull request.
 
 Pull requests are where your changes go through the 
 vital steps of code and science review.
