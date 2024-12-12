@@ -116,6 +116,7 @@
 <li><a class="dropdown-item" href="discuss.html">Discussion</a></li>
 <li><a class="dropdown-item" href="fcm-git_cheat_sheet.html">FCM vs Git Cheat Sheet</a></li>
 <li><a class="dropdown-item" href="reference.html">Git Cheatsheets for Quick Reference</a></li>
+<li><a class="dropdown-item" href="repo-quick-start.html">Quick Start Repository Guide</a></li>
           </ul>
 </li>
       </ul>
@@ -272,7 +273,7 @@
 <div class="accordion accordion-flush" id="accordionFlush5">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading5">
-        <a href="04-changes.html">4. Tracking Changes</a>
+        <a href="09-branches.html">4. Branches</a>
     </div>
 <!--/div.accordion-header-->
 
@@ -284,7 +285,7 @@
 <div class="accordion accordion-flush" id="accordionFlush6">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading6">
-        <a href="05-history.html">5. Exploring History</a>
+        <a href="04-changes.html">5. Tracking Changes</a>
     </div>
 <!--/div.accordion-header-->
 
@@ -296,7 +297,7 @@
 <div class="accordion accordion-flush" id="accordionFlush7">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading7">
-        <a href="06-reverting-changes.html">6. Reverting Changes</a>
+        <a href="05-history.html">6. Exploring History</a>
     </div>
 <!--/div.accordion-header-->
 
@@ -308,7 +309,7 @@
 <div class="accordion accordion-flush" id="accordionFlush8">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading8">
-        <a href="06-ignore.html">7. Ignoring Things</a>
+        <a href="06-reverting-changes.html">7. Reverting Changes</a>
     </div>
 <!--/div.accordion-header-->
 
@@ -320,7 +321,7 @@
 <div class="accordion accordion-flush" id="accordionFlush9">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading9">
-        <a href="Break.html">8. Break</a>
+        <a href="06-ignore.html">8. Ignoring Things</a>
     </div>
 <!--/div.accordion-header-->
 
@@ -332,7 +333,7 @@
 <div class="accordion accordion-flush" id="accordionFlush10">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading10">
-        <a href="07-github.html">9. Remotes in GitHub</a>
+        <a href="Break.html">9. Break</a>
     </div>
 <!--/div.accordion-header-->
 
@@ -344,7 +345,7 @@
 <div class="accordion accordion-flush" id="accordionFlush11">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading11">
-        <a href="08-github-interface.html">10. Exploring GitHub</a>
+        <a href="07-github.html">10. Remotes in GitHub</a>
     </div>
 <!--/div.accordion-header-->
 
@@ -356,7 +357,7 @@
 <div class="accordion accordion-flush" id="accordionFlush12">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading12">
-        <a href="09-branches.html">11. Branches</a>
+        <a href="08-github-interface.html">11. Exploring GitHub</a>
     </div>
 <!--/div.accordion-header-->
 
@@ -440,7 +441,7 @@
 <div class="accordion accordion-flush" id="accordionFlush19">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading19">
-        <a href="14-supplemental-rstudio.html">18. Supplemental: Using Git from RStudio</a>
+        <a href="14-supplemental-rstudio.html">18. Using Git from RStudio</a>
     </div>
 <!--/div.accordion-header-->
 
@@ -476,6 +477,7 @@
                       <li><a href="discuss.html">Discussion</a></li>
 <li><a href="fcm-git_cheat_sheet.html">FCM vs Git Cheat Sheet</a></li>
 <li><a href="reference.html">Git Cheatsheets for Quick Reference</a></li>
+<li><a href="repo-quick-start.html">Quick Start Repository Guide</a></li>
                     </ul>
 </div>
                 </div>
@@ -523,6 +525,33 @@ per machine.</li>
 <code>git init</code> initializes a repository.</li>
 <li>Git stores all of its repository data in the <code>.git</code>
 directory.</li>
+</ul></section><section id="09-branches"><h2 class="section-heading"><a href="09-branches.html">Branches</a></h2>
+<hr class="half-width">
+<ul>
+<li>
+<code>git status</code> shows you the branch you’re currently
+on.</li>
+<li>
+<code>git switch -c &lt;branch-name&gt;</code> creates a new branch
+and switches you to it. Make sure you know what branch you are branching
+from before using <code>git switch</code> without a start-point!</li>
+<li>
+<code>git switch -c &lt;branch-name&gt; &lt;start-point&gt;</code>
+lets you define the start-point to branch off, via another branch name,
+a commit ID, or a tag.</li>
+<li>
+<code>git switch &lt;branch-name&gt;</code> switches you to another
+branch that already exists.</li>
+<li>
+<code>git branch -vv</code> shows you all the branches in the
+repository.</li>
+<li>
+<code>git branch -m &lt;old-branch-name&gt; &lt;new-branch-name&gt;</code>
+renames branches.</li>
+<li>
+<code>git branch -d &lt;branch-name&gt;</code> deletes a branch. Use
+the <code>-D</code> flag instead of <code>-d</code> to force delete the
+branch.</li>
 </ul></section><section id="04-changes"><h2 class="section-heading"><a href="04-changes.html">Tracking Changes</a></h2>
 <hr class="half-width">
 <ul>
@@ -582,33 +611,6 @@ local repository.</li>
 pattern:
 <code>https://github.com/&lt;username or organisation&gt;/&lt;repo name&gt;</code>
 </li>
-</ul></section><section id="09-branches"><h2 class="section-heading"><a href="09-branches.html">Branches</a></h2>
-<hr class="half-width">
-<ul>
-<li>
-<code>git status</code> shows you the branch you’re currently
-on.</li>
-<li>
-<code>git switch -c &lt;branch-name&gt;</code> creates a new branch
-and switches you to it. Make sure you know what branch you are branching
-from before using <code>git switch</code> without a start-point!</li>
-<li>
-<code>git switch -c &lt;branch-name&gt; &lt;start-point&gt;</code>
-lets you define the start-point to branch off, via another branch name,
-a commit ID, or a tag.</li>
-<li>
-<code>git switch &lt;branch-name&gt;</code> switches you to another
-branch that already exists.</li>
-<li>
-<code>git branch -vv</code> shows you all the branches in the
-repository.</li>
-<li>
-<code>git branch -m &lt;old-branch-name&gt; &lt;new-branch-name&gt;</code>
-renames branches.</li>
-<li>
-<code>git branch -d &lt;branch-name&gt;</code> deletes a branch. Use
-the <code>-D</code> flag instead of <code>-d</code> to force delete the
-branch.</li>
 </ul></section><section id="10-pull-requests"><h2 class="section-heading"><a href="10-pull-requests.html">Pull Requests</a></h2>
 <hr class="half-width">
 <ul>
@@ -665,7 +667,7 @@ work cited.</li>
 or on a public hosting service.</li>
 <li>Rules regarding intellectual property and storage of sensitive
 information apply no matter where code and data are hosted.</li>
-</ul></section><section id="14-supplemental-rstudio"><h2 class="section-heading"><a href="14-supplemental-rstudio.html">Supplemental: Using Git from RStudio</a></h2>
+</ul></section><section id="14-supplemental-rstudio"><h2 class="section-heading"><a href="14-supplemental-rstudio.html">Using Git from RStudio</a></h2>
 <hr class="half-width">
 <ul>
 <li>Using RStudio’s Git integration allows you to version control a
@@ -718,8 +720,8 @@ project over time.</li>
   "url": "https://swcarpentry.github.io/git-novice/key-points.html",
   "identifier": "https://swcarpentry.github.io/git-novice/key-points.html",
   "dateCreated": "2014-12-04",
-  "dateModified": "2024-12-10",
-  "datePublished": "2024-12-10"
+  "dateModified": "2024-12-12",
+  "datePublished": "2024-12-12"
 }
 
   </script><script>

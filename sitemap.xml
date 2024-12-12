@@ -169,6 +169,9 @@
     <loc>https://swcarpentry.github.io/git-novice/instructor/reference.html</loc>
   </url>
   <url>
+    <loc>https://swcarpentry.github.io/git-novice/instructor/repo-quick-start.html</loc>
+  </url>
+  <url>
     <loc>https://swcarpentry.github.io/git-novice/instructor-notes.html</loc>
   </url>
   <url>
@@ -179,5 +182,8 @@
   </url>
   <url>
     <loc>https://swcarpentry.github.io/git-novice/reference.html</loc>
+  </url>
+  <url>
+    <loc>https://swcarpentry.github.io/git-novice/repo-quick-start.html</loc>
   </url>
 </urlset>
