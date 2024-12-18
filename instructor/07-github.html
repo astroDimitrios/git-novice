@@ -108,11 +108,11 @@
   Version Control with Git
 </div>
 
-<aside class="col-md-12 lesson-progress"><div style="width: 45%" class="percentage">
-    45%
+<aside class="col-md-12 lesson-progress"><div style="width: 43%" class="percentage">
+    43%
   </div>
   <div class="progress software">
-    <div class="progress-bar software" role="progressbar" style="width: 45%" aria-valuenow="45" aria-label="Lesson Progress" aria-valuemin="0" aria-valuemax="100">
+    <div class="progress-bar software" role="progressbar" style="width: 43%" aria-valuenow="43" aria-label="Lesson Progress" aria-valuemin="0" aria-valuemax="100">
     </div>
   </div>
 </aside><div class="container">
@@ -309,7 +309,7 @@
 <div class="accordion accordion-flush" id="accordionFlush13">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading13">
-        <a href="10-pull-requests.html">12. Pull Requests</a>
+        <a href="09-github-history.html">12. Exploring History on GitHub</a>
     </div><!--/div.accordion-header-->
 
   </div><!--/div.accordion-item-->
@@ -318,7 +318,7 @@
 <div class="accordion accordion-flush" id="accordionFlush14">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading14">
-        <a href="End.html">13. End</a>
+        <a href="10-pull-requests.html">13. Pull Requests</a>
     </div><!--/div.accordion-header-->
 
   </div><!--/div.accordion-item-->
@@ -327,7 +327,7 @@
 <div class="accordion accordion-flush" id="accordionFlush15">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading15">
-        <a href="10-open.html">14. Open Science</a>
+        <a href="End.html">14. End</a>
     </div><!--/div.accordion-header-->
 
   </div><!--/div.accordion-item-->
@@ -336,7 +336,7 @@
 <div class="accordion accordion-flush" id="accordionFlush16">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading16">
-        <a href="11-licensing.html">15. Licensing</a>
+        <a href="10-open.html">15. Open Science</a>
     </div><!--/div.accordion-header-->
 
   </div><!--/div.accordion-item-->
@@ -345,7 +345,7 @@
 <div class="accordion accordion-flush" id="accordionFlush17">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading17">
-        <a href="12-citation.html">16. Citation</a>
+        <a href="11-licensing.html">16. Licensing</a>
     </div><!--/div.accordion-header-->
 
   </div><!--/div.accordion-item-->
@@ -354,7 +354,7 @@
 <div class="accordion accordion-flush" id="accordionFlush18">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading18">
-        <a href="13-hosting.html">17. Hosting</a>
+        <a href="12-citation.html">17. Citation</a>
     </div><!--/div.accordion-header-->
 
   </div><!--/div.accordion-item-->
@@ -363,7 +363,16 @@
 <div class="accordion accordion-flush" id="accordionFlush19">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading19">
-        <a href="14-supplemental-rstudio.html">18. Using Git from RStudio</a>
+        <a href="13-hosting.html">18. Hosting</a>
+    </div><!--/div.accordion-header-->
+
+  </div><!--/div.accordion-item-->
+</div><!--/div.accordion-flush-->
+
+<div class="accordion accordion-flush" id="accordionFlush20">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading20">
+        <a href="14-supplemental-rstudio.html">19. Using Git from RStudio</a>
     </div><!--/div.accordion-header-->
 
   </div><!--/div.accordion-item-->
@@ -427,7 +436,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Remotes in GitHub</h1>
-        <p>Last updated on 2024-12-17 |
+        <p>Last updated on 2024-12-18 |
 
         <a href="https://github.com/swcarpentry/git-novice/edit/main/episodes/07-github.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -487,7 +496,27 @@ it needs to be empty. Leave “Initialize this repository with a README”
 unchecked, and keep “None” as options for both “Add .gitignore” and “Add
 a license.” See the “GitHub License and README files” exercise below for
 a full explanation of why the repository needs to be empty.</p>
-<figure><img src="../fig/github-create-repo-02.png" alt="The second step in creating a repository on GitHub: filling out the new repository form to provide the repository name, and specify that neither a readme nor a license should be created" class="figure mx-auto d-block"></figure><p>As soon as the repository is created, GitHub displays a page with a
+<figure><img src="../fig/github-create-repo-02.png" alt="The second step in creating a repository on GitHub: filling out the new repository form to provide the repository name, and specify that neither a readme nor a license should be created" class="figure mx-auto d-block"></figure><div id="accordionSpoiler1" class="accordion spoiler-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler1" aria-expanded="false" aria-controls="collapseSpoiler1">
+  <h3 class="accordion-header" id="headingSpoiler1">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div> Repository Visibility </h3>
+</button>
+<div id="collapseSpoiler1" class="accordion-collapse collapse" aria-labelledby="headingSpoiler1" data-bs-parent="#accordionSpoiler1">
+<div class="accordion-body">
+<p>Here we have chosen to make our repository public. The visibility of
+your repository depends on which option you choose:</p>
+<ul><li>Private: only you</li>
+<li>Internal (organisations only): read permissions to anyone in the
+organisation</li>
+<li>Public: read permissions to anyone</li>
+</ul><p>Some organisations will restrict the creation of public repositories
+so you may find their default is internal. If your project deals with
+sensitive material then create a private repository.</p>
+</div>
+</div>
+</div>
+</div>
+<p>As soon as the repository is created, GitHub displays a page with a
 URL and some information on how to configure your local repository.
 Ignore the suggested commands for now as we will run these later.</p>
 <figure><img src="../fig/github-create-repo-03.png" alt="The summary page displayed by GitHub after a new repository has been created. It contains instructions for configuring the new GitHub repository as a git remote" class="figure mx-auto d-block"></figure><p>This effectively does the following on GitHub’s servers:</p>
@@ -554,7 +583,28 @@ origin   git@github.com:mo-eormerod/weather.git (push)</code></pre>
 <p>We’ll discuss remotes in more detail in the next episode, while
 talking about how they might be used for collaboration.</p>
 </section><section><h2 class="section-heading" id="ssh-background-and-setup">3. SSH Background and Setup<a class="anchor" aria-label="anchor" href="#ssh-background-and-setup"></a></h2>
-<hr class="half-width"><p>Before you can connect to a remote repository, you need to set up a
+<hr class="half-width"><div id="accordionInstructor1" class="accordion instructor-note accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button instructor-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseInstructor1" aria-expanded="false" aria-controls="collapseInstructor1">
+  <h3 class="accordion-header" id="headingInstructor1">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="edit-2"></i></div> Instructor Note </h3>
+</button>
+<div id="collapseInstructor1" class="accordion-collapse collapse" aria-labelledby="headingInstructor1" data-bs-parent="#accordionInstructor1">
+<div class="accordion-body">
+<p>Some learners may have set up an ssh key already. If they have a key
+with this name: <code>~/.ssh/id_ed25519_github</code> and can
+successfully authenticate with <code>ssh -T git@github.com</code> they
+can skip this section.</p>
+<p>If their ssh key name does not match the one above we
+<strong>strongly</strong> recommend they follow the instructions
+below.</p>
+<p>Those who are skipping this section can revisit the challenges in
+earlier episodes (yellow callouts with a lightning bolt) or read through
+the <a href="discuss.html">discussion notes</a>.</p>
+</div>
+</div>
+</div>
+</div>
+<p>Before you can connect to a remote repository, you need to set up a
 way for your computer to authenticate with GitHub so it knows it’s you
 trying to connect to the remote repository.</p>
 <p>We are going to set up the method that is commonly used by many
@@ -717,12 +767,12 @@ Warning: Permanently added 'github.com' (RSA) to the list of known hosts.
 git@github.com: Permission denied (publickey).</code></pre>
 </div>
 <p>Right, we forgot that we need to give GitHub our public key!</p>
-<div id="accordionSpoiler1" class="accordion spoiler-accordion accordion-flush">
+<div id="accordionSpoiler2" class="accordion spoiler-accordion accordion-flush">
 <div class="accordion-item">
-<button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler1" aria-expanded="false" aria-controls="collapseSpoiler1">
-  <h3 class="accordion-header" id="headingSpoiler1">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div> Checking the GitHub RSA Key </h3>
+<button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler2" aria-expanded="false" aria-controls="collapseSpoiler2">
+  <h3 class="accordion-header" id="headingSpoiler2">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div> Checking the GitHub RSA Key </h3>
 </button>
-<div id="collapseSpoiler1" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler1" aria-labelledby="headingSpoiler1">
+<div id="collapseSpoiler2" class="accordion-collapse collapse" aria-labelledby="headingSpoiler2" data-bs-parent="#accordionSpoiler2">
 <div class="accordion-body">
 <p>Ideally before connecting to a new host, like <code>github.com</code>
 in the output above, you would check the RSA key fingerprint matches the
@@ -782,21 +832,40 @@ the command line.</p>
 </div>
 <p>Good! This output confirms that the SSH key works as intended. We are
 now ready to push our work to the remote repository.</p>
+<div id="accordionSpoiler3" class="accordion spoiler-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler3" aria-expanded="false" aria-controls="collapseSpoiler3">
+  <h3 class="accordion-header" id="headingSpoiler3">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div> Troubleshooting SSH Setup </h3>
+</button>
+<div id="collapseSpoiler3" class="accordion-collapse collapse" aria-labelledby="headingSpoiler3" data-bs-parent="#accordionSpoiler3">
+<div class="accordion-body">
+<p>If your new key failed to connect you may need to alter your ssh
+config.</p>
+<ol style="list-style-type: decimal"><li>Create the <code>~/.ssh/config</code> file if it doesn’t exist</li>
+<li>Add the following to the file:</li>
+</ol><pre class="ssh-config"><code>Host github.com
+  IdentityFile ~/.ssh/id_ed25519_github</code></pre>
+<p>This explicitly states which key to use for github.com and is needed
+if you have many SSH keys already for other hosts.</p>
+</div>
+</div>
+</div>
+</div>
 </div>
 </section><section><h2 class="section-heading" id="push-local-changes-to-a-remote">4. Push local changes to a remote<a class="anchor" aria-label="anchor" href="#push-local-changes-to-a-remote"></a></h2>
 <hr class="half-width"><p>Now that authentication is setup, we can return to the local
 repository. Ensure you are on the <code>main</code> branch:</p>
-<div class="codewrapper sourceCode" id="cb20">
-<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1" tabindex="-1"></a><span class="ex">$</span> git switch main</span></code></pre>
-</div>
-<p>This command will push our main branch on our local repository to the
-repository on GitHub:</p>
 <div class="codewrapper sourceCode" id="cb21">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1" tabindex="-1"></a><span class="ex">$</span> git push</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1" tabindex="-1"></a><span class="ex">$</span> git switch main</span></code></pre>
+</div>
+<p>This command will push our main branch on our local repository to the
+repository on GitHub:</p>
+<div class="codewrapper sourceCode" id="cb22">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb22-1"><a href="#cb22-1" tabindex="-1"></a><span class="ex">$</span> git push</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -838,10 +907,10 @@ branch 'main' set up to track 'origin/main'.</code></pre>
 having to run git push with the <code>--set-upstream</code> flag the
 first time you push from a new branch.</p>
 <p>Change your git config using:</p>
-<div class="codewrapper sourceCode" id="cb24">
+<div class="codewrapper sourceCode" id="cb25">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb24-1"><a href="#cb24-1" tabindex="-1"></a><span class="ex">$</span> git config <span class="at">--global</span> push.autoSetupRemote true</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb25-1"><a href="#cb25-1" tabindex="-1"></a><span class="ex">$</span> git config <span class="at">--global</span> push.autoSetupRemote true</span></code></pre>
 </div>
 </div>
 </div>
@@ -857,19 +926,19 @@ first time you push from a new branch.</p>
 that your last command failed with “Could not resolve hostname” as the
 error message. To solve this issue, you need to tell Git about the
 proxy:</p>
-<div class="codewrapper sourceCode" id="cb25">
-<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb25-1"><a href="#cb25-1" tabindex="-1"></a><span class="ex">$</span> git config <span class="at">--global</span> http.proxy http://user:password@proxy.url</span>
-<span id="cb25-2"><a href="#cb25-2" tabindex="-1"></a><span class="ex">$</span> git config <span class="at">--global</span> https.proxy https://user:password@proxy.url</span></code></pre>
-</div>
-<p>When you connect to another network that doesn’t use a proxy, you
-will need to tell Git to disable the proxy using:</p>
 <div class="codewrapper sourceCode" id="cb26">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb26-1"><a href="#cb26-1" tabindex="-1"></a><span class="ex">$</span> git config <span class="at">--global</span> <span class="at">--unset</span> http.proxy</span>
-<span id="cb26-2"><a href="#cb26-2" tabindex="-1"></a><span class="ex">$</span> git config <span class="at">--global</span> <span class="at">--unset</span> https.proxy</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb26-1"><a href="#cb26-1" tabindex="-1"></a><span class="ex">$</span> git config <span class="at">--global</span> http.proxy http://user:password@proxy.url</span>
+<span id="cb26-2"><a href="#cb26-2" tabindex="-1"></a><span class="ex">$</span> git config <span class="at">--global</span> https.proxy https://user:password@proxy.url</span></code></pre>
+</div>
+<p>When you connect to another network that doesn’t use a proxy, you
+will need to tell Git to disable the proxy using:</p>
+<div class="codewrapper sourceCode" id="cb27">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb27-1"><a href="#cb27-1" tabindex="-1"></a><span class="ex">$</span> git config <span class="at">--global</span> <span class="at">--unset</span> http.proxy</span>
+<span id="cb27-2"><a href="#cb27-2" tabindex="-1"></a><span class="ex">$</span> git config <span class="at">--global</span> <span class="at">--unset</span> https.proxy</span></code></pre>
 </div>
 </div>
 </div>
@@ -886,10 +955,10 @@ will need to tell Git to disable the proxy using:</p>
 password. For example, this is the default behavior for Git Bash on
 Windows. If you want to type your username and password at the terminal
 instead of using a password manager, type:</p>
-<div class="codewrapper sourceCode" id="cb27">
+<div class="codewrapper sourceCode" id="cb28">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb27-1"><a href="#cb27-1" tabindex="-1"></a><span class="ex">$</span> unset SSH_ASKPASS</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb28-1"><a href="#cb28-1" tabindex="-1"></a><span class="ex">$</span> unset SSH_ASKPASS</span></code></pre>
 </div>
 <p>in the terminal, before you run <code>git push</code>. Despite the
 name, <a href="https://git-scm.com/docs/gitcredentials#_requesting_credentials" class="external-link">Git
@@ -914,7 +983,7 @@ for usernames and passwords.</p>
 in some documentation. This option is synonymous with the
 <code>--set-upstream-to</code> option for the <code>git branch</code>
 command, and is used to associate the current branch with a remote
-branch so that the <code>git pull</code> command can be used without any
+branch so that the <code>git push</code> command can be used without any
 arguments. To do this, simply use <code>git push -u origin main</code>
 once the remote has been set up.</p>
 <p>Here, we are telling Git to push the branch to the origin (GitHub)
@@ -924,10 +993,10 @@ repositories <code>main</code> branch.</p>
 </div>
 <p>We can pull changes from the remote repository to the local one as
 well:</p>
-<div class="codewrapper sourceCode" id="cb28">
+<div class="codewrapper sourceCode" id="cb29">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb28-1"><a href="#cb28-1" tabindex="-1"></a><span class="ex">$</span> git pull</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb29-1"><a href="#cb29-1" tabindex="-1"></a><span class="ex">$</span> git pull</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -958,7 +1027,7 @@ buttons? How would you get that same information in the shell?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>The left-most button (with the picture of a clipboard) copies the
 full identifier of the commit to the clipboard. In the shell,
@@ -1017,7 +1086,7 @@ GitHub record times, and why?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <p>GitHub displays timestamps in a human readable relative format
 (i.e. “22 hours ago” or “three weeks ago”). However, if you hover over
@@ -1044,7 +1113,7 @@ push” different from “git commit”?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
 <div class="accordion-body">
 <p>When we push changes, we’re interacting with a remote repository to
 update it with the changes we’ve made locally (often this corresponds to
@@ -1073,17 +1142,17 @@ happened when you tried to link your local and remote repositories?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
   <h4 class="accordion-header" id="headingSolution4"> Show me the solution </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
 <div class="accordion-body">
 <p>In this case, we’d see a merge conflict due to unrelated histories.
 When GitHub creates a README.md file, it performs a commit in the remote
 repository. When you try to pull the remote repository to your local
 repository, Git detects that they have histories that do not share a
 common origin and refuses to merge.</p>
-<div class="codewrapper sourceCode" id="cb30">
+<div class="codewrapper sourceCode" id="cb31">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb30-1"><a href="#cb30-1" tabindex="-1"></a><span class="ex">$</span> git pull origin main</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb31-1"><a href="#cb31-1" tabindex="-1"></a><span class="ex">$</span> git pull origin main</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1102,10 +1171,10 @@ fatal: refusing to merge unrelated histories</code></pre>
 <code>--allow-unrelated-histories</code>. Be careful when you use this
 option and carefully examine the contents of local and remote
 repositories before merging.</p>
-<div class="codewrapper sourceCode" id="cb32">
+<div class="codewrapper sourceCode" id="cb33">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb32-1"><a href="#cb32-1" tabindex="-1"></a><span class="ex">$</span> git pull <span class="at">--allow-unrelated-histories</span> origin main</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb33-1"><a href="#cb33-1" tabindex="-1"></a><span class="ex">$</span> git pull <span class="at">--allow-unrelated-histories</span> origin main</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1198,8 +1267,8 @@ local repository.</li>
   "url": "https://swcarpentry.github.io/git-novice/instructor/07-github.html",
   "identifier": "https://swcarpentry.github.io/git-novice/instructor/07-github.html",
   "dateCreated": "2014-12-04",
-  "dateModified": "2024-12-17",
-  "datePublished": "2024-12-17"
+  "dateModified": "2024-12-18",
+  "datePublished": "2024-12-18"
 }
 
   </script><script>

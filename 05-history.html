@@ -108,11 +108,11 @@
   Version Control with Git
 </div>
 
-<aside class="col-md-12 lesson-progress"><div style="width: 26%" class="percentage">
-    26%
+<aside class="col-md-12 lesson-progress"><div style="width: 25%" class="percentage">
+    25%
   </div>
   <div class="progress software">
-    <div class="progress-bar software" role="progressbar" style="width: 26%" aria-valuenow="26" aria-label="Lesson Progress" aria-valuemin="0" aria-valuemax="100">
+    <div class="progress-bar software" role="progressbar" style="width: 25%" aria-valuenow="25" aria-label="Lesson Progress" aria-valuemin="0" aria-valuemax="100">
     </div>
   </div>
 </aside><div class="container">
@@ -307,7 +307,7 @@
 <div class="accordion accordion-flush" id="accordionFlush13">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading13">
-        <a href="10-pull-requests.html">12. Pull Requests</a>
+        <a href="09-github-history.html">12. Exploring History on GitHub</a>
     </div><!--/div.accordion-header-->
 
   </div><!--/div.accordion-item-->
@@ -316,7 +316,7 @@
 <div class="accordion accordion-flush" id="accordionFlush14">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading14">
-        <a href="End.html">13. End</a>
+        <a href="10-pull-requests.html">13. Pull Requests</a>
     </div><!--/div.accordion-header-->
 
   </div><!--/div.accordion-item-->
@@ -325,7 +325,7 @@
 <div class="accordion accordion-flush" id="accordionFlush15">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading15">
-        <a href="10-open.html">14. Open Science</a>
+        <a href="End.html">14. End</a>
     </div><!--/div.accordion-header-->
 
   </div><!--/div.accordion-item-->
@@ -334,7 +334,7 @@
 <div class="accordion accordion-flush" id="accordionFlush16">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading16">
-        <a href="11-licensing.html">15. Licensing</a>
+        <a href="10-open.html">15. Open Science</a>
     </div><!--/div.accordion-header-->
 
   </div><!--/div.accordion-item-->
@@ -343,7 +343,7 @@
 <div class="accordion accordion-flush" id="accordionFlush17">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading17">
-        <a href="12-citation.html">16. Citation</a>
+        <a href="11-licensing.html">16. Licensing</a>
     </div><!--/div.accordion-header-->
 
   </div><!--/div.accordion-item-->
@@ -352,7 +352,7 @@
 <div class="accordion accordion-flush" id="accordionFlush18">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading18">
-        <a href="13-hosting.html">17. Hosting</a>
+        <a href="12-citation.html">17. Citation</a>
     </div><!--/div.accordion-header-->
 
   </div><!--/div.accordion-item-->
@@ -361,7 +361,16 @@
 <div class="accordion accordion-flush" id="accordionFlush19">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading19">
-        <a href="14-supplemental-rstudio.html">18. Using Git from RStudio</a>
+        <a href="13-hosting.html">18. Hosting</a>
+    </div><!--/div.accordion-header-->
+
+  </div><!--/div.accordion-item-->
+</div><!--/div.accordion-flush-->
+
+<div class="accordion accordion-flush" id="accordionFlush20">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading20">
+        <a href="14-supplemental-rstudio.html">19. Using Git from RStudio</a>
     </div><!--/div.accordion-header-->
 
   </div><!--/div.accordion-item-->
@@ -425,7 +434,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Exploring History</h1>
-        <p>Last updated on 2024-12-12 |
+        <p>Last updated on 2024-12-18 |
 
         <a href="https://github.com/swcarpentry/git-novice/edit/main/episodes/05-history.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -491,7 +500,7 @@ commits!</p>
 <button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler1" aria-expanded="false" aria-controls="collapseSpoiler1">
   <h3 class="accordion-header" id="headingSpoiler1">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div> FCM Comparison </h3>
 </button>
-<div id="collapseSpoiler1" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler1" aria-labelledby="headingSpoiler1">
+<div id="collapseSpoiler1" class="accordion-collapse collapse" aria-labelledby="headingSpoiler1" data-bs-parent="#accordionSpoiler1">
 <div class="accordion-body">
 <p><code>git log</code> is equivalent to:</p>
 <div class="codewrapper sourceCode" id="cb3">
@@ -585,20 +594,41 @@ associated with the current <code>HEAD</code>, the current branch
 </div>
 </div>
 </div>
+<div class="section level3">
+<h3 id="a-common-alias-for-git-log">A common alias for git log<a class="anchor" aria-label="anchor" href="#a-common-alias-for-git-log"></a></h3>
+<p>It is often useful to use the <code>--decorate</code>,
+<code>--oneline</code>, and <code>--graph</code> flags all at once. To
+avoid us having to write out the three flags each time we can set an
+alias:</p>
+<div class="codewrapper sourceCode" id="cb10">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a><span class="ex">$</span> git config <span class="at">--global</span> alias.dog <span class="st">"log --decorate --oneline --graph"</span></span></code></pre>
+</div>
+<p>This alias makes these two commands equivalent:</p>
+<div class="codewrapper sourceCode" id="cb11">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a><span class="ex">$</span> git dog</span>
+<span id="cb11-2"><a href="#cb11-2" tabindex="-1"></a><span class="ex">$</span> git log <span class="at">--decorate</span> <span class="at">--oneline</span> <span class="at">--graph</span></span></code></pre>
+</div>
+<p><code>--decorate</code> ensures commits with reference names<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a> are
+displayed when using older versions of git.</p>
+</div>
 </section><section><h2 class="section-heading" id="identifying-commits">Identifying Commits<a class="anchor" aria-label="anchor" href="#identifying-commits"></a></h2>
 <hr class="half-width"><p>As we saw in the previous episode, we can refer to commits by their
 identifiers. You can refer to the <em>most recent commit</em> of the
-working directory by using the identifier <code>HEAD</code>.</p>
+working directory by using the reference name <code>HEAD</code>.</p>
 <p>We’ve been adding small changes at a time to
 <code>forecast.md</code>, so it’s easy to track our progress by looking,
 so let’s do that using our <code>HEAD</code>s. Before we start, let’s
 make a change to <code>forecast.md</code>, adding yet another line with
 <strong>an ill-considered change</strong>.</p>
-<div class="codewrapper sourceCode" id="cb10">
+<div class="codewrapper sourceCode" id="cb12">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a><span class="ex">$</span> nano forecast.md</span>
-<span id="cb10-2"><a href="#cb10-2" tabindex="-1"></a><span class="ex">$</span> cat forecast.md</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" tabindex="-1"></a><span class="ex">$</span> nano forecast.md</span>
+<span id="cb12-2"><a href="#cb12-2" tabindex="-1"></a><span class="ex">$</span> cat forecast.md</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -616,10 +646,10 @@ Morning rainbows followed by light showers.
 An ill-considered change.</code></pre>
 </div>
 <p>Now, let’s see what we get.</p>
-<div class="codewrapper sourceCode" id="cb12">
+<div class="codewrapper sourceCode" id="cb14">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" tabindex="-1"></a><span class="ex">$</span> git diff HEAD forecast.md</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" tabindex="-1"></a><span class="ex">$</span> git diff HEAD forecast.md</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -641,18 +671,18 @@ index b36abfd..0848c8d 100644
 can refer to previous commits. We do that by adding <code>~1</code>
 (where “~” is “tilde”, pronounced [<strong>til</strong>-d<em>uh</em>])
 to refer to the commit one before <code>HEAD</code>.</p>
-<div class="codewrapper sourceCode" id="cb14">
+<div class="codewrapper sourceCode" id="cb16">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" tabindex="-1"></a><span class="ex">$</span> git diff HEAD~1 forecast.md</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" tabindex="-1"></a><span class="ex">$</span> git diff HEAD~1 forecast.md</span></code></pre>
 </div>
 <p>If we want to see the differences between older commits we can use
 <code>git diff</code> again, but with the notation <code>HEAD~1</code>,
 <code>HEAD~2</code>, and so on, to refer to them:</p>
-<div class="codewrapper sourceCode" id="cb15">
+<div class="codewrapper sourceCode" id="cb17">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" tabindex="-1"></a><span class="ex">$</span> git diff HEAD~2 forecast.md</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" tabindex="-1"></a><span class="ex">$</span> git diff HEAD~2 forecast.md</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -678,10 +708,10 @@ index df0654a..b36abfd 100644
 we made at an older commit as well as the commit message, rather than
 the <em>differences</em> between a commit and our working directory that
 we see by using <code>git diff</code>.</p>
-<div class="codewrapper sourceCode" id="cb17">
+<div class="codewrapper sourceCode" id="cb19">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" tabindex="-1"></a><span class="ex">$</span> git show HEAD~2 forecast.md</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" tabindex="-1"></a><span class="ex">$</span> git show HEAD~2 forecast.md</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -717,10 +747,10 @@ unique 40-character identifier. Our first commit on the
 <code>forecast</code> branch was given the ID
 <code>f22b25e3233b4645dabd0d81e651fe074bd8e73b</code>, so let’s try
 this:</p>
-<div class="codewrapper sourceCode" id="cb19">
+<div class="codewrapper sourceCode" id="cb21">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" tabindex="-1"></a><span class="ex">$</span> git diff f22b25e3233b4645dabd0d81e651fe074bd8e73b forecast.md</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1" tabindex="-1"></a><span class="ex">$</span> git diff f22b25e3233b4645dabd0d81e651fe074bd8e73b forecast.md</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -745,10 +775,10 @@ index df0654a..93a3e13 100644
 <p>That’s the right answer, but typing out random 40-character strings
 is annoying, so Git lets us use just the first few characters (typically
 seven for normal size projects):</p>
-<div class="codewrapper sourceCode" id="cb21">
+<div class="codewrapper sourceCode" id="cb23">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1" tabindex="-1"></a><span class="ex">$</span> git diff f22b25e forecast.md</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb23-1"><a href="#cb23-1" tabindex="-1"></a><span class="ex">$</span> git diff f22b25e forecast.md</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -778,17 +808,17 @@ index df0654a..93a3e13 100644
 <h3 class="callout-title">Understanding Workflow and History</h3>
 <div class="callout-content">
 <p>What is the output of the last command in</p>
-<div class="codewrapper sourceCode" id="cb23">
+<div class="codewrapper sourceCode" id="cb25">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb23-1"><a href="#cb23-1" tabindex="-1"></a><span class="ex">$</span> cd weather</span>
-<span id="cb23-2"><a href="#cb23-2" tabindex="-1"></a><span class="ex">$</span> git switch <span class="at">-c</span> add_CMIP_data</span>
-<span id="cb23-3"><a href="#cb23-3" tabindex="-1"></a><span class="ex">$</span> echo <span class="st">"Global Climate Data"</span> <span class="op">&gt;</span> CMIP7.md</span>
-<span id="cb23-4"><a href="#cb23-4" tabindex="-1"></a><span class="ex">$</span> git add CMIP7.md</span>
-<span id="cb23-5"><a href="#cb23-5" tabindex="-1"></a><span class="ex">$</span> echo <span class="st">"Data from the 7th model intercomparison project"</span> <span class="op">&gt;&gt;</span> CMIP7.md</span>
-<span id="cb23-6"><a href="#cb23-6" tabindex="-1"></a><span class="ex">$</span> git commit <span class="at">-m</span> <span class="st">"Adds in CMIP7 data file"</span></span>
-<span id="cb23-7"><a href="#cb23-7" tabindex="-1"></a><span class="ex">$</span> git restore CMIP7.md</span>
-<span id="cb23-8"><a href="#cb23-8" tabindex="-1"></a><span class="ex">$</span> cat CMIP7.md  <span class="co"># this will print the content of CMIP7.md on screen</span></span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb25-1"><a href="#cb25-1" tabindex="-1"></a><span class="ex">$</span> cd weather</span>
+<span id="cb25-2"><a href="#cb25-2" tabindex="-1"></a><span class="ex">$</span> git switch <span class="at">-c</span> add_CMIP_data</span>
+<span id="cb25-3"><a href="#cb25-3" tabindex="-1"></a><span class="ex">$</span> echo <span class="st">"Global Climate Data"</span> <span class="op">&gt;</span> CMIP7.md</span>
+<span id="cb25-4"><a href="#cb25-4" tabindex="-1"></a><span class="ex">$</span> git add CMIP7.md</span>
+<span id="cb25-5"><a href="#cb25-5" tabindex="-1"></a><span class="ex">$</span> echo <span class="st">"Data from the 7th model intercomparison project"</span> <span class="op">&gt;&gt;</span> CMIP7.md</span>
+<span id="cb25-6"><a href="#cb25-6" tabindex="-1"></a><span class="ex">$</span> git commit <span class="at">-m</span> <span class="st">"Adds in CMIP7 data file"</span></span>
+<span id="cb25-7"><a href="#cb25-7" tabindex="-1"></a><span class="ex">$</span> git restore CMIP7.md</span>
+<span id="cb25-8"><a href="#cb25-8" tabindex="-1"></a><span class="ex">$</span> cat CMIP7.md  <span class="co"># this will print the content of CMIP7.md on screen</span></span></code></pre>
 </div>
 <ol style="list-style-type: decimal"><li><div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -819,7 +849,7 @@ index df0654a..93a3e13 100644
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>The answer is 2.</p>
 <p>The changes to the file from the second <code>echo</code> command are
@@ -878,28 +908,28 @@ long list appeared. How can you narrow down the search?</p>
 <p>Recall that the <code>git diff</code> command allows us to explore
 one specific file, e.g., <code>git diff forecast.md</code>. We can apply
 a similar idea here.</p>
-<div class="codewrapper sourceCode" id="cb29">
+<div class="codewrapper sourceCode" id="cb31">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb29-1"><a href="#cb29-1" tabindex="-1"></a><span class="ex">$</span> git log forecast.md</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb31-1"><a href="#cb31-1" tabindex="-1"></a><span class="ex">$</span> git log forecast.md</span></code></pre>
 </div>
 <p>Unfortunately some of these commit messages are very ambiguous, e.g.,
 <code>update files</code>. How can you search through these files?</p>
 <p>Both <code>git diff</code> and <code>git log</code> are very useful
 and they summarize a different part of the history for you. Is it
 possible to combine both? Let’s try the following:</p>
-<div class="codewrapper sourceCode" id="cb30">
+<div class="codewrapper sourceCode" id="cb32">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb30-1"><a href="#cb30-1" tabindex="-1"></a><span class="ex">$</span> git log <span class="at">--patch</span> forecast.md</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb32-1"><a href="#cb32-1" tabindex="-1"></a><span class="ex">$</span> git log <span class="at">--patch</span> forecast.md</span></code></pre>
 </div>
 <p>You should get a long list of output, and you should be able to see
 both commit messages and the difference between each commit.</p>
 <p>Question: What does the following command do?</p>
-<div class="codewrapper sourceCode" id="cb31">
+<div class="codewrapper sourceCode" id="cb33">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb31-1"><a href="#cb31-1" tabindex="-1"></a><span class="ex">$</span> git log <span class="at">--patch</span> HEAD~9 <span class="pp">*</span>.md</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb33-1"><a href="#cb33-1" tabindex="-1"></a><span class="ex">$</span> git log <span class="at">--patch</span> HEAD~9 <span class="pp">*</span>.md</span></code></pre>
 </div>
 </div>
 </div>
@@ -922,7 +952,19 @@ both commit messages and the difference between each commit.</p>
 </ul></div>
 </div>
 </div>
-</section></div> <!-- / div.lesson-content -->
+</section><div class="footnotes footnotes-end-of-document">
+<hr><ol><li id="fn1"><p><a href="https://git-scm.com/book/ms/v2/Git-Internals-Git-References" class="external-link">References</a>
+in Git are user friendly links to specific commits. For instance
+<code>HEAD</code> is a reference to the latest commit on a branch.
+Programs with regular releases might add reference tags such as
+<code>v1.0</code> to a specific commit to mark a new release. These
+references can be used instead of a commit identifier such as
+<code>e48heu0</code>.<a href="#fnref1" class="footnote-back">↩︎</a></p></li>
+</ol></div>
+
+
+
+      </div> <!-- / div.lesson-content -->
     </main><!-- / main#main-content.main-content --><nav class="bottom-pagination mx-md-4" aria-label="Previous and Next Chapter"><div class="d-block d-sm-block d-md-none">
         <a class="chapter-link" href="04-changes.html"><i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>Previous</a>
         <a class="chapter-link float-end" href="06-reverting-changes.html">Next<i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
@@ -980,8 +1022,8 @@ both commit messages and the difference between each commit.</p>
   "url": "https://swcarpentry.github.io/git-novice/05-history.html",
   "identifier": "https://swcarpentry.github.io/git-novice/05-history.html",
   "dateCreated": "2014-12-04",
-  "dateModified": "2024-12-12",
-  "datePublished": "2024-12-17"
+  "dateModified": "2024-12-18",
+  "datePublished": "2024-12-18"
 }
 
   </script><script>

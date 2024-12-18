@@ -307,7 +307,7 @@
 <div class="accordion accordion-flush" id="accordionFlush13">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading13">
-        <a href="10-pull-requests.html">12. Pull Requests</a>
+        <a href="09-github-history.html">12. Exploring History on GitHub</a>
     </div><!--/div.accordion-header-->
 
   </div><!--/div.accordion-item-->
@@ -316,7 +316,7 @@
 <div class="accordion accordion-flush" id="accordionFlush14">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading14">
-        <a href="End.html">13. End</a>
+        <a href="10-pull-requests.html">13. Pull Requests</a>
     </div><!--/div.accordion-header-->
 
   </div><!--/div.accordion-item-->
@@ -325,7 +325,7 @@
 <div class="accordion accordion-flush" id="accordionFlush15">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading15">
-        <a href="10-open.html">14. Open Science</a>
+        <a href="End.html">14. End</a>
     </div><!--/div.accordion-header-->
 
   </div><!--/div.accordion-item-->
@@ -334,7 +334,7 @@
 <div class="accordion accordion-flush" id="accordionFlush16">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading16">
-        <a href="11-licensing.html">15. Licensing</a>
+        <a href="10-open.html">15. Open Science</a>
     </div><!--/div.accordion-header-->
 
   </div><!--/div.accordion-item-->
@@ -343,7 +343,7 @@
 <div class="accordion accordion-flush" id="accordionFlush17">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading17">
-        <a href="12-citation.html">16. Citation</a>
+        <a href="11-licensing.html">16. Licensing</a>
     </div><!--/div.accordion-header-->
 
   </div><!--/div.accordion-item-->
@@ -352,7 +352,7 @@
 <div class="accordion accordion-flush" id="accordionFlush18">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading18">
-        <a href="13-hosting.html">17. Hosting</a>
+        <a href="12-citation.html">17. Citation</a>
     </div><!--/div.accordion-header-->
 
   </div><!--/div.accordion-item-->
@@ -361,7 +361,16 @@
 <div class="accordion accordion-flush" id="accordionFlush19">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading19">
-        <a href="14-supplemental-rstudio.html">18. Using Git from RStudio</a>
+        <a href="13-hosting.html">18. Hosting</a>
+    </div><!--/div.accordion-header-->
+
+  </div><!--/div.accordion-item-->
+</div><!--/div.accordion-flush-->
+
+<div class="accordion accordion-flush" id="accordionFlush20">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading20">
+        <a href="14-supplemental-rstudio.html">19. Using Git from RStudio</a>
     </div><!--/div.accordion-header-->
 
   </div><!--/div.accordion-item-->
@@ -425,7 +434,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Branches</h1>
-        <p>Last updated on 2024-12-12 |
+        <p>Last updated on 2024-12-18 |
 
         <a href="https://github.com/swcarpentry/git-novice/edit/main/episodes/09-branches.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -505,6 +514,27 @@ branch:</p>
 Your branch is up to date with 'origin/main'.
 
 nothing to commit, working tree clean</code></pre>
+</div>
+<p>The phrase <strong>working tree clean</strong> means there are no
+changes in your working directory and the current state of your
+repository is identical to the last commit.</p>
+<div id="accordionSpoiler1" class="accordion spoiler-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler1" aria-expanded="false" aria-controls="collapseSpoiler1">
+  <h3 class="accordion-header" id="headingSpoiler1">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div> FCM Comparison </h3>
+</button>
+<div id="collapseSpoiler1" class="accordion-collapse collapse" aria-labelledby="headingSpoiler1" data-bs-parent="#accordionSpoiler1">
+<div class="accordion-body">
+<p><code>main</code> == <code>trunk</code></p>
+<p>In an earlier episode we set our default branch to be called
+<code>main</code>. This is where our stable production code lives and is
+equivalent to <code>trunk</code>.</p>
+<p>We could have also named this branch <code>trunk</code> in Git. We
+chose <code>main</code> as it is a more common default branch name for
+Git and matches the default on GitHub.</p>
+</div>
+</div>
+</div>
 </div>
 <section><h2 class="section-heading" id="creating-branches">Creating Branches<a class="anchor" aria-label="anchor" href="#creating-branches"></a></h2>
 <hr class="half-width"><p>Our current repository looks something like this:</p>
@@ -664,7 +694,7 @@ right for you and your team.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb18">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -694,7 +724,7 @@ command.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <p>The <code>-m</code> flag used with <code>git branch</code> lets you
 rename a branch.</p>
@@ -729,7 +759,7 @@ command.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
 <div class="accordion-body">
 <p>The <code>git switch</code> command lets you define a
 <code>&lt;start-point&gt;</code> to branch from:</p>
@@ -846,7 +876,7 @@ the correct branch point.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
   <h4 class="accordion-header" id="headingSolution4"> Show me the solution </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
 <div class="accordion-body">
 <p>Git won’t let you delete a branch you are currently on! Try it for
 yourself:</p>
@@ -959,8 +989,8 @@ branch.</li>
   "url": "https://swcarpentry.github.io/git-novice/instructor/09-branches.html",
   "identifier": "https://swcarpentry.github.io/git-novice/instructor/09-branches.html",
   "dateCreated": "2014-12-04",
-  "dateModified": "2024-12-12",
-  "datePublished": "2024-12-17"
+  "dateModified": "2024-12-18",
+  "datePublished": "2024-12-18"
 }
 
   </script><script>

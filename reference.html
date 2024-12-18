@@ -295,7 +295,7 @@
 <div class="accordion accordion-flush" id="accordionFlush13">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading13">
-        <a href="10-pull-requests.html">12. Pull Requests</a>
+        <a href="09-github-history.html">12. Exploring History on GitHub</a>
     </div><!--/div.accordion-header-->
 
   </div><!--/div.accordion-item-->
@@ -304,7 +304,7 @@
 <div class="accordion accordion-flush" id="accordionFlush14">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading14">
-        <a href="End.html">13. End</a>
+        <a href="10-pull-requests.html">13. Pull Requests</a>
     </div><!--/div.accordion-header-->
 
   </div><!--/div.accordion-item-->
@@ -313,7 +313,7 @@
 <div class="accordion accordion-flush" id="accordionFlush15">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading15">
-        <a href="10-open.html">14. Open Science</a>
+        <a href="End.html">14. End</a>
     </div><!--/div.accordion-header-->
 
   </div><!--/div.accordion-item-->
@@ -322,7 +322,7 @@
 <div class="accordion accordion-flush" id="accordionFlush16">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading16">
-        <a href="11-licensing.html">15. Licensing</a>
+        <a href="10-open.html">15. Open Science</a>
     </div><!--/div.accordion-header-->
 
   </div><!--/div.accordion-item-->
@@ -331,7 +331,7 @@
 <div class="accordion accordion-flush" id="accordionFlush17">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading17">
-        <a href="12-citation.html">16. Citation</a>
+        <a href="11-licensing.html">16. Licensing</a>
     </div><!--/div.accordion-header-->
 
   </div><!--/div.accordion-item-->
@@ -340,7 +340,7 @@
 <div class="accordion accordion-flush" id="accordionFlush18">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading18">
-        <a href="13-hosting.html">17. Hosting</a>
+        <a href="12-citation.html">17. Citation</a>
     </div><!--/div.accordion-header-->
 
   </div><!--/div.accordion-item-->
@@ -349,7 +349,16 @@
 <div class="accordion accordion-flush" id="accordionFlush19">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading19">
-        <a href="14-supplemental-rstudio.html">18. Using Git from RStudio</a>
+        <a href="13-hosting.html">18. Hosting</a>
+    </div><!--/div.accordion-header-->
+
+  </div><!--/div.accordion-item-->
+</div><!--/div.accordion-flush-->
+
+<div class="accordion accordion-flush" id="accordionFlush20">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading20">
+        <a href="14-supplemental-rstudio.html">19. Using Git from RStudio</a>
     </div><!--/div.accordion-header-->
 
   </div><!--/div.accordion-item-->
@@ -413,7 +422,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Git Cheatsheets for Quick Reference</h1>
-        <p>Last updated on 2024-12-12 |
+        <p>Last updated on 2024-12-18 |
 
         <a href="https://github.com/swcarpentry/git-novice/edit/main/learners/reference.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -449,6 +458,12 @@ version control and open source software.</li>
 A git branch is a pointer to a commit. Branches are used to develop
 changes in parallel, isolated from each other.
 </dd>
+<dt><span id="cvc">Centralised Version Control System</span></dt>
+<dd>
+In a Centralised Version Control System such as Subversion a single,
+centralised server contains the main copy of a repository. Working on
+code requires internet access to the centralised server.
+</dd>
 <dt><span id="changeset">changeset</span></dt>
 <dd>
 A group of changes to one or more files that are or will be added to a
@@ -468,6 +483,25 @@ A change made by one user of a <a href="#version-control">version
 control system</a> that is incompatible with changes made by other
 users. Helping users <a href="#resolve">resolve</a> conflicts is one of
 version control’s major tasks.
+</dd>
+<dt><span id="dvc">Distributed Version Control System</span></dt>
+<dd>
+In a Distributed Version Control System such as <a href="#git">Git</a>
+each collaborator has a copy of the entire repository and its history.
+Working on code does not require internet access and there are multiple
+backups of the entire repository.
+</dd>
+<dt><span id="git">Git</span></dt>
+<dd>
+<a href="https://git-scm.com/" class="external-link">Git</a> is a free and open source Version
+Control System (VCS) capable of tracking the history of our files and
+recover previous versions. Git is an example of a <a href="#dvc">Distributed Version Control System</a>.
+</dd>
+<dt><span id="github">GitHub</span></dt>
+<dd>
+<a href="https://docs.github.com/en/get-started/start-your-journey/about-github-and-git" class="external-link">GitHub</a>
+is a cloud-based platform where you can store, share, and work together
+with others to write code. GitHub is built upon <a href="#git">Git</a>.
 </dd>
 <dt><span id="http">HTTP</span></dt>
 <dd>
@@ -523,7 +557,7 @@ communication between computers.
 <dd>
 A record of when a particular event occurred.
 </dd>
-<dt><span id="version-control">version control</span></dt>
+<dt><span id="version-control">Version Control System (VCS)</span></dt>
 <dd>
 A tool for managing changes to a set of files. Each set of changes
 creates a new <a href="#commit">commit</a> of the files; the version
@@ -588,8 +622,8 @@ manage conflicting changes made by different users.
   "url": "https://swcarpentry.github.io/git-novice/reference.html",
   "identifier": "https://swcarpentry.github.io/git-novice/reference.html",
   "dateCreated": "2014-12-04",
-  "dateModified": "2024-12-12",
-  "datePublished": "2024-12-17"
+  "dateModified": "2024-12-18",
+  "datePublished": "2024-12-18"
 }
 
   </script><script>
