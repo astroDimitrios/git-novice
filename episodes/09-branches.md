@@ -66,6 +66,10 @@ Your branch is up to date with 'origin/main'.
 nothing to commit, working tree clean
 ```
 
+The phrase **working tree clean** means there are no changes
+in your working directory and the current state of your
+repository is identical to the last commit.
+
 ::: spoiler
 
 ### FCM Comparison
