@@ -451,8 +451,9 @@
 remember to fill out your post-workshop feedback. This feedback is vital
 for us to keep improving the lesson for other learners.</p>
 <section><h2 class="section-heading" id="where-to-next">Where to next?<a class="anchor" aria-label="anchor" href="#where-to-next"></a></h2>
-<hr class="half-width"><p>The Git working practices lesson teaches you how to work
-collaboratively with others using git and GitHub.</p>
+<hr class="half-width"><p>The Git &amp; GitHub Working Practices lesson teaches you how to work
+collaboratively with others using Git and GitHub. It explores more
+complex workflows and topics, building on from this lesson.</p>
 <p>There are also a number of optional episodes after this page which
 focus on open science and code which you can read in your own time.</p>
 <p>You can revisit this training anytime. Useful page links:</p>
@@ -471,23 +472,35 @@ instructions at the end of this page.</p>
 <hr class="half-width"><p>You’ve now created a repository both locally on your computer and
 remotely on GitHub. You’ve developed changes on a feature branch,
 reviewed the changes on GitHub and merged them into <code>main</code>.
-Your local and remote repositories look something like this:</p>
-<pre class="mermaid"><code>---
-config:
-  gitGraph:
-    showCommitLabel: false
----
-    gitGraph
-        accDescr {A git graph showing the root-commit on the main branch and a new forecast branch with five commits. The forecast branch has been merged into main using a merge commit via a GitHub Pull Request.}
-        commit id: 'Initial commit'
-        branch forecast
-        commit id: 'Create a md file with the forecast'
-        commit id: 'Add tomorrows forecast to forecast.md'
-        commit id: 'Modify the forecast to add a chance of Sun'
-        commit id: 'Add in the temperature to the forecast and create the weather atlas file'
-        commit id: 'Ignore png files and the data folder'
-        checkout main
-        merge forecast</code></pre>
+The diagram below outlines the workflow you used during the course:</p>
+<pre class="mermaid"><code>sequenceDiagram
+    autonumber
+    participant M as main
+    Note over M: Initialise the Repository
+    M -&gt;&gt; M:
+    Note over M: Initial Commit
+    M -&gt;&gt; M:
+    Note right of M: Create a Feature Branch
+    create participant F as forecast
+    M -&gt;&gt; F:
+    loop
+        Note over F: Develop Changes
+        F -&gt;&gt; F:
+    end
+    Note right of M: Backup to GitHub
+    create participant GHM as origin main
+    M --&gt;&gt; GHM:
+    Note right of F: Push changes to GitHub
+    create participant GHF as origin forecast
+    F --&gt;&gt; GHF:
+    Note left of GHF: Pull Request and then Merge
+    destroy GHF
+    GHF -&gt;&gt; GHM:
+    Note left of GHM: Update Local Branches
+    GHM --&gt;&gt; M:
+    Note left of F: Tidy up Local Branches
+    destroy F
+    F -&gt;&gt; M: </code></pre>
 <p>A summary page outlining the steps we’ve taken to create a new
 repository locally and connect it to a GitHub remote can be found in the
 extra <a href="repo-quick-start.html">Quick Start Repository
