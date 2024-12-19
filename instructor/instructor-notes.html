@@ -574,15 +574,14 @@ is definitely the most complicated tool. However, GitHub presently
 dominates the open software repository landscape, so the time and effort
 required to teach fundamental Git is justified and worthwhile.</p>
 <p>Because of this complexity, we don’t teach novice learners about many
-interesting topics, such as branching, hashes, and commit objects.</p>
+interesting topics, such as hashes, and commit objects.</p>
 <p>Instead we try to convince them that version control is useful for
-researchers working in teams or not, because it is</p>
+working in teams or not, because it is</p>
 <ul>
 <li>a better way to “undo” changes,</li>
 <li>a better way to collaborate than mailing files back and forth,
 and</li>
-<li>a better way to share your code and other scientific work with the
-world.</li>
+<li>a better way to share your code and other work with the world.</li>
 </ul></section><section><h2 class="section-heading" id="teaching-notes">Teaching Notes<a class="anchor" aria-label="anchor" href="#teaching-notes"></a>
 </h2>
 <hr class="half-width">
@@ -655,10 +654,26 @@ version revised”, “final version with reviewer three’s corrections”,
 “really final version”, and, “come on this really has to be the last
 version” to motivate version control as a better way to collaborate and
 as a better way to back work up.</p></li>
-</ul></section><section><h2 class="section-heading" id="setting-up-git">
+</ul>
+<div class="section level3">
+<h3 id="met-office">Met Office<a class="anchor" aria-label="anchor" href="#met-office"></a>
+</h3>
+<p>Why are we moving to Git and GitHub?</p>
+<ul>
+<li>FCM/SVN becoming unmaintainable</li>
+<li>Git/GitHub provide better security (MFA)</li>
+<li>GitHub has more useful features for collaboration than trac</li>
+<li>Easier to collaborate with partners outside the Met Office with
+GitHub</li>
+</ul>
+</div>
+</section><section><h2 class="section-heading" id="setting-up-git">
 <a href="02-setup.html">Setting Up Git</a><a class="anchor" aria-label="anchor" href="#setting-up-git"></a>
 </h2>
 <hr class="half-width">
+<p>Do <strong>NOT</strong> skip any steps setting the config. This may
+cause problems later especially if students end up with master
+branches.</p>
 <ul>
 <li>
 <p>We suggest instructors and students use <code>nano</code> as the
@@ -707,7 +722,15 @@ there:</p>
 inside another repo. For more discussion on this topic, please see <a href="https://github.com/swcarpentry/git-novice/issues/272" class="external-link">this
 issue</a>.</p>
 </li>
-</ul></section><section><h2 class="section-heading" id="tracking-changes">
+</ul></section><section><h2 class="section-heading" id="branches">
+<a href="09-branches.html">Branches</a><a class="anchor" aria-label="anchor" href="#branches"></a>
+</h2>
+<hr class="half-width">
+<p>All Mermaid diagrams don’t render atm in the Extract all Images page
+so be wary of this. Avoid putting your own preference into the training
+and teach <code>git switch</code> (although the other options are also
+given for reference).</p>
+</section><section><h2 class="section-heading" id="tracking-changes">
 <a href="04-changes.html">Tracking Changes</a><a class="anchor" aria-label="anchor" href="#tracking-changes"></a>
 </h2>
 <hr class="half-width">
@@ -759,6 +782,7 @@ output, including the line
 <a href="08-collab.html">Collaborating</a><a class="anchor" aria-label="anchor" href="#collaborating"></a>
 </h2>
 <hr class="half-width">
+<p>NOT IN THE MET OFFICE VERSION</p>
 <ul>
 <li><p>Decide in advance whether all the learners will work in one
 shared repository, or whether they will work in pairs (or other small
@@ -835,6 +859,7 @@ of git, and if upstream (<code>-u</code>) is used.</p></li>
 <a href="09-conflict.html">Conflicts</a><a class="anchor" aria-label="anchor" href="#conflicts"></a>
 </h2>
 <hr class="half-width">
+<p>NOT IN THE MET OFFICE VERSION</p>
 <ul>
 <li><p>Expect the learners to make mistakes. Expect <em>yourself</em> to
 make mistakes. This happens because it is late in the lesson and
