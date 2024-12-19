@@ -40,6 +40,9 @@
     <loc>https://swcarpentry.github.io/git-novice/10-pull-requests.html</loc>
   </url>
   <url>
+    <loc>https://swcarpentry.github.io/git-novice/11-configuring-github.html</loc>
+  </url>
+  <url>
     <loc>https://swcarpentry.github.io/git-novice/11-licensing.html</loc>
   </url>
   <url>
@@ -119,6 +122,9 @@
   </url>
   <url>
     <loc>https://swcarpentry.github.io/git-novice/instructor/10-pull-requests.html</loc>
+  </url>
+  <url>
+    <loc>https://swcarpentry.github.io/git-novice/instructor/11-configuring-github.html</loc>
   </url>
   <url>
     <loc>https://swcarpentry.github.io/git-novice/instructor/11-licensing.html</loc>
