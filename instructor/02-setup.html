@@ -205,12 +205,20 @@
 <div class="accordion accordion-flush" id="accordionFlushcurrent">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-headingcurrent">
+      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapsecurrent" aria-expanded="true" aria-controls="flush-collapsecurrent">
         <span class="visually-hidden">Current Chapter</span>
         <span class="current-chapter">
         2. Setting Up Git
         </span>
-      
+      </button>
     </div><!--/div.accordion-header-->
+
+    <div id="flush-collapsecurrent" class="accordion-collapse collapse show" aria-labelledby="flush-headingcurrent" data-bs-parent="#accordionFlushcurrent">
+      <div class="accordion-body">
+        <ul><li><a href="#command-line-git-setup">Command Line Git Setup</a></li>
+<li><a href="#text-editor-git-setup">Text Editor Git Setup</a></li>
+        </ul></div><!--/div.accordion-body-->
+    </div><!--/div.accordion-collapse-->
 
   </div><!--/div.accordion-item-->
 </div><!--/div.accordion-flush-->
@@ -435,7 +443,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Setting Up Git</h1>
-        <p>Last updated on 2024-12-03 |
+        <p>Last updated on 2024-12-19 |
 
         <a href="https://github.com/swcarpentry/git-novice/edit/main/episodes/02-setup.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -480,11 +488,14 @@ will set as we get started with Git:</p>
 <li>what our preferred text editor is,</li>
 <li>and that we want to use these settings globally (i.e. for every
 project).</li>
-</ul><p>On a command line, Git commands are written as
+</ul><section><h2 class="section-heading" id="command-line-git-setup">Command Line Git Setup<a class="anchor" aria-label="anchor" href="#command-line-git-setup"></a></h2>
+<hr class="half-width"><p>On a command line, Git commands are written as
 <code>git verb options</code>, where <code>verb</code> is what we
 actually want to do and <code>options</code> is additional optional
-information which may be needed for the <code>verb</code>. To set up a
-new computer:</p>
+information which may be needed for the <code>verb</code>.</p>
+<div class="section level3">
+<h3 id="authorship">Authorship<a class="anchor" aria-label="anchor" href="#authorship"></a></h3>
+<p>To set up a new computer:</p>
 <div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -516,13 +527,9 @@ address private.</p>
 </div>
 </div>
 </div>
-<div id="line-endings" class="callout">
-<div class="callout-square">
-<i class="callout-icon" data-feather="bell"></i>
 </div>
-<div id="line-endings" class="callout-inner">
-<h3 class="callout-title">Line Endings</h3>
-<div class="callout-content">
+<div class="section level3">
+<h3 id="line-endings">Line Endings<a class="anchor" aria-label="anchor" href="#line-endings"></a></h3>
 <p>As with other keys, when you press <kbd>Enter</kbd> or <kbd>↵</kbd>
 or on Macs, <kbd>Return</kbd> on your keyboard, your computer encodes
 this input as a character. Different operating systems use different
@@ -535,13 +542,28 @@ the Pro Git book</a>.</p>
 <p>You can change the way Git recognizes and encodes line endings using
 the <code>core.autocrlf</code> command to <code>git config</code>. The
 following settings are recommended:</p>
-<p>On macOS and Linux:</p>
+<div class="tabs">
+<nav><div id="nav-tab-1" class="nav nav-tabs" role="tablist">
+<button class="nav-link active" id="nav-tab-1-Linux&amp;MacOS" name="Linux&amp;MacOS" data-bs-toggle="tab" data-bs-target="#nav-tabpanel-1-Linux&amp;MacOS" type="button" role="tab" aria-controls="nav-tabpanel-1-Linux&amp;MacOS" aria-selected="true">
+  <h3 class="tab-header" id="nav-tab-heading-1-Linux&amp;MacOS">
+  Linux &amp; MacOS
+  </h3>
+</button>
+<button class="nav-link" id="nav-tab-1-Windows" name="Windows" data-bs-toggle="tab" data-bs-target="#nav-tabpanel-1-Windows" type="button" role="tab" aria-controls="nav-tabpanel-1-Windows" aria-selected="false">
+  <h3 class="tab-header" id="nav-tab-heading-1-Windows">
+  Windows
+  </h3>
+</button>
+</div>
+</nav><div id="nav-tabContent-1" class="tab-content">
+<div id="nav-tabpanel-1-Linux&amp;MacOS" class="tab-pane show active" aria-labelledby="nav-tab-1-Linux&amp;MacOS" role="tabpanel">
 <div class="codewrapper sourceCode" id="cb2">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="ex">$</span> git config <span class="at">--global</span> core.autocrlf input</span></code></pre>
 </div>
-<p>And on Windows:</p>
+</div>
+<div id="nav-tabpanel-1-Windows" class="tab-pane" aria-labelledby="nav-tab-1-Windows" role="tabpanel">
 <div class="codewrapper sourceCode" id="cb3">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -550,6 +572,9 @@ following settings are recommended:</p>
 </div>
 </div>
 </div>
+</div>
+<div class="section level3">
+<h3 id="text-editor">Text Editor<a class="anchor" aria-label="anchor" href="#text-editor"></a></h3>
 <p>To set your preferred text editor, find the correct configuration
 command from this table:</p>
 <table class="table"><colgroup><col width="27%"><col width="72%"></colgroup><thead><tr class="header"><th align="left">Editor</th>
@@ -603,6 +628,9 @@ want to save your changes and quit, press <kbd>Esc</kbd> then type
 </div>
 </div>
 </div>
+</div>
+<div class="section level3">
+<h3 id="default-branch-name">Default Branch Name<a class="anchor" aria-label="anchor" href="#default-branch-name"></a></h3>
 <p>Git (2.28+) allows configuration of the name of the branch created
 when you initialize any new repository. We want to set this to
 <code>main</code> so it matches the cloud service we will eventually
@@ -612,20 +640,19 @@ use.</p>
 </h3>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="ex">$</span> git config <span class="at">--global</span> init.defaultBranch main</span></code></pre>
 </div>
-<div id="default-git-branch-naming" class="callout">
+<div id="history-of-main" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
-<div id="default-git-branch-naming" class="callout-inner">
-<h3 class="callout-title">Default Git branch naming</h3>
+<div id="history-of-main" class="callout-inner">
+<h3 class="callout-title">History of <code>main</code>
+</h3>
 <div class="callout-content">
-<p>Source file changes are associated with a “branch.” For new learners
-in this lesson, it’s enough to know that branches exist, and this lesson
-uses one branch.<br>
-By default, Git will create a branch called <code>master</code> when you
-create a new repository with <code>git init</code> (as explained in the
-next Episode). This term evokes the racist practice of human slavery and
-the <a href="https://github.com/github/renaming" class="external-link">software development
+<p>Source file changes are associated with a “branch”. By default, Git
+will create a branch called <code>master</code> when you create a new
+repository with <code>git init</code> (as explained in the next
+Episode). This term evokes the racist practice of human slavery and the
+<a href="https://github.com/github/renaming" class="external-link">software development
 community</a> has moved to adopt more inclusive language.</p>
 <p>In 2020, most Git code hosting services transitioned to using
 <code>main</code> as the default branch. As an example, any new
@@ -644,24 +671,27 @@ configuration, the <code>init.defaultBranch</code> value defaults to
 <p>The five commands we just ran above only need to be run once: the
 flag <code>--global</code> tells Git to use the settings for every
 project, in your user account, on this computer.</p>
-<p>Let’s review those settings and test our <code>core.editor</code>
+</div>
+</section><section><h2 class="section-heading" id="text-editor-git-setup">Text Editor Git Setup<a class="anchor" aria-label="anchor" href="#text-editor-git-setup"></a></h2>
+<hr class="half-width"><p>Let’s review those settings and test our <code>core.editor</code>
 right away:</p>
 <div class="codewrapper sourceCode" id="cb5">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="ex">$</span> git config <span class="at">--global</span> <span class="at">--edit</span></span></code></pre>
 </div>
-<p>Let’s close the file without making any additional changes. Remember,
-since typos in the config file will cause issues, it’s safer to view the
+<p>Let’s close the file without making any additional changes. Since
+typos in the config file will cause issues, it’s safer to view the
 configuration with:</p>
 <div class="codewrapper sourceCode" id="cb6">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="ex">$</span> git config <span class="at">--list</span></span></code></pre>
 </div>
-<p>And if necessary, change your configuration using the same commands
-to choose another editor or update your email address. This can be done
-as many times as you want.</p>
+<p>And alter the configuration via the command line. You can re-run the
+commands above as many times as you want to change your configuration.
+The <a href="discuss.html#more-advanced-git-configuration">discussion</a> page
+has details on more recommended settings.</p>
 <div id="proxy" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
@@ -694,10 +724,10 @@ the case, you may also need to tell Git about the proxy:</p>
 <div id="git-help-and-manual" class="callout-inner">
 <h3 class="callout-title">Git Help and Manual</h3>
 <div class="callout-content">
-<p>Always remember that if you forget the subcommands or options of a
-<code>git</code> command, you can access the relevant list of options
-typing <code>git &lt;command&gt; -h</code> or access the corresponding
-Git manual by typing <code>git &lt;command&gt; --help</code>, e.g.:</p>
+<p>If you forget the subcommands or options of a <code>git</code>
+command, you can access the relevant list of options typing
+<code>git &lt;command&gt; -h</code> or access the corresponding Git
+manual by typing <code>git &lt;command&gt; --help</code>, e.g.:</p>
 <div class="codewrapper sourceCode" id="cb9">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -730,10 +760,7 @@ per machine.</li>
 </ul></div>
 </div>
 </div>
-
-
-
-      </div> <!-- / div.lesson-content -->
+</section></div> <!-- / div.lesson-content -->
     </main><!-- / main#main-content.main-content --><nav class="bottom-pagination mx-md-4" aria-label="Previous and Next Chapter"><div class="d-block d-sm-block d-md-none">
         <a class="chapter-link" href="../instructor/01-basics.html"><i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>Previous</a>
         <a class="chapter-link float-end" href="../instructor/03-create.html">Next<i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
@@ -791,7 +818,7 @@ per machine.</li>
   "url": "https://swcarpentry.github.io/git-novice/instructor/02-setup.html",
   "identifier": "https://swcarpentry.github.io/git-novice/instructor/02-setup.html",
   "dateCreated": "2014-12-04",
-  "dateModified": "2024-12-03",
+  "dateModified": "2024-12-19",
   "datePublished": "2024-12-19"
 }
 

@@ -828,7 +828,7 @@ problems.</p></li>
 </div>
 </section></section><section id="aio-02-setup"><p>Content from <a href="02-setup.html">Setting Up Git</a></p>
 <hr>
-<p>Last updated on 2024-12-03 |
+<p>Last updated on 2024-12-19 |
 
         <a href="https://github.com/swcarpentry/git-novice/edit/main/episodes/02-setup.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 5 minutes</p>
@@ -872,11 +872,17 @@ will set as we get started with Git:</p>
 <li>and that we want to use these settings globally (i.e. for every
 project).</li>
 </ul>
+<section><h2 class="section-heading" id="command-line-git-setup">Command Line Git Setup<a class="anchor" aria-label="anchor" href="#command-line-git-setup"></a>
+</h2>
+<hr class="half-width">
 <p>On a command line, Git commands are written as
 <code>git verb options</code>, where <code>verb</code> is what we
 actually want to do and <code>options</code> is additional optional
-information which may be needed for the <code>verb</code>. To set up a
-new computer:</p>
+information which may be needed for the <code>verb</code>.</p>
+<div class="section level3">
+<h3 id="authorship">Authorship<a class="anchor" aria-label="anchor" href="#authorship"></a>
+</h3>
+<p>To set up a new computer:</p>
 <div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -908,13 +914,10 @@ address private.</p>
 </div>
 </div>
 </div>
-<div id="line-endings" class="callout">
-<div class="callout-square">
-<i class="callout-icon" data-feather="bell"></i>
 </div>
-<div id="line-endings" class="callout-inner">
-<h3 class="callout-title">Line Endings</h3>
-<div class="callout-content">
+<div class="section level3">
+<h3 id="line-endings">Line Endings<a class="anchor" aria-label="anchor" href="#line-endings"></a>
+</h3>
 <p>As with other keys, when you press <kbd>Enter</kbd> or <kbd>↵</kbd>
 or on Macs, <kbd>Return</kbd> on your keyboard, your computer encodes
 this input as a character. Different operating systems use different
@@ -927,13 +930,28 @@ the Pro Git book</a>.</p>
 <p>You can change the way Git recognizes and encodes line endings using
 the <code>core.autocrlf</code> command to <code>git config</code>. The
 following settings are recommended:</p>
-<p>On macOS and Linux:</p>
+<div class="tabs">
+<nav><div id="nav-tab-1" class="nav nav-tabs" role="tablist">
+<button class="nav-link active" id="nav-tab-1-Linux&amp;MacOS" name="Linux&amp;MacOS" data-bs-toggle="tab" data-bs-target="#nav-tabpanel-1-Linux&amp;MacOS" type="button" role="tab" aria-controls="nav-tabpanel-1-Linux&amp;MacOS" aria-selected="true">
+  <h3 class="tab-header" id="nav-tab-heading-1-Linux&amp;MacOS">
+  Linux &amp; MacOS
+  </h3>
+</button>
+<button class="nav-link" id="nav-tab-1-Windows" name="Windows" data-bs-toggle="tab" data-bs-target="#nav-tabpanel-1-Windows" type="button" role="tab" aria-controls="nav-tabpanel-1-Windows" aria-selected="false">
+  <h3 class="tab-header" id="nav-tab-heading-1-Windows">
+  Windows
+  </h3>
+</button>
+</div>
+</nav><div id="nav-tabContent-1" class="tab-content">
+<div id="nav-tabpanel-1-Linux&amp;MacOS" class="tab-pane show active" aria-labelledby="nav-tab-1-Linux&amp;MacOS" role="tabpanel">
 <div class="codewrapper sourceCode" id="cb2">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="ex">$</span> git config <span class="at">--global</span> core.autocrlf input</span></code></pre>
 </div>
-<p>And on Windows:</p>
+</div>
+<div id="nav-tabpanel-1-Windows" class="tab-pane" aria-labelledby="nav-tab-1-Windows" role="tabpanel">
 <div class="codewrapper sourceCode" id="cb3">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -942,6 +960,10 @@ following settings are recommended:</p>
 </div>
 </div>
 </div>
+</div>
+<div class="section level3">
+<h3 id="text-editor">Text Editor<a class="anchor" aria-label="anchor" href="#text-editor"></a>
+</h3>
 <p>To set your preferred text editor, find the correct configuration
 command from this table:</p>
 <table class="table">
@@ -1035,6 +1057,10 @@ want to save your changes and quit, press <kbd>Esc</kbd> then type
 </div>
 </div>
 </div>
+</div>
+<div class="section level3">
+<h3 id="default-branch-name">Default Branch Name<a class="anchor" aria-label="anchor" href="#default-branch-name"></a>
+</h3>
 <p>Git (2.28+) allows configuration of the name of the branch created
 when you initialize any new repository. We want to set this to
 <code>main</code> so it matches the cloud service we will eventually
@@ -1044,20 +1070,19 @@ use.</p>
 </h3>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="ex">$</span> git config <span class="at">--global</span> init.defaultBranch main</span></code></pre>
 </div>
-<div id="default-git-branch-naming" class="callout">
+<div id="history-of-main" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
-<div id="default-git-branch-naming" class="callout-inner">
-<h3 class="callout-title">Default Git branch naming</h3>
+<div id="history-of-main" class="callout-inner">
+<h3 class="callout-title">History of <code>main</code>
+</h3>
 <div class="callout-content">
-<p>Source file changes are associated with a “branch.” For new learners
-in this lesson, it’s enough to know that branches exist, and this lesson
-uses one branch.<br>
-By default, Git will create a branch called <code>master</code> when you
-create a new repository with <code>git init</code> (as explained in the
-next Episode). This term evokes the racist practice of human slavery and
-the <a href="https://github.com/github/renaming" class="external-link">software development
+<p>Source file changes are associated with a “branch”. By default, Git
+will create a branch called <code>master</code> when you create a new
+repository with <code>git init</code> (as explained in the next
+Episode). This term evokes the racist practice of human slavery and the
+<a href="https://github.com/github/renaming" class="external-link">software development
 community</a> has moved to adopt more inclusive language.</p>
 <p>In 2020, most Git code hosting services transitioned to using
 <code>main</code> as the default branch. As an example, any new
@@ -1076,6 +1101,10 @@ configuration, the <code>init.defaultBranch</code> value defaults to
 <p>The five commands we just ran above only need to be run once: the
 flag <code>--global</code> tells Git to use the settings for every
 project, in your user account, on this computer.</p>
+</div>
+</section><section><h2 class="section-heading" id="text-editor-git-setup">Text Editor Git Setup<a class="anchor" aria-label="anchor" href="#text-editor-git-setup"></a>
+</h2>
+<hr class="half-width">
 <p>Let’s review those settings and test our <code>core.editor</code>
 right away:</p>
 <div class="codewrapper sourceCode" id="cb5">
@@ -1083,17 +1112,18 @@ right away:</p>
 </h3>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="ex">$</span> git config <span class="at">--global</span> <span class="at">--edit</span></span></code></pre>
 </div>
-<p>Let’s close the file without making any additional changes. Remember,
-since typos in the config file will cause issues, it’s safer to view the
+<p>Let’s close the file without making any additional changes. Since
+typos in the config file will cause issues, it’s safer to view the
 configuration with:</p>
 <div class="codewrapper sourceCode" id="cb6">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="ex">$</span> git config <span class="at">--list</span></span></code></pre>
 </div>
-<p>And if necessary, change your configuration using the same commands
-to choose another editor or update your email address. This can be done
-as many times as you want.</p>
+<p>And alter the configuration via the command line. You can re-run the
+commands above as many times as you want to change your configuration.
+The <a href="discuss.html#more-advanced-git-configuration">discussion</a> page
+has details on more recommended settings.</p>
 <div id="proxy" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
@@ -1126,10 +1156,10 @@ the case, you may also need to tell Git about the proxy:</p>
 <div id="git-help-and-manual" class="callout-inner">
 <h3 class="callout-title">Git Help and Manual</h3>
 <div class="callout-content">
-<p>Always remember that if you forget the subcommands or options of a
-<code>git</code> command, you can access the relevant list of options
-typing <code>git &lt;command&gt; -h</code> or access the corresponding
-Git manual by typing <code>git &lt;command&gt; --help</code>, e.g.:</p>
+<p>If you forget the subcommands or options of a <code>git</code>
+command, you can access the relevant list of options typing
+<code>git &lt;command&gt; -h</code> or access the corresponding Git
+manual by typing <code>git &lt;command&gt; --help</code>, e.g.:</p>
 <div class="codewrapper sourceCode" id="cb9">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -1163,7 +1193,8 @@ per machine.</li>
 </ul>
 </div>
 </div>
-</div></section><section id="aio-03-create"><p>Content from <a href="03-create.html">Creating a Repository</a></p>
+</div>
+</section></section><section id="aio-03-create"><p>Content from <a href="03-create.html">Creating a Repository</a></p>
 <hr>
 <p>Last updated on 2024-12-19 |
 
@@ -1252,7 +1283,7 @@ subdirectory, we will lose the project’s history.</p>
 <button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler1" aria-expanded="false" aria-controls="collapseSpoiler1">
   <h3 class="accordion-header" id="headingSpoiler1">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div> FCM Comparison </h3>
 </button>
-<div id="collapseSpoiler1" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler1" aria-labelledby="headingSpoiler1">
+<div id="collapseSpoiler1" class="accordion-collapse collapse" aria-labelledby="headingSpoiler1" data-bs-parent="#accordionSpoiler1">
 <div class="accordion-body">
 <p>FCM, which wraps SVN, is a <a href="https://about.gitlab.com/topics/version-control/what-is-centralized-version-control-system/" class="external-link">centralised
 version control</a> system. There is one central repository stored on a
@@ -1291,7 +1322,7 @@ nothing to commit (create/copy files and use "git add" to track)</code></pre>
 <button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler2" aria-expanded="false" aria-controls="collapseSpoiler2">
   <h3 class="accordion-header" id="headingSpoiler2">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div> FCM Comparison </h3>
 </button>
-<div id="collapseSpoiler2" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler2" aria-labelledby="headingSpoiler2">
+<div id="collapseSpoiler2" class="accordion-collapse collapse" aria-labelledby="headingSpoiler2" data-bs-parent="#accordionSpoiler2">
 <div class="accordion-body">
 <p><code>git status</code> is equivalent to:</p>
 <div class="codewrapper sourceCode" id="cb8">
@@ -1403,7 +1434,7 @@ the <code>clouds</code> subdirectory?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>No. You do not need to make the <code>clouds</code> subdirectory a
 Git repository because the <code>weather</code> repository will track
@@ -1451,7 +1482,7 @@ Git repository. How can you undo the last <code>git init</code> in the
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Solution – USE WITH CAUTION! </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <div class="section level3">
 <h3 id="background">Background<a class="anchor" aria-label="anchor" href="#background"></a>
@@ -1596,7 +1627,7 @@ repository is identical to the last commit.</p>
 <button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler1" aria-expanded="false" aria-controls="collapseSpoiler1">
   <h3 class="accordion-header" id="headingSpoiler1">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div> FCM Comparison </h3>
 </button>
-<div id="collapseSpoiler1" class="accordion-collapse collapse" aria-labelledby="headingSpoiler1" data-bs-parent="#accordionSpoiler1">
+<div id="collapseSpoiler1" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler1" aria-labelledby="headingSpoiler1">
 <div class="accordion-body">
 <p><code>main</code> == <code>trunk</code></p>
 <p>In an earlier episode we set our default branch to be called
@@ -1644,7 +1675,7 @@ branch will be named <strong>forecast</strong>:</p>
 </button>
 </div>
 </nav><div id="nav-tabContent-1" class="tab-content">
-<div id="nav-tabpanel-1-1" class="tab-pane show active" role="tabpanel" aria-labelledby="nav-tab-1-1">
+<div id="nav-tabpanel-1-1" class="tab-pane show active" aria-labelledby="nav-tab-1-1" role="tabpanel">
 <p><code>git switch</code> is a more modern command to navigate between
 branches. <code>git switch</code> used with the <code>-c</code> flag
 automatically creates and switches you to a new branch:</p>
@@ -1659,7 +1690,7 @@ automatically creates and switches you to a new branch:</p>
 <pre class="output" tabindex="0"><code>Switched to branch 'forecast'</code></pre>
 </div>
 </div>
-<div id="nav-tabpanel-1-2" class="tab-pane" role="tabpanel" aria-labelledby="nav-tab-1-2">
+<div id="nav-tabpanel-1-2" class="tab-pane" aria-labelledby="nav-tab-1-2" role="tabpanel">
 <p>To create a new branch use
 <code>git branch &lt;branch-name&gt;</code>:</p>
 <div class="codewrapper sourceCode" id="cb8">
@@ -1681,7 +1712,7 @@ main branch. To navigate between branches use
 <pre class="output" tabindex="0"><code>Switched to branch 'forecast'</code></pre>
 </div>
 </div>
-<div id="nav-tabpanel-1-3" class="tab-pane" role="tabpanel" aria-labelledby="nav-tab-1-3">
+<div id="nav-tabpanel-1-3" class="tab-pane" aria-labelledby="nav-tab-1-3" role="tabpanel">
 <p>The <code>git checkout</code> command can also be used to navigate
 between branches. <code>git checkout</code> used with the
 <code>-b</code> flag automatically creates and switches you to the new
@@ -1769,7 +1800,7 @@ right for you and your team.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb18">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1799,7 +1830,7 @@ command.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <p>The <code>-m</code> flag used with <code>git branch</code> lets you
 rename a branch.</p>
@@ -1834,7 +1865,7 @@ command.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <p>The <code>git switch</code> command lets you define a
 <code>&lt;start-point&gt;</code> to branch from:</p>
@@ -1955,7 +1986,7 @@ the correct branch point.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
   <h4 class="accordion-header" id="headingSolution4"> Show me the solution </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
 <div class="accordion-body">
 <p>Git won’t let you delete a branch you are currently on! Try it for
 yourself:</p>
@@ -2198,7 +2229,7 @@ made changes and/or what their impact will be.</commit></p>
 <button class="accordion-button instructor-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseInstructor1" aria-expanded="false" aria-controls="collapseInstructor1">
   <h3 class="accordion-header" id="headingInstructor1">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="edit-2"></i></div> Instructor Note </h3>
 </button>
-<div id="collapseInstructor1" class="accordion-collapse collapse" aria-labelledby="headingInstructor1" data-bs-parent="#accordionInstructor1">
+<div id="collapseInstructor1" class="accordion-collapse collapse" data-bs-parent="#accordionInstructor1" aria-labelledby="headingInstructor1">
 <div class="accordion-body">
 <p>The <a href="https://whatthecommit.com/" class="external-link">whatthecommit site</a> can
 be used to show example commit messages, good and bad, pulled from
@@ -2232,7 +2263,7 @@ them.</strong> We recommend you avoid using <code>git add .</code> and
 <button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler1" aria-expanded="false" aria-controls="collapseSpoiler1">
   <h3 class="accordion-header" id="headingSpoiler1">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div> FCM Comparison </h3>
 </button>
-<div id="collapseSpoiler1" class="accordion-collapse collapse" aria-labelledby="headingSpoiler1" data-bs-parent="#accordionSpoiler1">
+<div id="collapseSpoiler1" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler1" aria-labelledby="headingSpoiler1">
 <div class="accordion-body">
 <p>Running <code>git add</code> followed by <code>git commit</code> is
 equivalent to:</p>
@@ -2481,7 +2512,7 @@ Try to stage things manually, or you might find yourself searching for
 <button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler2" aria-expanded="false" aria-controls="collapseSpoiler2">
   <h3 class="accordion-header" id="headingSpoiler2">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div> FCM Comparison </h3>
 </button>
-<div id="collapseSpoiler2" class="accordion-collapse collapse" aria-labelledby="headingSpoiler2" data-bs-parent="#accordionSpoiler2">
+<div id="collapseSpoiler2" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler2" aria-labelledby="headingSpoiler2">
 <div class="accordion-body">
 <p>In FCM there is no concept of a staging area. FCM will commit all
 file modifications at once. This can lead to rather large commits. In
@@ -2716,7 +2747,7 @@ the last commit made to <code>forecast.md</code>?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p>Answer 1 is not descriptive enough, and the purpose of the commit is
 unclear; and answer 2 is redundant to using “git diff” to see what
@@ -2767,7 +2798,7 @@ imperative.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <ol style="list-style-type: decimal">
 <li>Would only create a commit if files have already been staged.</li>
@@ -2806,7 +2837,7 @@ changes.</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <p>First we make our changes to the <code>forecast.md</code> and
 <code>atlas.md</code> files:</p>
@@ -2902,7 +2933,7 @@ state.</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
   <h4 class="accordion-header" id="headingSolution4"> Show me the solution </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
 <div class="accordion-body">
 <p>If needed, move out of the <code>weather</code> folder:</p>
 <div class="codewrapper sourceCode" id="cb63">
@@ -3035,7 +3066,7 @@ commits!</p>
 <button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler1" aria-expanded="false" aria-controls="collapseSpoiler1">
   <h3 class="accordion-header" id="headingSpoiler1">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div> FCM Comparison </h3>
 </button>
-<div id="collapseSpoiler1" class="accordion-collapse collapse" aria-labelledby="headingSpoiler1" data-bs-parent="#accordionSpoiler1">
+<div id="collapseSpoiler1" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler1" aria-labelledby="headingSpoiler1">
 <div class="accordion-body">
 <p><code>git log</code> is equivalent to:</p>
 <div class="codewrapper sourceCode" id="cb3">
@@ -3448,7 +3479,7 @@ index 4c96be7..541eee7 100644
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p>The answer is 2.</p>
 <p>The changes to the file from the second <code>echo</code> command are
@@ -3651,7 +3682,7 @@ file recorded in <code>HEAD</code>, which is the last saved commit.</p>
 <button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler1" aria-expanded="false" aria-controls="collapseSpoiler1">
   <h3 class="accordion-header" id="headingSpoiler1">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div> FCM Comparison </h3>
 </button>
-<div id="collapseSpoiler1" class="accordion-collapse collapse" aria-labelledby="headingSpoiler1" data-bs-parent="#accordionSpoiler1">
+<div id="collapseSpoiler1" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler1" aria-labelledby="headingSpoiler1">
 <div class="accordion-body">
 <p><code>git restore</code> is equivalent to:</p>
 <div class="codewrapper sourceCode" id="cb5">
@@ -3853,7 +3884,7 @@ version of her Python script called <code>data_cruncher.py</code>?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p>The answer is (5)-Both 2 and 4.</p>
 <p>The <code>restore</code> command restores files from the repository,
@@ -3913,7 +3944,7 @@ e.g. 0b1d055).</p></li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <p>The command <code>git log</code> lists project history with commit
 IDs.</p>

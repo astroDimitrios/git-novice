@@ -483,26 +483,129 @@ available options are described in the manual:</p>
 </h3>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="ex">$</span> git config <span class="at">--help</span></span></code></pre>
 </div>
+<div class="section level3">
+<h3 id="recommended-settings">Recommended Settings<a class="anchor" aria-label="anchor" href="#recommended-settings"></a></h3>
+<p>We recommend setting the following:</p>
+<pre class="gitconfig"><code>[merge]
+    ff = false
+    conflictStyle = diff3
+[mergetool]
+    keepBackup = false
+[fetch]
+    prune = true
+[pull]
+    ff = only</code></pre>
+<table class="table"><colgroup><col width="24%"><col width="7%"><col width="67%"></colgroup><thead><tr class="header"><th>Setting</th>
+<th>Value</th>
+<th>Justification</th>
+</tr></thead><tbody><tr class="odd"><td>merge.ff</td>
+<td>false</td>
+<td>Make <code>git merge</code> always a “true merge”</td>
+</tr><tr class="even"><td>merge.conflictStyle</td>
+<td>diff3</td>
+<td>Add common ancestor to conflict markers</td>
+</tr><tr class="odd"><td>mergetool.keepBackup</td>
+<td>false</td>
+<td>Tidy <code>*.orig</code> files when <code>mergetool</code>
+finishes</td>
+</tr><tr class="even"><td>fetch.prune</td>
+<td>true</td>
+<td>Automatically delete references to deleted remote branches</td>
+</tr><tr class="odd"><td>pull.ff</td>
+<td>only</td>
+<td>Make <code>git pull</code> only fast-forward</td>
+</tr></tbody></table><p>These settings will be explained in later episodes and in the follow
+on Git &amp; GitHub Working Practices training.</p>
+<p>Set them using:</p>
+<div class="codewrapper sourceCode" id="cb5">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="ex">$</span> git config <span class="at">--global</span> setting value</span>
+<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a><span class="ex">$</span> git config <span class="at">--global</span> merge.ff false</span></code></pre>
+</div>
+<div class="section level4">
+<h4 id="aliases">Aliases<a class="anchor" aria-label="anchor" href="#aliases"></a></h4>
 <p>In particular, you might find it useful to add aliases. These are
 like shortcuts for longer Git commands. For example, if you get sick of
 typing <code>git checkout</code> all the time, you could run the
 command:</p>
-<div class="codewrapper sourceCode" id="cb4">
-<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="ex">$</span> git config <span class="at">--global</span> alias.co checkout</span></code></pre>
-</div>
-<p>Now if we return to the example from <a href="05-history.html">Exploring History</a> where we ran:</p>
-<div class="codewrapper sourceCode" id="cb5">
-<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="ex">$</span> git checkout f22b25e forecast.md</span></code></pre>
-</div>
-<p>we could now instead type:</p>
 <div class="codewrapper sourceCode" id="cb6">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="ex">$</span> git co f22b25e forecast.md</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="ex">$</span> git config <span class="at">--global</span> alias.co checkout</span></code></pre>
+</div>
+<p>Now if we return to the example from <a href="05-history.html">Exploring History</a> where we ran:</p>
+<div class="codewrapper sourceCode" id="cb7">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="ex">$</span> git checkout f22b25e forecast.md</span></code></pre>
+</div>
+<p>we could now instead type:</p>
+<div class="codewrapper sourceCode" id="cb8">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="ex">$</span> git co f22b25e forecast.md</span></code></pre>
+</div>
+<p>The following are some aliases others have found useful. We recommend
+returning to these once you have learnt more Git commands and become
+more comfortable with Git in general.</p>
+<pre class="gitconfig"><code>[alias]
+    st = status
+    ci = commit
+    ca = commit -a
+    br = branch
+    co = checkout
+    cb = checkout -b
+    lg = log --oneline
+    graph = log --oneline --graph
+    dog = log --decorate --oneline --graph
+    sdiff = diff --staged
+    unstage = restore --staged
+    amend = commit --amend --no-edit
+    reword = commit --amend --only --
+    ff = merge --ff-only
+    update = "! git pull --ff-only &amp;&amp; git push"</code></pre>
+<p>Set them using:</p>
+<div class="codewrapper sourceCode" id="cb10">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a><span class="ex">$</span> git config <span class="at">--global</span> alias.<span class="op">&lt;</span>short<span class="op">&gt;</span> <span class="st">"&lt;command&gt;"</span></span>
+<span id="cb10-2"><a href="#cb10-2" tabindex="-1"></a><span class="ex">$</span> git config <span class="at">--global</span> alias.st <span class="st">"status"</span></span></code></pre>
+</div>
+</div>
+</div>
+<div class="section level3">
+<h3 id="viewing-settings">Viewing Settings<a class="anchor" aria-label="anchor" href="#viewing-settings"></a></h3>
+<div class="codewrapper sourceCode" id="cb11">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--list</span> <span class="at">--show-origin</span>  <span class="co"># Shows all configurations with their origins</span></span>
+<span id="cb11-2"><a href="#cb11-2" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> <span class="at">--list</span>       <span class="co"># Shows global configurations</span></span>
+<span id="cb11-3"><a href="#cb11-3" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--local</span> <span class="at">--list</span>        <span class="co"># Shows configurations for the current repository</span></span></code></pre>
+</div>
+</div>
+<div class="section level3">
+<h3 id="removing-settings">Removing Settings<a class="anchor" aria-label="anchor" href="#removing-settings"></a></h3>
+<p>The following actions can <strong>NOT</strong> be undone. Be certain
+you wish to delete any settings. Simply add <code>--unset</code> before
+the key:</p>
+<div class="codewrapper sourceCode" id="cb12">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" tabindex="-1"></a><span class="ex">$</span> git config <span class="at">--global</span> <span class="at">--unset</span> alias.st</span></code></pre>
+</div>
+<p>You may wish to completely clear your global settings:</p>
+<div class="codewrapper sourceCode" id="cb13">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" tabindex="-1"></a><span class="ex">$</span> rm ~/.gitconfig</span></code></pre>
+</div>
+<p>Or your local settings:</p>
+<div class="codewrapper sourceCode" id="cb14">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" tabindex="-1"></a><span class="ex">$</span> rm .git/config</span></code></pre>
+</div>
 </div>
 </section><section><h2 class="section-heading" id="styling-gits-log">Styling Git’s Log<a class="anchor" aria-label="anchor" href="#styling-gits-log"></a></h2>
 <hr class="half-width"><p>A good target for customization is output from the log. The default
@@ -513,21 +616,21 @@ remotes.</p>
 <code>git config --help</code> to look for different ways to change the
 log output. Try the following commands and see what effect they
 have:</p>
-<div class="codewrapper sourceCode" id="cb7">
+<div class="codewrapper sourceCode" id="cb15">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="ex">$</span> git config <span class="at">--global</span> alias.lg <span class="st">"log --graph"</span></span>
-<span id="cb7-2"><a href="#cb7-2" tabindex="-1"></a><span class="ex">$</span> git config <span class="at">--global</span> log.abbrevCommit true</span>
-<span id="cb7-3"><a href="#cb7-3" tabindex="-1"></a><span class="ex">$</span> git config <span class="at">--global</span> format.pretty oneline</span>
-<span id="cb7-4"><a href="#cb7-4" tabindex="-1"></a><span class="ex">$</span> git lg</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" tabindex="-1"></a><span class="ex">$</span> git config <span class="at">--global</span> alias.lg <span class="st">"log --graph"</span></span>
+<span id="cb15-2"><a href="#cb15-2" tabindex="-1"></a><span class="ex">$</span> git config <span class="at">--global</span> log.abbrevCommit true</span>
+<span id="cb15-3"><a href="#cb15-3" tabindex="-1"></a><span class="ex">$</span> git config <span class="at">--global</span> format.pretty oneline</span>
+<span id="cb15-4"><a href="#cb15-4" tabindex="-1"></a><span class="ex">$</span> git lg</span></code></pre>
 </div>
 <p>If you don’t like the effects, you can undo them with:</p>
-<div class="codewrapper sourceCode" id="cb8">
+<div class="codewrapper sourceCode" id="cb16">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="ex">$</span> git config <span class="at">--global</span> <span class="at">--unset</span> alias.lg</span>
-<span id="cb8-2"><a href="#cb8-2" tabindex="-1"></a><span class="ex">$</span> git config <span class="at">--global</span> <span class="at">--unset</span> log.abbrevCommit</span>
-<span id="cb8-3"><a href="#cb8-3" tabindex="-1"></a><span class="ex">$</span> git config <span class="at">--global</span> <span class="at">--unset</span> format.pretty</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" tabindex="-1"></a><span class="ex">$</span> git config <span class="at">--global</span> <span class="at">--unset</span> alias.lg</span>
+<span id="cb16-2"><a href="#cb16-2" tabindex="-1"></a><span class="ex">$</span> git config <span class="at">--global</span> <span class="at">--unset</span> log.abbrevCommit</span>
+<span id="cb16-3"><a href="#cb16-3" tabindex="-1"></a><span class="ex">$</span> git config <span class="at">--global</span> <span class="at">--unset</span> format.pretty</span></code></pre>
 </div>
 <div id="undoing-git-configuration-changes" class="callout">
 <div class="callout-square">
@@ -570,11 +673,11 @@ difficult to compare different versions of your project.</p>
 go see what would have happened if you had tried using outputs from a
 word processor instead of plain text.</p>
 <p>Create a new directory and go into it:</p>
-<div class="codewrapper sourceCode" id="cb9">
+<div class="codewrapper sourceCode" id="cb17">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a><span class="ex">$</span> mkdir weather-nontext</span>
-<span id="cb9-2"><a href="#cb9-2" tabindex="-1"></a><span class="ex">$</span> cd weather-nontext</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" tabindex="-1"></a><span class="ex">$</span> mkdir weather-nontext</span>
+<span id="cb17-2"><a href="#cb17-2" tabindex="-1"></a><span class="ex">$</span> cd weather-nontext</span></code></pre>
 </div>
 <p>Use a program such as Microsoft Word or LibreOffice Writer to create
 a new document. Enter the same text that we began with before:</p>
@@ -588,12 +691,12 @@ Cloudy with a chance of pizza.</code></pre>
 <p>Save the document into the <code>weather-nontext</code> directory
 with the name of <code>forecast.doc</code>. Back in the terminal, run
 the usual commands for setting up a new Git repository:</p>
-<div class="codewrapper sourceCode" id="cb11">
+<div class="codewrapper sourceCode" id="cb19">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a><span class="ex">$</span> git init</span>
-<span id="cb11-2"><a href="#cb11-2" tabindex="-1"></a><span class="ex">$</span> git add forecast.doc</span>
-<span id="cb11-3"><a href="#cb11-3" tabindex="-1"></a><span class="ex">$</span> git commit <span class="at">-m</span> <span class="st">"Create a Word file with the forecast"</span></span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" tabindex="-1"></a><span class="ex">$</span> git init</span>
+<span id="cb19-2"><a href="#cb19-2" tabindex="-1"></a><span class="ex">$</span> git add forecast.doc</span>
+<span id="cb19-3"><a href="#cb19-3" tabindex="-1"></a><span class="ex">$</span> git commit <span class="at">-m</span> <span class="st">"Create a Word file with the forecast"</span></span></code></pre>
 </div>
 <p>Then make the same changes to <code>forecast.doc</code> that we
 previously made to <code>forecast.md</code>.</p>
@@ -608,10 +711,10 @@ Morning rainbows followed by light showers.</code></pre>
 </div>
 <p>Save and close the word processor. Now see what Git thinks of your
 changes:</p>
-<div class="codewrapper sourceCode" id="cb13">
+<div class="codewrapper sourceCode" id="cb21">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" tabindex="-1"></a><span class="ex">$</span> git diff</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1" tabindex="-1"></a><span class="ex">$</span> git diff</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -657,18 +760,18 @@ replace the logo completely rather than merge little differences in.</p>
 when working on a project. It might be required to remove a file from
 the repository.</p>
 <p>Create a new file:</p>
-<div class="codewrapper sourceCode" id="cb16">
+<div class="codewrapper sourceCode" id="cb24">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" tabindex="-1"></a><span class="ex">$</span> echo <span class="st">"This is where we store MEOP information"</span> <span class="op">&gt;</span> MEOP.md</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb24-1"><a href="#cb24-1" tabindex="-1"></a><span class="ex">$</span> echo <span class="st">"This is where we store MEOP information"</span> <span class="op">&gt;</span> MEOP.md</span></code></pre>
 </div>
 <p>Now add to the repository like you have learned earlier:</p>
-<div class="codewrapper sourceCode" id="cb17">
+<div class="codewrapper sourceCode" id="cb25">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" tabindex="-1"></a><span class="ex">$</span> git add MEOP.md</span>
-<span id="cb17-2"><a href="#cb17-2" tabindex="-1"></a><span class="ex">$</span> git commit <span class="at">-m</span> <span class="st">'Add MEOP information'</span></span>
-<span id="cb17-3"><a href="#cb17-3" tabindex="-1"></a><span class="ex">$</span> git status</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb25-1"><a href="#cb25-1" tabindex="-1"></a><span class="ex">$</span> git add MEOP.md</span>
+<span id="cb25-2"><a href="#cb25-2" tabindex="-1"></a><span class="ex">$</span> git commit <span class="at">-m</span> <span class="st">'Add MEOP information'</span></span>
+<span id="cb25-3"><a href="#cb25-3" tabindex="-1"></a><span class="ex">$</span> git status</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -678,11 +781,11 @@ nothing to commit, working directory clean</code></pre>
 </div>
 <p>Adding MEOP data to the weather repository was not a good idea. Let
 us remove it from the disk and let Git know about it:</p>
-<div class="codewrapper sourceCode" id="cb19">
+<div class="codewrapper sourceCode" id="cb27">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" tabindex="-1"></a><span class="ex">$</span> git rm MEOP.md</span>
-<span id="cb19-2"><a href="#cb19-2" tabindex="-1"></a><span class="ex">$</span> git status</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb27-1"><a href="#cb27-1" tabindex="-1"></a><span class="ex">$</span> git rm MEOP.md</span>
+<span id="cb27-2"><a href="#cb27-2" tabindex="-1"></a><span class="ex">$</span> git status</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -698,29 +801,29 @@ Changes to be committed:
 file from the repository itself. Note that the file will be removed in
 the new commit. The previous commit will still have the file, if you
 were to retrieve that specific commit.</p>
-<div class="codewrapper sourceCode" id="cb21">
+<div class="codewrapper sourceCode" id="cb29">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1" tabindex="-1"></a><span class="ex">$</span> git commit <span class="at">-m</span> <span class="st">'Remove info on MEOP seals'</span></span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb29-1"><a href="#cb29-1" tabindex="-1"></a><span class="ex">$</span> git commit <span class="at">-m</span> <span class="st">'Remove info on MEOP seals'</span></span></code></pre>
 </div>
 </section><section><h2 class="section-heading" id="removing-a-file-with-unix">Removing a File with Unix<a class="anchor" aria-label="anchor" href="#removing-a-file-with-unix"></a></h2>
 <hr class="half-width"><p>Sometimes we might forget to remove the file through Git. If you
 removed the file with Unix <code>rm</code> instead of using
 <code>git rm</code>, no worries, Git is smart enough to notice the
 missing file. Let us recreate the file and commit it again.</p>
-<div class="codewrapper sourceCode" id="cb22">
+<div class="codewrapper sourceCode" id="cb30">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb22-1"><a href="#cb22-1" tabindex="-1"></a><span class="ex">$</span> echo <span class="st">"More MEOP info"</span> <span class="op">&gt;</span> MEOP-info.md</span>
-<span id="cb22-2"><a href="#cb22-2" tabindex="-1"></a><span class="ex">$</span> git add MEOP-info.md</span>
-<span id="cb22-3"><a href="#cb22-3" tabindex="-1"></a><span class="ex">$</span> git commit <span class="at">-m</span> <span class="st">'Add MEOP info again'</span></span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb30-1"><a href="#cb30-1" tabindex="-1"></a><span class="ex">$</span> echo <span class="st">"More MEOP info"</span> <span class="op">&gt;</span> MEOP-info.md</span>
+<span id="cb30-2"><a href="#cb30-2" tabindex="-1"></a><span class="ex">$</span> git add MEOP-info.md</span>
+<span id="cb30-3"><a href="#cb30-3" tabindex="-1"></a><span class="ex">$</span> git commit <span class="at">-m</span> <span class="st">'Add MEOP info again'</span></span></code></pre>
 </div>
 <p>Now we remove the file with Unix <code>rm</code>:</p>
-<div class="codewrapper sourceCode" id="cb23">
+<div class="codewrapper sourceCode" id="cb31">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb23-1"><a href="#cb23-1" tabindex="-1"></a><span class="ex">$</span> rm MEOP-info.md</span>
-<span id="cb23-2"><a href="#cb23-2" tabindex="-1"></a><span class="ex">$</span> git status</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb31-1"><a href="#cb31-1" tabindex="-1"></a><span class="ex">$</span> rm MEOP-info.md</span>
+<span id="cb31-2"><a href="#cb31-2" tabindex="-1"></a><span class="ex">$</span> git status</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -738,11 +841,11 @@ no changes added to commit (use "git add" and/or "git commit -a")</code></pre>
 been removed from the disk. The next step is to “stage” the removal of
 the file from the repository. This is done with the command
 <code>git rm</code> just as before.</p>
-<div class="codewrapper sourceCode" id="cb25">
+<div class="codewrapper sourceCode" id="cb33">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb25-1"><a href="#cb25-1" tabindex="-1"></a><span class="ex">$</span> git rm MEOP-info.md</span>
-<span id="cb25-2"><a href="#cb25-2" tabindex="-1"></a><span class="ex">$</span> git status</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb33-1"><a href="#cb33-1" tabindex="-1"></a><span class="ex">$</span> git rm MEOP-info.md</span>
+<span id="cb33-2"><a href="#cb33-2" tabindex="-1"></a><span class="ex">$</span> git status</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -756,34 +859,34 @@ Changes to be committed:
 </div>
 <p>The change that was made in Unix has now been staged and needs to be
 committed.</p>
-<div class="codewrapper sourceCode" id="cb27">
+<div class="codewrapper sourceCode" id="cb35">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb27-1"><a href="#cb27-1" tabindex="-1"></a><span class="ex">$</span> git commit <span class="at">-m</span> <span class="st">'Remove info on MEOP seals, again!'</span></span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb35-1"><a href="#cb35-1" tabindex="-1"></a><span class="ex">$</span> git commit <span class="at">-m</span> <span class="st">'Remove info on MEOP seals, again!'</span></span></code></pre>
 </div>
 </section><section><h2 class="section-heading" id="renaming-a-file">Renaming a File<a class="anchor" aria-label="anchor" href="#renaming-a-file"></a></h2>
 <hr class="half-width"><p>Another common change when working on a project is to rename a
 file.</p>
 <p>Create a file for cirrus clouds:</p>
-<div class="codewrapper sourceCode" id="cb28">
+<div class="codewrapper sourceCode" id="cb36">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb28-1"><a href="#cb28-1" tabindex="-1"></a><span class="ex">$</span> echo <span class="st">"Very wispy"</span> <span class="op">&gt;</span> cirrus.md</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb36-1"><a href="#cb36-1" tabindex="-1"></a><span class="ex">$</span> echo <span class="st">"Very wispy"</span> <span class="op">&gt;</span> cirrus.md</span></code></pre>
 </div>
 <p>Add it to the repository:</p>
-<div class="codewrapper sourceCode" id="cb29">
+<div class="codewrapper sourceCode" id="cb37">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb29-1"><a href="#cb29-1" tabindex="-1"></a><span class="ex">$</span> git add cirrus.md</span>
-<span id="cb29-2"><a href="#cb29-2" tabindex="-1"></a><span class="ex">$</span> git commit <span class="at">-m</span> <span class="st">'Add cirrus clouds file'</span></span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb37-1"><a href="#cb37-1" tabindex="-1"></a><span class="ex">$</span> git add cirrus.md</span>
+<span id="cb37-2"><a href="#cb37-2" tabindex="-1"></a><span class="ex">$</span> git commit <span class="at">-m</span> <span class="st">'Add cirrus clouds file'</span></span></code></pre>
 </div>
 <p>You realise you identified the cloud incorrectly. Rename the file
 <code>cirrus.md</code> to <code>cumulus.md</code> with Git:</p>
-<div class="codewrapper sourceCode" id="cb30">
+<div class="codewrapper sourceCode" id="cb38">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb30-1"><a href="#cb30-1" tabindex="-1"></a><span class="ex">$</span> git mv cirrus.md cumulus.md</span>
-<span id="cb30-2"><a href="#cb30-2" tabindex="-1"></a><span class="ex">$</span> git status</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb38-1"><a href="#cb38-1" tabindex="-1"></a><span class="ex">$</span> git mv cirrus.md cumulus.md</span>
+<span id="cb38-2"><a href="#cb38-2" tabindex="-1"></a><span class="ex">$</span> git status</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -795,10 +898,10 @@ Changes to be committed:
 	renamed:    cirrus.md -&gt;  cumulus.md</code></pre>
 </div>
 <p>The final step is commit our change to the repository:</p>
-<div class="codewrapper sourceCode" id="cb32">
+<div class="codewrapper sourceCode" id="cb40">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb32-1"><a href="#cb32-1" tabindex="-1"></a><span class="ex">$</span> git commit <span class="at">-m</span> <span class="st">'Correct the cloud type'</span></span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb40-1"><a href="#cb40-1" tabindex="-1"></a><span class="ex">$</span> git commit <span class="at">-m</span> <span class="st">'Correct the cloud type'</span></span></code></pre>
 </div>
 </section><section><h2 class="section-heading" id="renaming-a-file-with-unix">Renaming a File with Unix<a class="anchor" aria-label="anchor" href="#renaming-a-file-with-unix"></a></h2>
 <hr class="half-width"><p>If you forgot to use Git and you used Unix <code>mv</code> instead of
@@ -806,20 +909,20 @@ Changes to be committed:
 be able to deal with it. Let’s try again renaming the file, this time
 with Unix <code>mv</code>. First, we need to recreate the
 <code>cirrus.md</code> file:</p>
-<div class="codewrapper sourceCode" id="cb33">
+<div class="codewrapper sourceCode" id="cb41">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb33-1"><a href="#cb33-1" tabindex="-1"></a><span class="ex">$</span> echo <span class="st">"Very wispy"</span> <span class="op">&gt;</span> cirrus.md</span>
-<span id="cb33-2"><a href="#cb33-2" tabindex="-1"></a><span class="ex">$</span> git add cirrus.md</span>
-<span id="cb33-3"><a href="#cb33-3" tabindex="-1"></a><span class="ex">$</span> git commit <span class="at">-m</span> <span class="st">'Add cirrus clouds file'</span></span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb41-1"><a href="#cb41-1" tabindex="-1"></a><span class="ex">$</span> echo <span class="st">"Very wispy"</span> <span class="op">&gt;</span> cirrus.md</span>
+<span id="cb41-2"><a href="#cb41-2" tabindex="-1"></a><span class="ex">$</span> git add cirrus.md</span>
+<span id="cb41-3"><a href="#cb41-3" tabindex="-1"></a><span class="ex">$</span> git commit <span class="at">-m</span> <span class="st">'Add cirrus clouds file'</span></span></code></pre>
 </div>
 <p>Let us rename the file and see what Git can figured out by
 itself:</p>
-<div class="codewrapper sourceCode" id="cb34">
+<div class="codewrapper sourceCode" id="cb42">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb34-1"><a href="#cb34-1" tabindex="-1"></a><span class="ex">$</span> mv cirrus.md cumulus.md</span>
-<span id="cb34-2"><a href="#cb34-2" tabindex="-1"></a><span class="ex">$</span> git status</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb42-1"><a href="#cb42-1" tabindex="-1"></a><span class="ex">$</span> mv cirrus.md cumulus.md</span>
+<span id="cb42-2"><a href="#cb42-2" tabindex="-1"></a><span class="ex">$</span> git status</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -842,11 +945,11 @@ no changes added to commit (use "git add" and/or "git commit -a")</code></pre>
 from the file system and a new file <code>cumulus.md</code> has showed
 up.</p>
 <p>Add those changes to the staging area:</p>
-<div class="codewrapper sourceCode" id="cb36">
+<div class="codewrapper sourceCode" id="cb44">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb36-1"><a href="#cb36-1" tabindex="-1"></a><span class="ex">$</span> git add cirrus.md cumulus.md</span>
-<span id="cb36-2"><a href="#cb36-2" tabindex="-1"></a><span class="ex">$</span> git status</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb44-1"><a href="#cb44-1" tabindex="-1"></a><span class="ex">$</span> git add cirrus.md cumulus.md</span>
+<span id="cb44-2"><a href="#cb44-2" tabindex="-1"></a><span class="ex">$</span> git status</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -862,10 +965,10 @@ Changes to be committed:
 has not disappeared - it has simply been renamed.</p>
 <p>The final step, as before, is to commit our change to the
 repository:</p>
-<div class="codewrapper sourceCode" id="cb38">
+<div class="codewrapper sourceCode" id="cb46">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb38-1"><a href="#cb38-1" tabindex="-1"></a><span class="ex">$</span> git commit <span class="at">-m</span> <span class="st">'Correct the cloud type'</span></span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb46-1"><a href="#cb46-1" tabindex="-1"></a><span class="ex">$</span> git commit <span class="at">-m</span> <span class="st">'Correct the cloud type'</span></span></code></pre>
 </div>
 <p>This works because Git can tell that the file was only re-named, they
 contain the same content. If you are renaming files add this change as a
@@ -889,13 +992,13 @@ root directory.</p>
 <h3 class="callout-title">Ignoring Nested Files: Challenge Problem</h3>
 <div class="callout-content">
 <p>Given a directory structure that looks like:</p>
-<div class="codewrapper sourceCode" id="cb39">
+<div class="codewrapper sourceCode" id="cb47">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb39-1"><a href="#cb39-1" tabindex="-1"></a><span class="ex">results/data</span></span>
-<span id="cb39-2"><a href="#cb39-2" tabindex="-1"></a><span class="ex">results/plots</span></span>
-<span id="cb39-3"><a href="#cb39-3" tabindex="-1"></a><span class="ex">results/run001.log</span></span>
-<span id="cb39-4"><a href="#cb39-4" tabindex="-1"></a><span class="ex">results/run002.log</span></span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb47-1"><a href="#cb47-1" tabindex="-1"></a><span class="ex">results/data</span></span>
+<span id="cb47-2"><a href="#cb47-2" tabindex="-1"></a><span class="ex">results/plots</span></span>
+<span id="cb47-3"><a href="#cb47-3" tabindex="-1"></a><span class="ex">results/run001.log</span></span>
+<span id="cb47-4"><a href="#cb47-4" tabindex="-1"></a><span class="ex">results/run002.log</span></span></code></pre>
 </div>
 <p>And a .gitignore that looks like:</p>
 <div class="codewrapper">
