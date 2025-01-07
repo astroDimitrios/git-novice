@@ -444,7 +444,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>End</h1>
-        <p>Last updated on 2024-12-18 |
+        <p>Last updated on 2025-01-07 |
 
         <a href="https://github.com/swcarpentry/git-novice/edit/main/episodes/End.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -482,35 +482,7 @@ instructions at the end of this page.</p>
 remotely on GitHub. You’ve developed changes on a feature branch,
 reviewed the changes on GitHub and merged them into <code>main</code>.
 The diagram below outlines the workflow you used during the course:</p>
-<pre class="mermaid"><code>sequenceDiagram
-    autonumber
-    participant M as main
-    Note over M: Initialise the Repository
-    M -&gt;&gt; M:
-    Note over M: Initial Commit
-    M -&gt;&gt; M:
-    Note right of M: Create a Feature Branch
-    create participant F as forecast
-    M -&gt;&gt; F:
-    loop
-        Note over F: Develop Changes
-        F -&gt;&gt; F:
-    end
-    Note right of M: Backup to GitHub
-    create participant GHM as origin main
-    M --&gt;&gt; GHM:
-    Note right of F: Push changes to GitHub
-    create participant GHF as origin forecast
-    F --&gt;&gt; GHF:
-    Note left of GHF: Pull Request and then Merge
-    destroy GHF
-    GHF -&gt;&gt; GHM:
-    Note left of GHM: Update Local Branches
-    GHM --&gt;&gt; M:
-    Note left of F: Tidy up Local Branches
-    destroy F
-    F -&gt;&gt; M: </code></pre>
-<p>A summary page outlining the steps we’ve taken to create a new
+<figure><img src="fig/lesson-workflow-mermaid.svg" alt="A sequence diagram showing the workflow we used during the lesson." class="figure mx-auto d-block"></figure><p>A summary page outlining the steps we’ve taken to create a new
 repository locally and connect it to a GitHub remote can be found in the
 extra <a href="repo-quick-start.html">Quick Start Repository
 Guide</a>.</p>
@@ -520,11 +492,11 @@ delete both the local and GitHub repositories you won’t be able to
 recover your files!</p>
 <div class="section level3">
 <h3 id="deleting-a-local-repository">Deleting a Local Repository<a class="anchor" aria-label="anchor" href="#deleting-a-local-repository"></a></h3>
-<div class="codewrapper sourceCode" id="cb2">
+<div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="ex">$</span> cd ~/Desktop</span>
-<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a><span class="ex">$</span> rm <span class="at">-rf</span> weather</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="ex">$</span> cd ~/Desktop</span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="ex">$</span> rm <span class="at">-rf</span> weather</span></code></pre>
 </div>
 </div>
 <div class="section level3">
@@ -600,7 +572,7 @@ you may have to confirm the deletion using MFA or your passkey.</p>
   "url": "https://swcarpentry.github.io/git-novice/End.html",
   "identifier": "https://swcarpentry.github.io/git-novice/End.html",
   "dateCreated": "2014-12-04",
-  "dateModified": "2024-12-18",
+  "dateModified": "2025-01-07",
   "datePublished": "2025-01-07"
 }
 
