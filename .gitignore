@@ -2,7 +2,6 @@
 episodes/*html
 site
 site_libs
-_site
 !site/README.md
 */favicons
 */images
