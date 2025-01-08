@@ -62,7 +62,6 @@ renv/sandbox/
 .jekyll-cache/
 .jekyll-metadata
 __pycache__
-_site
 .Rproj.user
 .bundle/
 .vendor/
