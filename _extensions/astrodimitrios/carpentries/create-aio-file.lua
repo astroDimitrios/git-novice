@@ -95,15 +95,15 @@ local center_slide_contents_style = [[
           margin-left:auto;
           margin-right:auto;
         }
-        .reveal img[src$=".svg"],svg {
+        .reveal img[src$=".svg"]:not(.slide-logo),svg:not(.slide-logo) {
           object-fit: contain;
           /* max-width: inherit !important; */
-          /* max-height: 90vh !important; */
+          max-height: 80% !important;
         }
-        div.center-xy img[src$=".svg"],svg {
+        div.center-xy img[src$=".svg"]:not(.slide-logo),svg:not(.slide-logo) {
           object-fit: contain;
           /* max-width: inherit !important; */
-          /* max-height: 90vh !important; */
+          max-height: 80% !important;
         }
         </style>
 ]]
