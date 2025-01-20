@@ -197,7 +197,9 @@
 
     <div id="flush-collapsecurrent" class="accordion-collapse collapse show" aria-labelledby="flush-headingcurrent" data-bs-parent="#accordionFlushcurrent">
       <div class="accordion-body">
-        <ul><li><a href="#pre-workshop-survey">Pre-workshop Survey</a></li>
+        <ul><li><a href="#how-to-get-help">How to get help</a></li>
+<li><a href="#lesson-outcomes">Lesson Outcomes</a></li>
+<li><a href="#pre-lesson-survey">Pre-lesson Survey</a></li>
 <li><a href="#installing-git">Installing Git</a></li>
 <li><a href="#creating-a-github-account">Creating a GitHub Account</a></li>
 <li><a href="#optional-git-autocomplete">Optional: Git Autocomplete</a></li>
@@ -438,9 +440,12 @@
       <hr></nav><main id="main-content" class="main-content"><h1 class="schedule-heading">Summary and Setup</h1>
       
 
-<p><a href="reference.html#version-control">Version control</a> is
-fundamental to good quality assurance of science and code. Using a
-Version Control System is better than mailing files back and forth:</p>
+<p>Welcome to the Introduction to Git and GitHub training! This page
+contains learning outcomes and setup that must be completed before
+working through the lesson.</p>
+<p>Version control is fundamental to good quality assurance of science
+and code. Using a <a href="reference.html#version-control">Version
+Control System</a> is better than mailing files back and forth:</p>
 <ul><li><p>Nothing that is committed to version control is ever lost, unless
 you work really, really hard at losing it. Since all old versions of
 files are saved, it’s always possible to go back in time to see exactly
@@ -472,41 +477,112 @@ a version control system.</p>
 <div id="prerequisites" class="callout-inner">
 <h3 class="callout-title">Prerequisites</h3>
 <div class="callout-content">
-<p>In this lesson we use Git from the Unix Shell. Some previous
-experience with the shell is expected, <em>but isn’t mandatory</em>.</p>
+<p>No knowledge of Git and GitHub is required. In this lesson we use Git
+from the command line. Some previous experience with the command line is
+expected, <em>but isn’t mandatory</em>. Access to the command line and a
+browser connected to the Internet are required.</p>
 </div>
 </div>
 </div>
+<p>This lesson is platform-independent and can be taken on Linux,
+Windows, and MacOS. This lesson has been fully tested on Linux. If you
+encounter any problems using either Windows or MacOS please <a href="./learners/setup.html#how-to-get-help">reach out for
+support</a>.</p>
 
 
-      <section id="setup"><section><h2 class="section-heading" id="pre-workshop-survey">Pre-workshop Survey<a class="anchor" aria-label="anchor" href="#pre-workshop-survey"></a></h2>
-<hr class="half-width"><p>Please remember to fill out the pre-workshop survey prior to the
-start of the workshop. This information is vital for us to keep
+      <section id="setup"><section><h2 class="section-heading" id="how-to-get-help">How to get help<a class="anchor" aria-label="anchor" href="#how-to-get-help"></a></h2>
+<hr class="half-width"><ul><li>Attend a Git and GitHub Surgery.</li>
+<li>Email the <a href="mailto:ScienceGitMigrationProjectSupport@metoffice.gov.uk">support
+mailbox</a>.</li>
+</ul><p>Details of surgeries can be found on the Science Git Migration
+Project Comms Site.</p>
+</section><section><h2 class="section-heading" id="lesson-outcomes">Lesson Outcomes<a class="anchor" aria-label="anchor" href="#lesson-outcomes"></a></h2>
+<hr class="half-width"><p>This lesson is split into two parts. Episodes in the first half
+before the break focus on Git. Episodes in the second half after the
+break focus on GitHub.</p>
+<p>By the end of the Git section you will be able to:</p>
+<ul><li>describe the importance of Version Control.</li>
+<li>describe the similarities and differences between SVN and Git.</li>
+<li>configure Git.</li>
+<li>initialise new repositories using Git.</li>
+<li>develop changes on a branch.</li>
+<li>view differences between changes and explore your repositories
+history.</li>
+</ul><p>By the end of the GitHub section you will be able to:</p>
+<ul><li>set up important GitHub settings and SSH access.</li>
+<li>describe the similarities and differences between Trac and
+GitHub.</li>
+<li>explain the differences between private, internal and public
+repositories.</li>
+<li>set up a repository, including how to protect the <code>main</code>
+branch and enable wiki pages, discussions, and GitHub projects.</li>
+<li>view a repositories history and differences between changes.</li>
+<li>view Issues and Pull Requests.</li>
+<li>contribute changes to a repository using a Pull Request.</li>
+</ul><p>And much more!</p>
+</section><section><h2 class="section-heading" id="pre-lesson-survey">Pre-lesson Survey<a class="anchor" aria-label="anchor" href="#pre-lesson-survey"></a></h2>
+<hr class="half-width"><p>Please remember to fill out the <a href="https://forms.office.com/e/XJPJUTn0mp" class="external-link">pre-lesson survey</a> prior
+to the start of the lesson. This information is vital for us to keep
 improving the lesson for other learners.</p>
 </section><section><h2 class="section-heading" id="installing-git">Installing Git<a class="anchor" aria-label="anchor" href="#installing-git"></a></h2>
-<hr class="half-width"><p>Since several Carpentries lessons rely on Git, please see <a href="https://carpentries.github.io/workshop-template/install_instructions/#git" class="external-link">this
-section of the workshop template</a> for instructions on installing Git
-for various operating systems.</p>
-<ul><li><a href="https://carpentries.github.io/workshop-template/install_instructions/#git" class="external-link">Git
-installation on Windows</a></li>
-<li><a href="https://carpentries.github.io/workshop-template/install_instructions/#git" class="external-link">Git
-installation on MacOS</a></li>
-<li><a href="https://carpentries.github.io/workshop-template/install_instructions/#git" class="external-link">Git
-installation on Linux</a></li>
-</ul><p>Your institution may have already installed Git on your work
-computer. Ask your instructor if this step is necessary or simply
-type:</p>
+<hr class="half-width"><div class="tabs">
+<nav><div id="nav-tab-1" class="nav nav-tabs" role="tablist">
+<button class="nav-link active" id="nav-tab-1-1" data-bs-toggle="tab" data-bs-target="#nav-tabpanel-1-1" type="button" role="tab" aria-controls="nav-tabpanel-1-1" aria-selected="true">
+  <h3 class="tab-header" id="nav-tab-heading-1-1">
+  Met Office Linux
+  </h3>
+</button>
+<button class="nav-link" id="nav-tab-1-2" data-bs-toggle="tab" data-bs-target="#nav-tabpanel-1-2" type="button" role="tab" aria-controls="nav-tabpanel-1-2" aria-selected="false">
+  <h3 class="tab-header" id="nav-tab-heading-1-2">
+  Met Office Windows
+  </h3>
+</button>
+<button class="nav-link" id="nav-tab-1-3" data-bs-toggle="tab" data-bs-target="#nav-tabpanel-1-3" type="button" role="tab" aria-controls="nav-tabpanel-1-3" aria-selected="false">
+  <h3 class="tab-header" id="nav-tab-heading-1-3">
+  Non-Met Office Systems
+  </h3>
+</button>
+</div>
+</nav><div id="nav-tabContent-1" class="tab-content">
+<div id="nav-tabpanel-1-1" class="tab-pane show active" role="tabpanel" aria-labelledby="nav-tab-1-1">
+<p>No setup is required, Git is installed for you. Your version number
+may be different to the example below.</p>
 <div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="ex">$</span> git <span class="at">--version</span></span>
 <span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="fu">git</span> version 2.47.0</span></code></pre>
 </div>
+</div>
+<div id="nav-tabpanel-1-2" class="tab-pane" role="tabpanel" aria-labelledby="nav-tab-1-2">
+<p>Please ensure Git is installed via the Company Portal. You should now
+have access to the <strong>Git Bash</strong> app. Your version number
+may be different to the example below.</p>
+<div class="codewrapper sourceCode" id="cb2">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="ex">$</span> git <span class="at">--version</span></span>
+<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a><span class="fu">git</span> version 2.47.1.windows.1</span></code></pre>
+</div>
+</div>
+<div id="nav-tabpanel-1-3" class="tab-pane" role="tabpanel" aria-labelledby="nav-tab-1-3">
+<p>The systems at your institution may already have Git installed. You
+can check this by typing:</p>
+<div class="codewrapper sourceCode" id="cb3">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="ex">$</span> git <span class="at">--version</span></span>
+<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a><span class="fu">git</span> version 2.47.0</span></code></pre>
+</div>
 <p>If a version number is printed like the output above Git is installed
-and ready to use.</p>
+and ready to use. Otherwise please follow the instructions in the <a href="https://git-scm.com/book/en/v2/Getting-Started-Installing-Git" class="external-link">Git
+book</a> for your operating system.</p>
+</div>
+</div>
+</div>
 </section><section><h2 class="section-heading" id="creating-a-github-account">Creating a GitHub Account<a class="anchor" aria-label="anchor" href="#creating-a-github-account"></a></h2>
 <hr class="half-width"><p>You will need an account for <a href="https://github.com" class="external-link">GitHub</a>
-to follow episodes 7 &amp; 8 in this lesson.</p>
+to follow the GitHub episodes of this lesson.</p>
 <ol style="list-style-type: decimal"><li>Go to <a href="https://github.com" class="external-link uri">https://github.com</a> and follow the “Sign up” link at the
 top-right of the window.</li>
 <li>Follow the instructions to create an account.</li>
@@ -521,8 +597,8 @@ So if your name is <code>Eleanor Ormerod</code> your username would be:
 <div class="section level3">
 <h3 id="multi-factor-authentication">Multi-factor Authentication<a class="anchor" aria-label="anchor" href="#multi-factor-authentication"></a></h3>
 <p>In 2023, GitHub introduced a requirement for all accounts to have <a href="https://docs.github.com/en/authentication/securing-your-account-with-two-factor-authentication-2fa/about-two-factor-authentication" class="external-link">multi-factor
-authentication (2FA)</a> configured for extra security. Several options
-exist for setting up 2FA, which are summarised here:</p>
+authentication (MFA)</a> configured for extra security. Several options
+exist for setting up MFA, which are summarised here:</p>
 <ol style="list-style-type: decimal"><li>If you already use an authenticator app, like <a href="https://support.google.com/accounts/answer/1066447?hl=en&amp;co=GENIE.Platform%3DiOS&amp;oco=0" class="external-link">Google
 Authenticator</a> or <a href="https://duo.com/product/multi-factor-authentication-mfa/duo-mobile-app" class="external-link">Duo
 Mobile</a> on your smartphone for example, <a href="https://docs.github.com/en/authentication/securing-your-account-with-two-factor-authentication-2fa/configuring-two-factor-authentication#configuring-two-factor-authentication-using-a-totp-mobile-app" class="external-link">add
@@ -534,7 +610,7 @@ GitHub to the app</a>.</li>
 an authenticator app, you have two options:
 <ol style="list-style-type: decimal"><li>
 <a href="https://docs.github.com/en/authentication/securing-your-account-with-two-factor-authentication-2fa/configuring-two-factor-authentication#configuring-two-factor-authentication-using-text-messages" class="external-link">set
-up 2FA via text message</a> (<a href="https://docs.github.com/en/authentication/securing-your-account-with-two-factor-authentication-2fa/countries-where-sms-authentication-is-supported" class="external-link">list
+up MFA via text message</a> (<a href="https://docs.github.com/en/authentication/securing-your-account-with-two-factor-authentication-2fa/countries-where-sms-authentication-is-supported" class="external-link">list
 of countries where authentication by SMS is supported</a>), or</li>
 <li>
 <a href="https://docs.github.com/en/authentication/securing-your-account-with-two-factor-authentication-2fa/configuring-two-factor-authentication#configuring-two-factor-authentication-using-a-security-key" class="external-link">use
@@ -543,62 +619,76 @@ or the <a href="https://store.google.com/us/product/titan_security_key?hl=en-US&
 Titan key</a>.</li>
 </ol></li>
 </ol><p>The GitHub documentation provides <a href="https://docs.github.com/en/authentication/securing-your-account-with-two-factor-authentication-2fa/configuring-two-factor-authentication" class="external-link">more
-details about configuring 2FA</a>.</p>
+details about configuring MFA</a>.</p>
 </div>
 <div class="section level3">
 <h3 id="passkeys">Passkeys<a class="anchor" aria-label="anchor" href="#passkeys"></a></h3>
 <p>To completely avoid having authentication for work purposes on a
 personal device you may choose to <a href="https://docs.github.com/en/authentication/authenticating-with-a-passkey/managing-your-passkeys" class="external-link">set
-up a passkey</a>. Your instructor and organisation will be able to
-provide guidance on suitable passkey providers and password
-managers.</p>
+up a passkey</a>. Your instructor or organisation will be able to
+provide guidance on suitable passkey providers and password managers. At
+the Met Office the KeePass password manager is available. Search, “Using
+KeePass for one-time passwords” on SharePoint for setup
+instructions.</p>
 </div>
 </section><section><h2 class="section-heading" id="optional-git-autocomplete">Optional: Git Autocomplete<a class="anchor" aria-label="anchor" href="#optional-git-autocomplete"></a></h2>
 <hr class="half-width"><p>Git provides a script which lets us display the version control
 status in your terminal prompt. The following instructions have been
 tested on <strong>Linux</strong>. If you are using MacOS or Windows
 please consult the <a href="https://github.com/git/git/blob/master/contrib/completion/git-prompt.sh" class="external-link">Git
-autocomplete instructions</a> at the top of the linked file. Your
-instructor may point you to another online resource for your OS. To
-enable this script add the following to a new
-<code>~/.bashrc.d/git.bash</code> file:</p>
-<div class="codewrapper sourceCode" id="cb2">
+autocomplete instructions</a> at the top of the linked file and <a href="./learners/setup.html#how-to-get-help">reach out for support</a>
+if you require help. To enable this script add the following to a new
+<code>~/.bashrc.d/prompt.bash</code> file:</p>
+<div class="codewrapper sourceCode" id="cb4">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="cf">if</span> <span class="kw">[[</span> <span class="va">$-</span> <span class="ot">=~</span> <span class="ss">i</span> <span class="kw">]];</span> <span class="cf">then</span></span>
-<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a>    <span class="va">GIT_PROMPT_PATH</span><span class="op">=</span>/usr/share/doc/git/contrib/completion/git-prompt.sh</span>
-<span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a>    <span class="cf">if</span> <span class="kw">[[</span> <span class="ot">-r</span> <span class="st">"</span><span class="va">${GIT_PROMPT_PATH}</span><span class="st">"</span> <span class="kw">]];</span> <span class="cf">then</span>    </span>
-<span id="cb2-4"><a href="#cb2-4" tabindex="-1"></a>        <span class="bu">source</span> <span class="st">"</span><span class="va">${GIT_PROMPT_PATH}</span><span class="st">"</span> <span class="op">&gt;&amp;</span><span class="dv">2</span></span>
-<span id="cb2-5"><a href="#cb2-5" tabindex="-1"></a>    <span class="cf">else</span></span>
-<span id="cb2-6"><a href="#cb2-6" tabindex="-1"></a>        <span class="cf">if</span> <span class="kw">[[</span> <span class="st">"</span><span class="va">$-</span><span class="st">"</span> <span class="ot">==</span> <span class="pp">*</span>i<span class="pp">*</span> <span class="kw">]];</span> <span class="cf">then</span></span>
-<span id="cb2-7"><a href="#cb2-7" tabindex="-1"></a>            <span class="bu">echo</span> <span class="st">"</span><span class="va">${GIT_PROMPT_PATH}</span><span class="st"> - not found"</span> <span class="op">&gt;&amp;</span><span class="dv">2</span></span>
-<span id="cb2-8"><a href="#cb2-8" tabindex="-1"></a>        <span class="cf">fi</span></span>
-<span id="cb2-9"><a href="#cb2-9" tabindex="-1"></a>    <span class="cf">fi</span></span>
-<span id="cb2-10"><a href="#cb2-10" tabindex="-1"></a>    <span class="bu">export</span> <span class="va">GIT_PS1_SHOWDIRTYSTATE</span><span class="op">=</span>1</span>
-<span id="cb2-11"><a href="#cb2-11" tabindex="-1"></a>    <span class="bu">export</span> <span class="va">GIT_PS1_SHOWSTASHSTATE</span><span class="op">=</span>1</span>
-<span id="cb2-12"><a href="#cb2-12" tabindex="-1"></a>    <span class="bu">export</span> <span class="va">GIT_PS1_SHOWUPSTREAM</span><span class="op">=</span><span class="st">"auto"</span></span>
-<span id="cb2-13"><a href="#cb2-13" tabindex="-1"></a>    <span class="bu">export</span> <span class="va">GIT_PS1_SHOWCOLORHINTS</span><span class="op">=</span>1</span>
-<span id="cb2-14"><a href="#cb2-14" tabindex="-1"></a>    <span class="bu">export</span> <span class="va">GIT_PS1_SHOWUNTRACKEDFILES</span><span class="op">=</span>1</span>
-<span id="cb2-15"><a href="#cb2-15" tabindex="-1"></a></span>
-<span id="cb2-16"><a href="#cb2-16" tabindex="-1"></a>    <span class="bu">export</span> <span class="va">PS1</span><span class="op">=</span><span class="st">'[\u@\h:\w]$(__git_ps1 "(%s)"):\$ '</span></span>
-<span id="cb2-17"><a href="#cb2-17" tabindex="-1"></a></span>
-<span id="cb2-18"><a href="#cb2-18" tabindex="-1"></a><span class="cf">fi</span></span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="ex">$</span> mkdir <span class="at">-p</span> ~/.bashrc.d</span>
+<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a><span class="ex">$</span> nano ~/.bashrc.d/prompt.bash</span>
+<span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a><span class="ex">$</span> cat ~/.bashrc.d/prompt.bash</span></code></pre>
 </div>
-<p>And make sure your <code>~/.bashrc</code> file includes:</p>
-<div class="codewrapper sourceCode" id="cb3">
+<div class="codewrapper sourceCode" id="cb5">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="co"># User specific aliases and functions</span></span>
-<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a></span>
-<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a><span class="cf">if</span> <span class="bu">[</span> <span class="ot">-d</span> ~/.bashrc.d <span class="bu">]</span><span class="kw">;</span> <span class="cf">then</span></span>
-<span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a>	<span class="cf">for</span> rc <span class="kw">in</span> ~/.bashrc.d/<span class="pp">*</span><span class="kw">;</span> <span class="cf">do</span></span>
-<span id="cb3-5"><a href="#cb3-5" tabindex="-1"></a>		<span class="cf">if</span> <span class="bu">[</span> <span class="ot">-f</span> <span class="st">"</span><span class="va">$rc</span><span class="st">"</span> <span class="bu">]</span><span class="kw">;</span> <span class="cf">then</span></span>
-<span id="cb3-6"><a href="#cb3-6" tabindex="-1"></a>			<span class="bu">.</span> <span class="st">"</span><span class="va">$rc</span><span class="st">"</span></span>
-<span id="cb3-7"><a href="#cb3-7" tabindex="-1"></a>		<span class="cf">fi</span></span>
-<span id="cb3-8"><a href="#cb3-8" tabindex="-1"></a>	<span class="cf">done</span></span>
-<span id="cb3-9"><a href="#cb3-9" tabindex="-1"></a><span class="cf">fi</span></span>
-<span id="cb3-10"><a href="#cb3-10" tabindex="-1"></a></span>
-<span id="cb3-11"><a href="#cb3-11" tabindex="-1"></a><span class="bu">unset</span> <span class="va">rc</span></span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="cf">if</span> <span class="kw">[[</span> <span class="va">$-</span> <span class="ot">=~</span> <span class="ss">i</span> <span class="kw">]];</span> <span class="cf">then</span></span>
+<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a>    <span class="va">GIT_PROMPT_PATH</span><span class="op">=</span>/usr/share/git-core/contrib/completion/git-prompt.sh</span>
+<span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a>    <span class="cf">if</span> <span class="kw">[[</span> <span class="ot">-r</span> <span class="st">"</span><span class="va">${GIT_PROMPT_PATH}</span><span class="st">"</span> <span class="kw">]];</span> <span class="cf">then</span></span>
+<span id="cb5-4"><a href="#cb5-4" tabindex="-1"></a>        <span class="bu">source</span> <span class="st">"</span><span class="va">${GIT_PROMPT_PATH}</span><span class="st">"</span> <span class="op">&gt;&amp;</span><span class="dv">2</span></span>
+<span id="cb5-5"><a href="#cb5-5" tabindex="-1"></a>    <span class="cf">else</span></span>
+<span id="cb5-6"><a href="#cb5-6" tabindex="-1"></a>        <span class="cf">if</span> <span class="kw">[[</span> <span class="st">"</span><span class="va">$-</span><span class="st">"</span> <span class="ot">==</span> <span class="pp">*</span>i<span class="pp">*</span> <span class="kw">]];</span> <span class="cf">then</span></span>
+<span id="cb5-7"><a href="#cb5-7" tabindex="-1"></a>            <span class="bu">echo</span> <span class="st">"</span><span class="va">${GIT_PROMPT_PATH}</span><span class="st"> - not found"</span> <span class="op">&gt;&amp;</span><span class="dv">2</span></span>
+<span id="cb5-8"><a href="#cb5-8" tabindex="-1"></a>        <span class="cf">fi</span></span>
+<span id="cb5-9"><a href="#cb5-9" tabindex="-1"></a>    <span class="cf">fi</span></span>
+<span id="cb5-10"><a href="#cb5-10" tabindex="-1"></a>    <span class="bu">export</span> <span class="va">GIT_PS1_SHOWDIRTYSTATE</span><span class="op">=</span>1</span>
+<span id="cb5-11"><a href="#cb5-11" tabindex="-1"></a>    <span class="bu">export</span> <span class="va">GIT_PS1_SHOWSTASHSTATE</span><span class="op">=</span>1</span>
+<span id="cb5-12"><a href="#cb5-12" tabindex="-1"></a>    <span class="bu">export</span> <span class="va">GIT_PS1_SHOWUPSTREAM</span><span class="op">=</span><span class="st">"auto"</span></span>
+<span id="cb5-13"><a href="#cb5-13" tabindex="-1"></a>    <span class="bu">export</span> <span class="va">GIT_PS1_SHOWCOLORHINTS</span><span class="op">=</span>1</span>
+<span id="cb5-14"><a href="#cb5-14" tabindex="-1"></a>    <span class="bu">export</span> <span class="va">GIT_PS1_SHOWUNTRACKEDFILES</span><span class="op">=</span>1</span>
+<span id="cb5-15"><a href="#cb5-15" tabindex="-1"></a></span>
+<span id="cb5-16"><a href="#cb5-16" tabindex="-1"></a>    <span class="bu">export</span> <span class="va">PS1</span><span class="op">=</span><span class="st">'[\u@\h:\w]$(__git_ps1 "(%s)"):\$ '</span></span>
+<span id="cb5-17"><a href="#cb5-17" tabindex="-1"></a></span>
+<span id="cb5-18"><a href="#cb5-18" tabindex="-1"></a><span class="cf">fi</span></span></code></pre>
+</div>
+<p>You may use your preferred editor to create this file; these lesson
+materials use the <a href="https://www.nano-editor.org/" class="external-link"><code>nano</code></a> editor when a
+file needs creating or modifying. This is followed by the
+<code>cat</code> command in the material to show the file contents after
+the change. You do not have to use the <code>cat</code> command when
+following the lesson material.</p>
+<p>Make sure your <code>~/.bashrc</code> file includes:</p>
+<div class="codewrapper sourceCode" id="cb6">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="co"># User specific aliases and functions</span></span>
+<span id="cb6-2"><a href="#cb6-2" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="#cb6-3" tabindex="-1"></a><span class="cf">if</span> <span class="bu">[</span> <span class="ot">-d</span> ~/.bashrc.d <span class="bu">]</span><span class="kw">;</span> <span class="cf">then</span></span>
+<span id="cb6-4"><a href="#cb6-4" tabindex="-1"></a>	<span class="cf">for</span> rc <span class="kw">in</span> ~/.bashrc.d/<span class="pp">*</span><span class="kw">;</span> <span class="cf">do</span></span>
+<span id="cb6-5"><a href="#cb6-5" tabindex="-1"></a>		<span class="cf">if</span> <span class="bu">[</span> <span class="ot">-f</span> <span class="st">"</span><span class="va">$rc</span><span class="st">"</span> <span class="bu">]</span><span class="kw">;</span> <span class="cf">then</span></span>
+<span id="cb6-6"><a href="#cb6-6" tabindex="-1"></a>			<span class="bu">.</span> <span class="st">"</span><span class="va">$rc</span><span class="st">"</span></span>
+<span id="cb6-7"><a href="#cb6-7" tabindex="-1"></a>		<span class="cf">fi</span></span>
+<span id="cb6-8"><a href="#cb6-8" tabindex="-1"></a>	<span class="cf">done</span></span>
+<span id="cb6-9"><a href="#cb6-9" tabindex="-1"></a><span class="cf">fi</span></span>
+<span id="cb6-10"><a href="#cb6-10" tabindex="-1"></a></span>
+<span id="cb6-11"><a href="#cb6-11" tabindex="-1"></a><span class="bu">unset</span> <span class="va">rc</span></span></code></pre>
 </div>
 <div id="git_prompt_path" class="callout caution">
 <div class="callout-square">
@@ -607,83 +697,65 @@ enable this script add the following to a new
 <div id="git_prompt_path" class="callout-inner">
 <h3 class="callout-title">GIT_PROMPT_PATH</h3>
 <div class="callout-content">
-<p>Your instructor will let you know if the value of
-<code>GIT_PROMPT_PATH</code> is different from the path in the example
-above. The following paths are for Met Office colleagues. If you are
-external to the Met Office please consult your institutions IT services
-or download your own copy of the <code>git-prompt.sh</code> script.
-Download the latest version from the <a href="https://github.com/git/git/blob/master/contrib/completion/git-prompt.sh" class="external-link">Git
+<p>The path in the output above is correct for Met Office systems. If
+you are not using Met Office systems please consult your institutions IT
+services or download your own copy of the <code>git-prompt.sh</code>
+script. Download the latest version from the <a href="https://github.com/git/git/blob/master/contrib/completion/git-prompt.sh" class="external-link">Git
 repository contrib directory</a>. Ensure the
 <code>GIT_PROMPT_PATH</code> matches where you decide to store the
 <code>git-prompt.sh</code> file.</p>
-<p>For Azure Spice, the path in the snippet above is correct:</p>
-<div class="codewrapper sourceCode" id="cb4">
-<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="va">GIT_PROMPT_PATH</span><span class="op">=</span>/usr/share/doc/git/contrib/completion/git-prompt.sh</span></code></pre>
-</div>
-<p>For old Spice:</p>
-<div class="codewrapper sourceCode" id="cb5">
-<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="va">GIT_PROMPT_PATH</span><span class="op">=</span>/usr/share/doc/git236-2.36.6/contrib/completion/git-prompt.sh</span></code></pre>
-</div>
 </div>
 </div>
 </div>
 <p>To see the changes to your terminal prompt run:</p>
-<div class="codewrapper sourceCode" id="cb6">
-<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="bu">source</span> ~/.bashrc</span></code></pre>
-</div>
-<div id="if-you-have-already-modified-your-ps1" class="callout">
-<div class="callout-square">
-<i class="callout-icon" data-feather="bell"></i>
-</div>
-<div id="if-you-have-already-modified-your-ps1" class="callout-inner">
-<h3 class="callout-title">If you have already modified your
-<code>PS1</code>
-</h3>
-<div class="callout-content">
-<p>If your <code>~/.bashrc</code> file, or any file in the
-<code>~/.bashrc.d/</code> directory, already modifies your
-<code>PS1</code> command you can <code>export PROMPT_COMMAND</code>
-instead or seek help from your instructor on how to merge your current
-<code>PS1</code> command with the one above.</p>
-<p>Replace the <code>export PS1</code> line with:</p>
 <div class="codewrapper sourceCode" id="cb7">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="bu">export</span> <span class="va">PROMPT_COMMAND</span><span class="op">=</span><span class="va">(</span><span class="st">"</span><span class="va">${PROMPT_COMMAND</span><span class="op">[@]</span><span class="va">}</span><span class="st">"</span> <span class="st">'__git_ps1 "${CONDA_PROMPT_MODIFIER}[\u@\h:\w]:" "\$ " "(%s)"'</span><span class="va">)</span></span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="bu">source</span> ~/.bashrc</span></code></pre>
 </div>
-<p>If your version of Bash is less than 5.1 or you are using MacOS you
-might need to use:</p>
+<p>You might not notice much of a change until you are in a directory
+containing a Git repository.</p>
+<div id="accordionSpoiler1" class="accordion spoiler-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler1" aria-expanded="false" aria-controls="collapseSpoiler1">
+  <h3 class="accordion-header" id="headingSpoiler1">
+  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div>
+  If you have already modified your prompt
+  </h3>
+</button>
+<div id="collapseSpoiler1" class="accordion-collapse collapse" aria-labelledby="headingSpoiler1" data-bs-parent="#accordionSpoiler1">
+<div class="accordion-body">
+<p>If your <code>~/.bashrc</code> file, or any file in the
+<code>~/.bashrc.d/</code> directory, already modifies your prompt using
+the <code>PS1</code> command you can <code>export PROMPT_COMMAND</code>
+instead.</p>
+<p>Replace the <code>export PS1</code> line with:</p>
 <div class="codewrapper sourceCode" id="cb8">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="bu">export</span> <span class="va">PROMPT_COMMAND</span><span class="op">=</span><span class="va">${PROMPT_COMMAND</span><span class="op">:+</span><span class="st">"</span><span class="va">$PROMPT_COMMAND</span><span class="st">; "</span><span class="va">}</span><span class="st">'__git_ps1 "${CONDA_PROMPT_MODIFIER}[\w]:" "\$ " "(%s)"'</span></span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="bu">export</span> <span class="va">PROMPT_COMMAND</span><span class="op">=</span><span class="va">(</span><span class="st">"</span><span class="va">${PROMPT_COMMAND</span><span class="op">[@]</span><span class="va">}</span><span class="st">"</span> <span class="st">'__git_ps1 "${CONDA_PROMPT_MODIFIER}[\u@\h:\w]:" "\$ " "(%s)"'</span><span class="va">)</span></span></code></pre>
+</div>
+<p>If your version of Bash is less than 5.1 or you are using MacOS you
+might need to use:</p>
+<div class="codewrapper sourceCode" id="cb9">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a><span class="bu">export</span> <span class="va">PROMPT_COMMAND</span><span class="op">=</span><span class="va">${PROMPT_COMMAND</span><span class="op">:+</span><span class="st">"</span><span class="va">$PROMPT_COMMAND</span><span class="st">; "</span><span class="va">}</span><span class="st">'__git_ps1 "${CONDA_PROMPT_MODIFIER}[\w]:" "\$ " "(%s)"'</span></span></code></pre>
 </div>
 </div>
 </div>
 </div>
-<div id="how-to-get-help" class="callout">
-<div class="callout-square">
-<i class="callout-icon" data-feather="bell"></i>
 </div>
-<div id="how-to-get-help" class="callout-inner">
-<h3 class="callout-title">How to get help</h3>
-<div class="callout-content">
-<p>Your instructor will be able to help you with this setup. At the Met
-Office please email the <a href="mailto:ScienceGitMigrationProjectSupport@metoffice.gov.uk">Science
-Git Migration Project</a> and come to a Git &amp; GitHub surgery to
-receive help. Details of surgeries can be found on the Science Git
-Migration Project SharePoint homepage and MetNets homepage.</p>
-</div>
-</div>
-</div>
-<div class="section level3">
-<h3 id="long-terminal-prompts">Long Terminal Prompts<a class="anchor" aria-label="anchor" href="#long-terminal-prompts"></a></h3>
+<div id="accordionSpoiler2" class="accordion spoiler-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler2" aria-expanded="false" aria-controls="collapseSpoiler2">
+  <h3 class="accordion-header" id="headingSpoiler2">
+  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div>
+  Long Terminal Prompts
+  </h3>
+</button>
+<div id="collapseSpoiler2" class="accordion-collapse collapse" aria-labelledby="headingSpoiler2" data-bs-parent="#accordionSpoiler2">
+<div class="accordion-body">
 <p>You might find that with long paths and usernames your prompt takes
 up the entire width of the terminal; there are several ways to reduce
 the prompt length:</p>
@@ -696,13 +768,12 @@ the prompt length:</p>
 <code>PROMPT_COMMAND</code> or <code>PS1</code> lines.</p>
 </div>
 <div class="section level4">
-<h4 id="add-in-prompt_dirtrim">Add in <code>PROMPT_DIRTRIM</code>
-<a class="anchor" aria-label="anchor" href="#add-in-prompt_dirtrim"></a></h4>
+<h4 id="trim-long-directory-paths">Trim long directory paths<a class="anchor" aria-label="anchor" href="#trim-long-directory-paths"></a></h4>
 <p>Just before the final <code>fi</code> line you may add:</p>
-<div class="codewrapper sourceCode" id="cb9">
+<div class="codewrapper sourceCode" id="cb10">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a><span class="va">PROMPT_DIRTRIM</span><span class="op">=</span>3</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a><span class="va">PROMPT_DIRTRIM</span><span class="op">=</span>3</span></code></pre>
 </div>
 <p>This trims long directory paths to only show the current and two
 parent directories. You can change this value to show more or fewer
@@ -724,20 +795,23 @@ prompt from your terminal commands.</p>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code>(conda_env) [~/Documents/git-novice]:(branch_name) $ _</code></pre>
+<pre class="output" tabindex="0"><code>[~/Documents/git-novice]:(branch_name) $ _</code></pre>
 </div>
 <p>After:</p>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code>(conda_env) [~/Documents/git-novice]:(branch_name)
+<pre class="output" tabindex="0"><code>[~/Documents/git-novice]:(branch_name)
 $ _</code></pre>
 </div>
 <p>To see the changes to your terminal prompt run:</p>
-<div class="codewrapper sourceCode" id="cb13">
+<div class="codewrapper sourceCode" id="cb14">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" tabindex="-1"></a><span class="bu">source</span> ~/.bashrc</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" tabindex="-1"></a><span class="bu">source</span> ~/.bashrc</span></code></pre>
+</div>
+</div>
+</div>
 </div>
 </div>
 </div>
