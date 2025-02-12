@@ -110,9 +110,20 @@ find the correct configuration command from this table:
 | Scratch (Linux)                       | `$ git config --global core.editor "scratch-text-editor"`                      | 
 | Emacs                                 | `$ git config --global core.editor "emacs"`                      | 
 | Vim                                   | `$ git config --global core.editor "vim"`                      | 
+| gVim                                  | `$ git config --global core.editor "gvim -f"`                      | 
 | VS Code                               | `$ git config --global core.editor "code --wait"`                      | 
 
 It is possible to reconfigure the text editor for Git whenever you want to change it.
+
+::: caution
+
+### Nedit not available on Azure Spice
+
+Nedit won't be available on Azure SPICE VDI.
+Details are available in the [Met Office Azure SPICE Documentation](https://wwwspice/docs/software/removed/?h=nedit).
+The most similar editor in the table above is Gedit.
+
+:::
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
