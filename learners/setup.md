@@ -153,7 +153,7 @@ Hi <username>! You've successfully authenticated, but GitHub does not provide sh
 
 :::
 
-:: spoiler
+::: spoiler
 
 ### Note for Personal Access Token Users
 
