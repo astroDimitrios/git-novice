@@ -804,6 +804,26 @@ ignore a particular set of files in <code>.gitignore</code>.</p>
 <a href="07-github.html">Remotes in GitHub</a><a class="anchor" aria-label="anchor" href="#remotes-in-github"></a>
 </h2>
 <hr class="half-width">
+<div id="ssh-setup" class="callout caution">
+<div class="callout-square">
+<i class="callout-icon" data-feather="alert-triangle"></i>
+</div>
+<div id="ssh-setup" class="callout-inner">
+<h3 class="callout-title">SSH Setup</h3>
+<div class="callout-content">
+<p>Learners should have set up their SSH keys before the lesson. If they
+have skipped this step then pushing to the remote will fail. Either
+before the start of the lesson or before the break for lunch get
+learners to run:</p>
+<div class="codewrapper sourceCode" id="cb2">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="ex">$</span> shh <span class="at">-T</span> git@github.com</span></code></pre>
+</div>
+<p>to check their connection to GitHub.</p>
+</div>
+</div>
+</div>
 <ul>
 <li><p>Make it clear that Git and GitHub are not the same thing: Git is
 an open source version control tool, GitHub is a company that hosts Git
@@ -892,10 +912,10 @@ foreheads.</p></li>
 <p>If you’re the only instructor, the best way to create is clone
 the two repos in your Desktop, but under different names, e.g., pretend
 one is your computer at work:</p>
-<div class="codewrapper sourceCode" id="cb2">
+<div class="codewrapper sourceCode" id="cb3">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="ex">$</span> git clone https://github.com/mo-eormerod/weather.git weather-at-work</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="ex">$</span> git clone https://github.com/mo-eormerod/weather.git weather-at-work</span></code></pre>
 </div>
 </li>
 <li>
@@ -917,10 +937,10 @@ before cloning: <code>cd &amp;&amp; cd Desktop</code>.</p></li>
 <p>If both repos are in the <code>Desktop</code>, have them to clone
 their collaborator repo under a given directory using a second
 argument:</p>
-<div class="codewrapper sourceCode" id="cb3">
+<div class="codewrapper sourceCode" id="cb4">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="ex">$</span> git clone https://github.com/mo-eormerod/weather.git alflin-weather</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="ex">$</span> git clone https://github.com/mo-eormerod/weather.git alflin-weather</span></code></pre>
 </div>
 </li>
 <li><p>The most common mistake is that learners <code>push</code> before
@@ -1032,22 +1052,7 @@ language.</p>
 <hr class="half-width"></section><section id="06-ignore"><h2 class="section-heading"><a href="06-ignore.html">Ignoring Things</a></h2>
 <hr class="half-width"></section><section id="Break"><h2 class="section-heading"><a href="Break.html">Break</a></h2>
 <hr class="half-width"></section><section id="07-github"><h2 class="section-heading"><a href="07-github.html">Remotes in GitHub</a></h2>
-<hr class="half-width">
-<h3 id="07-github-headingInstructor1">
-<a href="07-github.html#headingInstructor1">Instructor Note</a><a class="anchor" aria-label="anchor" href="#07-github-headingInstructor1"></a>
-</h3>
-<p>Some learners may have set up an ssh key already. If they have a key
-with this name: <code>~/.ssh/id_ed25519_github</code> and can
-successfully authenticate with <code>ssh -T git@github.com</code> they
-can skip this section.</p>
-<p>If their ssh key name does not match the one above we
-<strong>strongly</strong> recommend they follow the instructions
-below.</p>
-<p>Those who are skipping this section can revisit the challenges in
-earlier episodes (yellow callouts with a lightning bolt) or read through
-the <a href="discuss.html">discussion notes</a>.</p>
-<hr>
-<br></section><section id="08-github-interface"><h2 class="section-heading"><a href="08-github-interface.html">Exploring GitHub</a></h2>
+<hr class="half-width"></section><section id="08-github-interface"><h2 class="section-heading"><a href="08-github-interface.html">Exploring GitHub</a></h2>
 <hr class="half-width"></section><section id="09-github-history"><h2 class="section-heading"><a href="09-github-history.html">Exploring History on GitHub</a></h2>
 <hr class="half-width"></section><section id="10-pull-requests"><h2 class="section-heading"><a href="10-pull-requests.html">Pull Requests</a></h2>
 <hr class="half-width"></section><section id="11-configuring-github"><h2 class="section-heading"><a href="11-configuring-github.html">Configuring GitHub</a></h2>
