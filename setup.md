@@ -401,10 +401,14 @@ If your new key failed to connect you may need to alter your ssh config.
 ```ssh-config
 Host github.com
   IdentityFile ~/.ssh/id_ed25519_github
+  IdentitiesOnly yes
 ```
 
 This explicitly states which key to use for `github.com`
 and is needed if you have many SSH keys already for other hosts.
+IdentityFile along with IdentitiesOnly yes ensures
+that only your GitHub SSH key is offered to github.com.
+This prevents failures caused by trying more key files than the GitHub server accepts.
 
 :::
 
@@ -430,20 +434,17 @@ $ cat ~/.bashrc.d/prompt.bash
 if [[ $- =~ i ]]; then
     GIT_PROMPT_PATH=/usr/share/git-core/contrib/completion/git-prompt.sh
     if [[ -r "${GIT_PROMPT_PATH}" ]]; then
-        source "${GIT_PROMPT_PATH}" >&2
-    else
-        if [[ "$-" == *i* ]]; then
-            echo "${GIT_PROMPT_PATH} - not found" >&2
-        fi
+        . "${GIT_PROMPT_PATH}" >&2
+        export GIT_PS1_SHOWDIRTYSTATE=1 # this can potentially slow down the prompt
+        export GIT_PS1_SHOWSTASHSTATE=1
+        export GIT_PS1_SHOWUPSTREAM="auto"
+        export GIT_PS1_SHOWCOLORHINTS=1
+        export GIT_PS1_SHOWUNTRACKEDFILES=1 # this can potentially slow down the prompt
+
+        export PS1='[\u@\h:\w]$(__git_ps1 "(%s)"):\$ ' # style to your taste
+    #else # optional, if you need to style the default prompt without Git 
+    #    export PS1='[\u@\h:\w] \$ '
     fi
-    export GIT_PS1_SHOWDIRTYSTATE=1
-    export GIT_PS1_SHOWSTASHSTATE=1
-    export GIT_PS1_SHOWUPSTREAM="auto"
-    export GIT_PS1_SHOWCOLORHINTS=1
-    export GIT_PS1_SHOWUNTRACKEDFILES=1
-
-    export PS1='[\u@\h:\w]$(__git_ps1 "(%s)"):\$ '
-
 fi
 ```
 

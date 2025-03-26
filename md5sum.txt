@@ -28,5 +28,5 @@
 "learners/fcm-git_cheat_sheet.md" "29ccb51a92f941d673f7a46d5c97b914" "site/built/fcm-git_cheat_sheet.md" "2024-12-12"
 "learners/reference.md" "4f100436a2f16b82e73515911e488a40" "site/built/reference.md" "2024-12-19"
 "learners/repo-quick-start.md" "84b7ee40a5b2bb149e97894869fda351" "site/built/repo-quick-start.md" "2024-12-12"
-"learners/setup.md" "3495792f7250a1ffea12c210504174c5" "site/built/setup.md" "2025-02-28"
+"learners/setup.md" "e1ff7aed3ff67573ebd4e5ded33004f8" "site/built/setup.md" "2025-03-26"
 "profiles/learner-profiles.md" "b0aff1340a2ac3341ae4bdf26891da60" "site/built/learner-profiles.md" "2024-12-19"
