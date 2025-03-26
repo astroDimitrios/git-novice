@@ -545,7 +545,7 @@ improving the lesson for other learners.</p>
 </button>
 </div>
 </nav><div id="nav-tabContent-1" class="tab-content">
-<div id="nav-tabpanel-1-1" class="tab-pane show active" role="tabpanel" aria-labelledby="nav-tab-1-1">
+<div id="nav-tabpanel-1-1" class="tab-pane show active" aria-labelledby="nav-tab-1-1" role="tabpanel">
 <p>No setup is required, Git is installed for you. Your version number
 may be different to the example below.</p>
 <div class="codewrapper sourceCode" id="cb1">
@@ -555,7 +555,7 @@ may be different to the example below.</p>
 <span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="fu">git</span> version 2.47.0</span></code></pre>
 </div>
 </div>
-<div id="nav-tabpanel-1-2" class="tab-pane" role="tabpanel" aria-labelledby="nav-tab-1-2">
+<div id="nav-tabpanel-1-2" class="tab-pane" aria-labelledby="nav-tab-1-2" role="tabpanel">
 <p>Please ensure Git is installed via the Company Portal. You should now
 have access to the <strong>Git Bash</strong> app. Your version number
 may be different to the example below.</p>
@@ -566,7 +566,7 @@ may be different to the example below.</p>
 <span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a><span class="fu">git</span> version 2.47.1.windows.1</span></code></pre>
 </div>
 </div>
-<div id="nav-tabpanel-1-3" class="tab-pane" role="tabpanel" aria-labelledby="nav-tab-1-3">
+<div id="nav-tabpanel-1-3" class="tab-pane" aria-labelledby="nav-tab-1-3" role="tabpanel">
 <p>The systems at your institution may already have Git installed. You
 can check this by typing:</p>
 <div class="codewrapper sourceCode" id="cb3">
@@ -745,14 +745,14 @@ pairs were set up.</p>
 </button>
 </div>
 </nav><div id="nav-tabContent-1" class="tab-content">
-<div id="nav-tabpanel-1-LinuxandMacOS" class="tab-pane show active" role="tabpanel" aria-labelledby="nav-tab-1-LinuxandMacOS">
+<div id="nav-tabpanel-1-LinuxandMacOS" class="tab-pane show active" aria-labelledby="nav-tab-1-LinuxandMacOS" role="tabpanel">
 <div class="codewrapper sourceCode" id="cb8">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="ex">$</span> ssh-keygen <span class="at">-t</span> ed25519 <span class="at">-f</span> ~/.ssh/id_ed25519_github <span class="at">-C</span> <span class="st">"e.ormerod@mo-weather.uk Azure SPICE"</span></span></code></pre>
 </div>
 </div>
-<div id="nav-tabpanel-1-Windows" class="tab-pane" role="tabpanel" aria-labelledby="nav-tab-1-Windows">
+<div id="nav-tabpanel-1-Windows" class="tab-pane" aria-labelledby="nav-tab-1-Windows" role="tabpanel">
 <p>In Git bash run:</p>
 <div class="codewrapper sourceCode" id="cb9">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -940,9 +940,13 @@ config.</p>
 <ol style="list-style-type: decimal"><li>Create the <code>~/.ssh/config</code> file if it doesn’t exist</li>
 <li>Add the following to the file:</li>
 </ol><pre class="ssh-config"><code>Host github.com
-  IdentityFile ~/.ssh/id_ed25519_github</code></pre>
+  IdentityFile ~/.ssh/id_ed25519_github
+  IdentitiesOnly yes</code></pre>
 <p>This explicitly states which key to use for <code>github.com</code>
-and is needed if you have many SSH keys already for other hosts.</p>
+and is needed if you have many SSH keys already for other hosts.
+IdentityFile along with IdentitiesOnly yes ensures that only your GitHub
+SSH key is offered to github.com. This prevents failures caused by
+trying more key files than the GitHub server accepts.</p>
 </div>
 </div>
 </div>
@@ -969,21 +973,18 @@ if you require help. To enable this script add the following to a new
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb23-1"><a href="#cb23-1" tabindex="-1"></a><span class="cf">if</span> <span class="kw">[[</span> <span class="va">$-</span> <span class="ot">=~</span> <span class="ss">i</span> <span class="kw">]];</span> <span class="cf">then</span></span>
 <span id="cb23-2"><a href="#cb23-2" tabindex="-1"></a>    <span class="va">GIT_PROMPT_PATH</span><span class="op">=</span>/usr/share/git-core/contrib/completion/git-prompt.sh</span>
 <span id="cb23-3"><a href="#cb23-3" tabindex="-1"></a>    <span class="cf">if</span> <span class="kw">[[</span> <span class="ot">-r</span> <span class="st">"</span><span class="va">${GIT_PROMPT_PATH}</span><span class="st">"</span> <span class="kw">]];</span> <span class="cf">then</span></span>
-<span id="cb23-4"><a href="#cb23-4" tabindex="-1"></a>        <span class="bu">source</span> <span class="st">"</span><span class="va">${GIT_PROMPT_PATH}</span><span class="st">"</span> <span class="op">&gt;&amp;</span><span class="dv">2</span></span>
-<span id="cb23-5"><a href="#cb23-5" tabindex="-1"></a>    <span class="cf">else</span></span>
-<span id="cb23-6"><a href="#cb23-6" tabindex="-1"></a>        <span class="cf">if</span> <span class="kw">[[</span> <span class="st">"</span><span class="va">$-</span><span class="st">"</span> <span class="ot">==</span> <span class="pp">*</span>i<span class="pp">*</span> <span class="kw">]];</span> <span class="cf">then</span></span>
-<span id="cb23-7"><a href="#cb23-7" tabindex="-1"></a>            <span class="bu">echo</span> <span class="st">"</span><span class="va">${GIT_PROMPT_PATH}</span><span class="st"> - not found"</span> <span class="op">&gt;&amp;</span><span class="dv">2</span></span>
-<span id="cb23-8"><a href="#cb23-8" tabindex="-1"></a>        <span class="cf">fi</span></span>
-<span id="cb23-9"><a href="#cb23-9" tabindex="-1"></a>    <span class="cf">fi</span></span>
-<span id="cb23-10"><a href="#cb23-10" tabindex="-1"></a>    <span class="bu">export</span> <span class="va">GIT_PS1_SHOWDIRTYSTATE</span><span class="op">=</span>1</span>
-<span id="cb23-11"><a href="#cb23-11" tabindex="-1"></a>    <span class="bu">export</span> <span class="va">GIT_PS1_SHOWSTASHSTATE</span><span class="op">=</span>1</span>
-<span id="cb23-12"><a href="#cb23-12" tabindex="-1"></a>    <span class="bu">export</span> <span class="va">GIT_PS1_SHOWUPSTREAM</span><span class="op">=</span><span class="st">"auto"</span></span>
-<span id="cb23-13"><a href="#cb23-13" tabindex="-1"></a>    <span class="bu">export</span> <span class="va">GIT_PS1_SHOWCOLORHINTS</span><span class="op">=</span>1</span>
-<span id="cb23-14"><a href="#cb23-14" tabindex="-1"></a>    <span class="bu">export</span> <span class="va">GIT_PS1_SHOWUNTRACKEDFILES</span><span class="op">=</span>1</span>
-<span id="cb23-15"><a href="#cb23-15" tabindex="-1"></a></span>
-<span id="cb23-16"><a href="#cb23-16" tabindex="-1"></a>    <span class="bu">export</span> <span class="va">PS1</span><span class="op">=</span><span class="st">'[\u@\h:\w]$(__git_ps1 "(%s)"):\$ '</span></span>
-<span id="cb23-17"><a href="#cb23-17" tabindex="-1"></a></span>
-<span id="cb23-18"><a href="#cb23-18" tabindex="-1"></a><span class="cf">fi</span></span></code></pre>
+<span id="cb23-4"><a href="#cb23-4" tabindex="-1"></a>        <span class="bu">.</span> <span class="st">"</span><span class="va">${GIT_PROMPT_PATH}</span><span class="st">"</span> <span class="op">&gt;&amp;</span><span class="dv">2</span></span>
+<span id="cb23-5"><a href="#cb23-5" tabindex="-1"></a>        <span class="bu">export</span> <span class="va">GIT_PS1_SHOWDIRTYSTATE</span><span class="op">=</span>1 <span class="co"># this can potentially slow down the prompt</span></span>
+<span id="cb23-6"><a href="#cb23-6" tabindex="-1"></a>        <span class="bu">export</span> <span class="va">GIT_PS1_SHOWSTASHSTATE</span><span class="op">=</span>1</span>
+<span id="cb23-7"><a href="#cb23-7" tabindex="-1"></a>        <span class="bu">export</span> <span class="va">GIT_PS1_SHOWUPSTREAM</span><span class="op">=</span><span class="st">"auto"</span></span>
+<span id="cb23-8"><a href="#cb23-8" tabindex="-1"></a>        <span class="bu">export</span> <span class="va">GIT_PS1_SHOWCOLORHINTS</span><span class="op">=</span>1</span>
+<span id="cb23-9"><a href="#cb23-9" tabindex="-1"></a>        <span class="bu">export</span> <span class="va">GIT_PS1_SHOWUNTRACKEDFILES</span><span class="op">=</span>1 <span class="co"># this can potentially slow down the prompt</span></span>
+<span id="cb23-10"><a href="#cb23-10" tabindex="-1"></a></span>
+<span id="cb23-11"><a href="#cb23-11" tabindex="-1"></a>        <span class="bu">export</span> <span class="va">PS1</span><span class="op">=</span><span class="st">'[\u@\h:\w]$(__git_ps1 "(%s)"):\$ '</span> <span class="co"># style to your taste</span></span>
+<span id="cb23-12"><a href="#cb23-12" tabindex="-1"></a>    <span class="co">#else # optional, if you need to style the default prompt without Git </span></span>
+<span id="cb23-13"><a href="#cb23-13" tabindex="-1"></a>    <span class="co">#    export PS1='[\u@\h:\w] \$ '</span></span>
+<span id="cb23-14"><a href="#cb23-14" tabindex="-1"></a>    <span class="cf">fi</span></span>
+<span id="cb23-15"><a href="#cb23-15" tabindex="-1"></a><span class="cf">fi</span></span></code></pre>
 </div>
 <p>You may use your preferred editor to create this file; these lesson
 materials use the <a href="https://www.nano-editor.org/" class="external-link"><code>nano</code></a> editor when a
@@ -1183,8 +1184,8 @@ $ _</code></pre>
   "url": "https://swcarpentry.github.io/git-novice/index.html",
   "identifier": "https://swcarpentry.github.io/git-novice/index.html",
   "dateCreated": "2014-12-04",
-  "dateModified": "2025-03-25",
-  "datePublished": "2025-03-25"
+  "dateModified": "2025-03-26",
+  "datePublished": "2025-03-26"
 }
 
   </script><script>
