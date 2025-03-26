@@ -401,10 +401,14 @@ If your new key failed to connect you may need to alter your ssh config.
 ```ssh-config
 Host github.com
   IdentityFile ~/.ssh/id_ed25519_github
+  IdentitiesOnly yes
 ```
 
 This explicitly states which key to use for `github.com`
 and is needed if you have many SSH keys already for other hosts.
+IdentityFile along with IdentitiesOnly yes ensures
+that only your GitHub SSH key is offered to github.com.
+This prevents failures caused by trying more key files than the GitHub server accepts.
 
 :::
 
