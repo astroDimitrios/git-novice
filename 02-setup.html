@@ -443,7 +443,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Setting Up Git</h1>
-        <p>Last updated on 2025-02-12 |
+        <p>Last updated on 2025-04-15 |
 
         <a href="https://github.com/metoffice/git-novice/edit/main/episodes/02-setup.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -527,51 +527,6 @@ address private.</p>
 </div>
 </div>
 <div class="section level3">
-<h3 id="line-endings">Line Endings<a class="anchor" aria-label="anchor" href="#line-endings"></a></h3>
-<p>As with other keys, when you press <kbd>Enter</kbd> or <kbd>↵</kbd>
-or on Macs, <kbd>Return</kbd> on your keyboard, your computer encodes
-this input as a character. Different operating systems use different
-character(s) to represent the end of a line. (You may also hear these
-referred to as newlines or line breaks.) Because Git uses these
-characters to compare files, it may cause unexpected issues when editing
-a file on different machines. Though it is beyond the scope of this
-lesson, you can read more about this issue <a href="https://www.git-scm.com/book/en/v2/Customizing-Git-Git-Configuration#_core_autocrlf" class="external-link">in
-the Pro Git book</a>.</p>
-<p>You can change the way Git recognizes and encodes line endings using
-the <code>core.autocrlf</code> command to <code>git config</code>. The
-following settings are recommended:</p>
-<div class="tabs">
-<nav><div id="nav-tab-1" class="nav nav-tabs" role="tablist">
-<button class="nav-link active" id="nav-tab-1-LinuxandMacOS" name="LinuxandMacOS" data-bs-toggle="tab" data-bs-target="#nav-tabpanel-1-LinuxandMacOS" type="button" role="tab" aria-controls="nav-tabpanel-1-LinuxandMacOS" aria-selected="true">
-  <h3 class="tab-header" id="nav-tab-heading-1-LinuxandMacOS">
-  Linux and MacOS
-  </h3>
-</button>
-<button class="nav-link" id="nav-tab-1-Windows" name="Windows" data-bs-toggle="tab" data-bs-target="#nav-tabpanel-1-Windows" type="button" role="tab" aria-controls="nav-tabpanel-1-Windows" aria-selected="false">
-  <h3 class="tab-header" id="nav-tab-heading-1-Windows">
-  Windows
-  </h3>
-</button>
-</div>
-</nav><div id="nav-tabContent-1" class="tab-content">
-<div id="nav-tabpanel-1-LinuxandMacOS" class="tab-pane show active" aria-labelledby="nav-tab-1-LinuxandMacOS" role="tabpanel">
-<div class="codewrapper sourceCode" id="cb2">
-<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="ex">$</span> git config <span class="at">--global</span> core.autocrlf input</span></code></pre>
-</div>
-</div>
-<div id="nav-tabpanel-1-Windows" class="tab-pane" aria-labelledby="nav-tab-1-Windows" role="tabpanel">
-<div class="codewrapper sourceCode" id="cb3">
-<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="ex">$</span> git config <span class="at">--global</span> core.autocrlf true</span></code></pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="section level3">
 <h3 id="text-editor">Text Editor<a class="anchor" aria-label="anchor" href="#text-editor"></a></h3>
 <p>To set your preferred text editor, find the correct configuration
 command from this table:</p>
@@ -649,10 +604,10 @@ want to save your changes and quit, press <kbd>Esc</kbd> then type
 when you initialize any new repository. We want to set this to
 <code>main</code> so it matches the cloud service we will eventually
 use.</p>
-<div class="codewrapper sourceCode" id="cb4">
+<div class="codewrapper sourceCode" id="cb2">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="ex">$</span> git config <span class="at">--global</span> init.defaultBranch main</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="ex">$</span> git config <span class="at">--global</span> init.defaultBranch main</span></code></pre>
 </div>
 <div id="history-of-main" class="callout">
 <div class="callout-square">
@@ -689,18 +644,18 @@ project, in your user account, on this computer.</p>
 </section><section><h2 class="section-heading" id="text-editor-git-setup">Text Editor Git Setup<a class="anchor" aria-label="anchor" href="#text-editor-git-setup"></a></h2>
 <hr class="half-width"><p>Let’s review those settings and test our <code>core.editor</code>
 right away:</p>
-<div class="codewrapper sourceCode" id="cb5">
+<div class="codewrapper sourceCode" id="cb3">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="ex">$</span> git config <span class="at">--global</span> <span class="at">--edit</span></span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="ex">$</span> git config <span class="at">--global</span> <span class="at">--edit</span></span></code></pre>
 </div>
 <p>Let’s close the file without making any additional changes. Since
 typos in the config file will cause issues, it’s safer to view the
 configuration with:</p>
-<div class="codewrapper sourceCode" id="cb6">
+<div class="codewrapper sourceCode" id="cb4">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="ex">$</span> git config <span class="at">--list</span></span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="ex">$</span> git config <span class="at">--list</span></span></code></pre>
 </div>
 <p>And alter the configuration via the command line. You can re-run the
 commands above as many times as you want to change your configuration.
@@ -715,18 +670,18 @@ has details on more recommended settings.</p>
 <div class="callout-content">
 <p>In some networks you need to use a <a href="https://en.wikipedia.org/wiki/Proxy_server" class="external-link">proxy</a>. If this is
 the case, you may also need to tell Git about the proxy:</p>
-<div class="codewrapper sourceCode" id="cb7">
+<div class="codewrapper sourceCode" id="cb5">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="ex">$</span> git config <span class="at">--global</span> http.proxy proxy-url</span>
-<span id="cb7-2"><a href="#cb7-2" tabindex="-1"></a><span class="ex">$</span> git config <span class="at">--global</span> https.proxy proxy-url</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="ex">$</span> git config <span class="at">--global</span> http.proxy proxy-url</span>
+<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a><span class="ex">$</span> git config <span class="at">--global</span> https.proxy proxy-url</span></code></pre>
 </div>
 <p>To disable the proxy, use</p>
-<div class="codewrapper sourceCode" id="cb8">
+<div class="codewrapper sourceCode" id="cb6">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="ex">$</span> git config <span class="at">--global</span> <span class="at">--unset</span> http.proxy</span>
-<span id="cb8-2"><a href="#cb8-2" tabindex="-1"></a><span class="ex">$</span> git config <span class="at">--global</span> <span class="at">--unset</span> https.proxy</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="ex">$</span> git config <span class="at">--global</span> <span class="at">--unset</span> http.proxy</span>
+<span id="cb6-2"><a href="#cb6-2" tabindex="-1"></a><span class="ex">$</span> git config <span class="at">--global</span> <span class="at">--unset</span> https.proxy</span></code></pre>
 </div>
 </div>
 </div>
@@ -742,21 +697,21 @@ the case, you may also need to tell Git about the proxy:</p>
 command, you can access the relevant list of options typing
 <code>git &lt;command&gt; -h</code> or access the corresponding Git
 manual by typing <code>git &lt;command&gt; --help</code>, e.g.:</p>
-<div class="codewrapper sourceCode" id="cb9">
+<div class="codewrapper sourceCode" id="cb7">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a><span class="ex">$</span> git config <span class="at">-h</span></span>
-<span id="cb9-2"><a href="#cb9-2" tabindex="-1"></a><span class="ex">$</span> git config <span class="at">--help</span></span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="ex">$</span> git config <span class="at">-h</span></span>
+<span id="cb7-2"><a href="#cb7-2" tabindex="-1"></a><span class="ex">$</span> git config <span class="at">--help</span></span></code></pre>
 </div>
 <p>While viewing the manual, remember the <code>:</code> is a prompt
 waiting for commands and you can press <kbd>Q</kbd> to exit the
 manual.</p>
 <p>More generally, you can get the list of available <code>git</code>
 commands and further resources of the Git manual typing:</p>
-<div class="codewrapper sourceCode" id="cb10">
+<div class="codewrapper sourceCode" id="cb8">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a><span class="ex">$</span> git help</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="ex">$</span> git help</span></code></pre>
 </div>
 </div>
 </div>
@@ -832,7 +787,7 @@ per machine.</li>
   "url": "https://swcarpentry.github.io/git-novice/02-setup.html",
   "identifier": "https://swcarpentry.github.io/git-novice/02-setup.html",
   "dateCreated": "2014-12-04",
-  "dateModified": "2025-02-12",
+  "dateModified": "2025-04-15",
   "datePublished": "2025-04-15"
 }
 
